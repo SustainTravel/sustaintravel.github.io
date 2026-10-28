@@ -4,7 +4,7 @@ export const en = {
   common: {
     brand: "Sustain",
     meta: {
-      title: "Sustain — Slow & rural travel in Portugal",
+      title: "Sustain | Slow & rural travel in Portugal",
       description:
         "Multi-day slow journeys through rural Portugal: tree planting, hikes, bike rides, yoga and farm food. Electric transfers only, famous sights only off-season.",
     },
@@ -32,7 +32,7 @@ export const en = {
   hero: {
     eyebrow: "Slow journeys in rural Portugal",
     title: "Portugal, at the pace of a walk",
-    lead: "Week-long journeys through schist villages, cork-oak plains and quiet winter coasts. Plant trees, cycle old railway lines, eat what the neighbours grow — and arrive everywhere by bike or electric car.",
+    lead: "Week-long journeys through schist villages, cork-oak plains and quiet winter coasts. Plant trees, cycle old railway lines, eat what the neighbours grow, and arrive everywhere by bike or electric car.",
     cta: "Explore tours",
     secondaryCta: "How it works",
     imageAlt: "A lone cork oak in a green Alentejo meadow",
@@ -45,7 +45,7 @@ export const en = {
     points: [
       {
         title: "Hidden gems",
-        body: "Schist hamlets in the Serra da Lousã, granite villages in Peneda-Gerês, cork-oak farms in the Alentejo — the places most visitors drive straight past.",
+        body: "Schist hamlets in the Serra da Lousã, granite villages in Peneda-Gerês, cork-oak farms in the Alentejo: the places most visitors drive straight past.",
       },
       {
         title: "Classics, off-season",
@@ -61,7 +61,7 @@ export const en = {
   values: {
     eyebrow: "What we stand by",
     title: "Six promises, on every journey",
-    lead: "Not a sustainability page tucked away in the footer — these shape every itinerary we write.",
+    lead: "Not a sustainability page tucked away in the footer. These shape every itinerary we write.",
     items: {
       ev: {
         title: "Electric transfers only",
@@ -73,19 +73,19 @@ export const en = {
       },
       local: {
         title: "Eat local",
-        body: "Meals come from farmers, shepherds, bakers and family kitchens nearby: chanfana, caldo verde, migas, cataplana — cooked the way grandmothers insist on.",
+        body: "Meals come from farmers, shepherds, bakers and family kitchens nearby: chanfana, caldo verde, migas, cataplana. All cooked the way grandmothers insist on.",
       },
       offseason: {
         title: "Famous places, off-season",
-        body: "We visit Portugal’s best-known sights only from November to March. It eases the pressure of mass tourism — and the winter light is better anyway.",
+        body: "We visit Portugal’s best-known sights only from November to March. It eases the pressure of mass tourism, and the winter light is better anyway.",
       },
       smallGroups: {
         title: "Small groups, local stays",
-        body: "Never more than 12 travellers. We sleep in family-run guesthouses, restored schist houses and farm stays — never chain hotels.",
+        body: "Never more than 12 travellers. We sleep in family-run guesthouses, restored schist houses and farm stays, never chain hotels.",
       },
       givingBack: {
         title: "Giving back",
-        body: "Every journey funds native trees — cork oaks, chestnuts, strawberry trees — on hillsides scarred by wildfire. On some, you’ll plant them yourself.",
+        body: "Every journey funds native trees (cork oaks, chestnuts, strawberry trees) on hillsides scarred by wildfire. On some, you’ll plant them yourself.",
       },
     },
   },
@@ -100,7 +100,7 @@ export const en = {
       },
       {
         title: "Book your dates",
-        body: "Pick a departure, tell us who’s coming and what you like to eat. Groups are small, so dates do fill up — that’s rather the point.",
+        body: "Pick a departure, tell us who’s coming and what you like to eat. Groups are small, so dates do fill up. That’s rather the point.",
       },
       {
         title: "We handle the rest",
@@ -150,7 +150,7 @@ export const en = {
         tour: "Ecopista do Dão by Bike",
       },
       {
-        quote: "I’ve lived in Portugal all my life and never seen Sintra like this — mist in the gardens, a fire lit in the guesthouse, the palaces almost to ourselves.",
+        quote: "I’ve lived in Portugal all my life and never seen Sintra like this: mist in the gardens, a fire lit in the guesthouse, the palaces almost to ourselves.",
         name: "Marta Oliveira",
         from: "Porto, Portugal",
         tour: "Sintra & Lisbon, Quietly",
@@ -164,11 +164,11 @@ export const en = {
     items: [
       {
         q: "What is slow travel?",
-        a: "Staying longer in fewer places and moving between them gently — on foot, by bike or in an electric car. You get time to know a valley, its food and its people, rather than collecting views through a coach window. Every day has a plan, never a rush: afternoons are often free, and nobody is counting kilometres.",
+        a: "Staying longer in fewer places and moving between them gently, on foot, by bike or in an electric car. You get time to know a valley, its food and its people, rather than collecting views through a coach window. Every day has a plan, never a rush: afternoons are often free, and nobody is counting kilometres.",
       },
       {
         q: "Why do you visit famous places only in the off-season?",
-        a: "Sintra, Lisbon and the Algarve are wonderful — and in summer they are overwhelmed. Going between November and March spreads tourism income across the year, eases the pressure on housing and water, and gives you quiet palaces, empty beaches and locals with time to talk.",
+        a: "Sintra, Lisbon and the Algarve are wonderful. In summer, they are overwhelmed. Going between November and March spreads tourism income across the year, eases the pressure on housing and water, and gives you quiet palaces, empty beaches and locals with time to talk.",
       },
       {
         q: "How do transfers work?",
@@ -176,7 +176,7 @@ export const en = {
       },
       {
         q: "Can you cater for dietary needs?",
-        a: "Yes. Vegetarian, vegan, gluten-free, lactose-free and allergies are all fine — just tell us when you book. Our cooks are used to adapting traditional recipes, and there is always more on a Portuguese table than meat.",
+        a: "Yes. Vegetarian, vegan, gluten-free, lactose-free and allergies are all fine. Just tell us when you book. Our cooks are used to adapting traditional recipes, and there is always more on a Portuguese table than meat.",
       },
       {
         q: "What if I need to cancel?",
@@ -193,7 +193,7 @@ export const en = {
       name: "Your name",
       email: "Email",
       message: "Message",
-      newsletter: "Also send me the seasonal letter — four a year, no more.",
+      newsletter: "Also send me the seasonal letter: four a year, no more.",
     },
     submit: "Send message",
     successTitle: "Obrigado!",
@@ -206,7 +206,7 @@ export const en = {
 
   footer: {
     mission:
-      "Slow, rural journeys through Portugal — on foot, by bike and in electric vehicles, with local food on the table and trees planted along the way.",
+      "Slow, rural journeys through Portugal (on foot, by bike and in electric vehicles), with local food on the table and trees planted along the way.",
     exploreTitle: "Explore",
     contactTitle: "Get in touch",
     followTitle: "Follow us",
@@ -218,7 +218,7 @@ export const en = {
 
   tours: {
     meta: {
-      title: "Slow journeys in Portugal — Sustain",
+      title: "Slow journeys in Portugal | Sustain",
       description:
         "Seven slow, small-group journeys through rural Portugal: tree planting, hiking, cycling, yoga and off-season classics.",
     },
@@ -279,19 +279,19 @@ export const en = {
     transport: {
       title: "Getting around",
       ev: "All transfers are in electric cars or electric buses.",
-      bike: "On bike days you ride from place to place — e-bikes are on hand for the hills — and your luggage travels ahead.",
+      bike: "On bike days you ride from place to place, with e-bikes on hand for the hills, and your luggage travels ahead.",
     },
     offSeason: {
       title: "Why only November to March?",
-      body: "These are some of Portugal’s most-visited places. Coming in winter spreads tourism across the year, takes pressure off the people who live there — and you get mild days, soft light and quiet streets.",
+      body: "These are some of Portugal’s most-visited places. Coming in winter spreads tourism across the year, takes pressure off the people who live there, and you get mild days, soft light and quiet streets.",
     },
     book: "Book this journey",
   },
 
   credits: {
-    meta: { title: "Photo credits — Sustain" },
+    meta: { title: "Photo credits | Sustain" },
     title: "Photo credits",
-    lead: "The photos on this site show the real places our journeys visit. They are shared under free licences by the photographers below — thank you.",
+    lead: "The photos on this site show the real places our journeys visit. They are shared under free licences by the photographers below. Thank you.",
     general: "Around the site",
     viewSource: "View on Wikimedia Commons",
     resized: "Resized from the original.",

@@ -8,7 +8,7 @@ import { body, display } from "./fonts";
 import "./globals.css";
 
 // Becomes out/404.html, served by the static host for any unknown URL. The language is unknown, so it speaks both.
-export const metadata: Metadata = { title: `${en.notFound.title} · ${pt.notFound.title} — Sustain` };
+export const metadata: Metadata = { title: `${en.notFound.title} · ${pt.notFound.title} | Sustain` };
 export const viewport: Viewport = { themeColor: "#f9f7eb" };
 
 const versions = [

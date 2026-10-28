@@ -1,11 +1,11 @@
-// Português europeu (pt-PT, AO90). Mesma estrutura que en.ts — o teste de paridade garante-o.
+// Português europeu (pt-PT, AO90). Mesma estrutura que en.ts (o teste de paridade garante-o).
 import type { Dictionary } from "./en";
 
 export const pt: Dictionary = {
   common: {
     brand: "Sustain",
     meta: {
-      title: "Sustain — Turismo lento e rural em Portugal",
+      title: "Sustain | Turismo lento e rural em Portugal",
       description:
         "Viagens lentas de vários dias pelo Portugal rural: plantação de árvores, caminhadas, bicicleta, ioga e comida da terra. Só transfers elétricos, e os lugares famosos só fora de época.",
     },
@@ -33,7 +33,7 @@ export const pt: Dictionary = {
   hero: {
     eyebrow: "Viagens lentas pelo Portugal rural",
     title: "Portugal, ao ritmo de quem caminha",
-    lead: "Uma semana ou mais por aldeias de xisto, montados de sobro e costas sossegadas de inverno. Plante árvores, pedale por antigas linhas de comboio, prove o que os vizinhos cultivam — e chegue a todo o lado de bicicleta ou de carro elétrico.",
+    lead: "Uma semana ou mais por aldeias de xisto, montados de sobro e costas sossegadas de inverno. Plante árvores, pedale por antigas linhas de comboio, prove o que os vizinhos cultivam, e chegue a todo o lado de bicicleta ou de carro elétrico.",
     cta: "Ver viagens",
     secondaryCta: "Como funciona",
     imageAlt: "Um sobreiro solitário num prado verde do Alentejo",
@@ -46,7 +46,7 @@ export const pt: Dictionary = {
     points: [
       {
         title: "Recantos escondidos",
-        body: "Aldeias de xisto na Serra da Lousã, lugarejos de granito na Peneda-Gerês, herdades de sobreiros no Alentejo — os sítios por onde a maioria dos visitantes passa sem parar.",
+        body: "Aldeias de xisto na Serra da Lousã, lugarejos de granito na Peneda-Gerês, herdades de sobreiros no Alentejo: os sítios por onde a maioria dos visitantes passa sem parar.",
       },
       {
         title: "Os clássicos, fora de época",
@@ -62,7 +62,7 @@ export const pt: Dictionary = {
   values: {
     eyebrow: "Aquilo em que acreditamos",
     title: "Seis compromissos, em todas as viagens",
-    lead: "Não é uma página de sustentabilidade escondida no rodapé — é o que molda cada itinerário que escrevemos.",
+    lead: "Não é uma página de sustentabilidade escondida no rodapé. É o que molda cada itinerário que escrevemos.",
     items: {
       ev: {
         title: "Só transfers elétricos",
@@ -74,19 +74,19 @@ export const pt: Dictionary = {
       },
       local: {
         title: "Comer o que é da terra",
-        body: "As refeições vêm de agricultores, pastores, padeiros e cozinhas de família ali ao lado: chanfana, caldo verde, migas, cataplana — feitas como as avós mandam.",
+        body: "As refeições vêm de agricultores, pastores, padeiros e cozinhas de família ali ao lado: chanfana, caldo verde, migas, cataplana. Tudo feito como as avós mandam.",
       },
       offseason: {
         title: "Lugares famosos, fora de época",
-        body: "Só visitamos os destinos mais conhecidos do país entre novembro e março. Alivia a pressão do turismo de massas — e a luz de inverno é mais bonita.",
+        body: "Só visitamos os destinos mais conhecidos do país entre novembro e março. Alivia a pressão do turismo de massas, e a luz de inverno é mais bonita.",
       },
       smallGroups: {
         title: "Grupos pequenos, alojamento local",
-        body: "Nunca mais de 12 viajantes. Dormimos em casas de família, casas de xisto recuperadas e quintas — nunca em cadeias de hotéis.",
+        body: "Nunca mais de 12 viajantes. Dormimos em casas de família, casas de xisto recuperadas e quintas, nunca em cadeias de hotéis.",
       },
       givingBack: {
         title: "Retribuir",
-        body: "Cada viagem financia árvores autóctones — sobreiros, castanheiros, medronheiros — em encostas marcadas pelos incêndios. Em algumas, é o viajante quem as planta.",
+        body: "Cada viagem financia árvores autóctones (sobreiros, castanheiros, medronheiros) em encostas marcadas pelos incêndios. Em algumas, é o viajante quem as planta.",
       },
     },
   },
@@ -101,7 +101,7 @@ export const pt: Dictionary = {
       },
       {
         title: "Reserve as datas",
-        body: "Escolha uma partida, diga-nos quem vem e o que gosta de comer. Os grupos são pequenos e as datas esgotam — e ainda bem.",
+        body: "Escolha uma partida, diga-nos quem vem e o que gosta de comer. Os grupos são pequenos e as datas esgotam. E ainda bem.",
       },
       {
         title: "Nós tratamos do resto",
@@ -128,7 +128,7 @@ export const pt: Dictionary = {
     title: "Nascemos num programa Erasmus+",
     story: [
       "A Sustain nasceu em 2026, quando nós os sete nos conhecemos em Portugal, num BIP (Blended Intensive Programme) do Erasmus+. Vínhamos de países e cursos diferentes e voltávamos sempre à mesma pergunta: porque é que o turismo tantas vezes tira mais a um lugar do que lhe devolve?",
-      "A nossa resposta é uma empresa de viagens assente numa economia sustentável e circular. Grupos pequenos e estadias mais longas. Transfers elétricos e bicicletas em vez de autocarros de turismo. Refeições compradas aos agricultores e às famílias que as produzem, e dinheiro que fica nas aldeias que o recebem. O que uma viagem gasta, deve ajudar a devolver — a começar pelas árvores que plantamos.",
+      "A nossa resposta é uma empresa de viagens assente numa economia sustentável e circular. Grupos pequenos e estadias mais longas. Transfers elétricos e bicicletas em vez de autocarros de turismo. Refeições compradas aos agricultores e às famílias que as produzem, e dinheiro que fica nas aldeias que o recebem. O que uma viagem gasta, deve ajudar a devolver, a começar pelas árvores que plantamos.",
       "Somos pequenos e queremos continuar assim. Cada viagem é desenhada em conjunto com quem vive ao longo do seu percurso.",
     ],
     photoAlt: "Os sete membros da equipa da Sustain à porta de um edifício universitário em Portugal",
@@ -151,7 +151,7 @@ export const pt: Dictionary = {
         tour: "Ecopista do Dão de Bicicleta",
       },
       {
-        quote: "Vivo em Portugal desde sempre e nunca tinha visto Sintra assim — nevoeiro nos jardins, lareira acesa na casa de hóspedes e os palácios quase só para nós.",
+        quote: "Vivo em Portugal desde sempre e nunca tinha visto Sintra assim: nevoeiro nos jardins, lareira acesa na casa de hóspedes e os palácios quase só para nós.",
         name: "Marta Oliveira",
         from: "Porto, Portugal",
         tour: "Sintra e Lisboa, com Calma",
@@ -165,11 +165,11 @@ export const pt: Dictionary = {
     items: [
       {
         q: "O que é o turismo lento?",
-        a: "É ficar mais tempo em menos sítios e viajar entre eles com calma — a pé, de bicicleta ou de carro elétrico. Há tempo para conhecer um vale, a sua comida e a sua gente, em vez de colecionar paisagens pela janela de um autocarro. Todos os dias têm um plano, mas nunca pressa: muitas tardes são livres e ninguém conta quilómetros.",
+        a: "É ficar mais tempo em menos sítios e viajar entre eles com calma, a pé, de bicicleta ou de carro elétrico. Há tempo para conhecer um vale, a sua comida e a sua gente, em vez de colecionar paisagens pela janela de um autocarro. Todos os dias têm um plano, mas nunca pressa: muitas tardes são livres e ninguém conta quilómetros.",
       },
       {
         q: "Porque visitam os lugares famosos só fora de época?",
-        a: "Sintra, Lisboa e o Algarve são maravilhosos — e no verão estão sobrelotados. Ir entre novembro e março distribui o rendimento do turismo ao longo do ano, alivia a pressão sobre a habitação e a água, e oferece palácios sossegados, praias vazias e gente com tempo para conversar.",
+        a: "Sintra, Lisboa e o Algarve são maravilhosos. No verão, estão sobrelotados. Ir entre novembro e março distribui o rendimento do turismo ao longo do ano, alivia a pressão sobre a habitação e a água, e oferece palácios sossegados, praias vazias e gente com tempo para conversar.",
       },
       {
         q: "Como funcionam as deslocações?",
@@ -177,7 +177,7 @@ export const pt: Dictionary = {
       },
       {
         q: "Têm em conta restrições alimentares?",
-        a: "Sim. Vegetariano, vegano, sem glúten, sem lactose ou alergias — basta indicar na reserva. Os nossos cozinheiros estão habituados a adaptar receitas tradicionais, e numa mesa portuguesa há sempre muito mais do que carne.",
+        a: "Sim. Vegetariano, vegano, sem glúten, sem lactose ou alergias. Basta indicar na reserva. Os nossos cozinheiros estão habituados a adaptar receitas tradicionais, e numa mesa portuguesa há sempre muito mais do que carne.",
       },
       {
         q: "E se precisar de cancelar?",
@@ -194,7 +194,7 @@ export const pt: Dictionary = {
       name: "Nome",
       email: "Email",
       message: "Mensagem",
-      newsletter: "Quero também receber a carta da estação — no máximo quatro por ano.",
+      newsletter: "Quero também receber a carta da estação: no máximo quatro por ano.",
     },
     submit: "Enviar mensagem",
     successTitle: "Obrigado!",
@@ -207,7 +207,7 @@ export const pt: Dictionary = {
 
   footer: {
     mission:
-      "Viagens lentas pelo Portugal rural — a pé, de bicicleta e em veículos elétricos, com comida da terra na mesa e árvores plantadas pelo caminho.",
+      "Viagens lentas pelo Portugal rural (a pé, de bicicleta e em veículos elétricos), com comida da terra na mesa e árvores plantadas pelo caminho.",
     exploreTitle: "Explorar",
     contactTitle: "Contacto",
     followTitle: "Siga-nos",
@@ -219,7 +219,7 @@ export const pt: Dictionary = {
 
   tours: {
     meta: {
-      title: "Viagens lentas em Portugal — Sustain",
+      title: "Viagens lentas em Portugal | Sustain",
       description:
         "Sete viagens lentas, em grupos pequenos, pelo Portugal rural: plantação de árvores, caminhadas, bicicleta, ioga e clássicos fora de época.",
     },
@@ -280,19 +280,19 @@ export const pt: Dictionary = {
     transport: {
       title: "Como nos deslocamos",
       ev: "Todas as deslocações são feitas em carros e autocarros elétricos.",
-      bike: "Nos dias de bicicleta, segue-se de um sítio para o outro a pedalar — há bicicletas elétricas para as subidas — e a bagagem vai à frente.",
+      bike: "Nos dias de bicicleta, segue-se de um sítio para o outro a pedalar, com bicicletas elétricas para as subidas, e a bagagem vai à frente.",
     },
     offSeason: {
       title: "Porquê só de novembro a março?",
-      body: "São dos lugares mais visitados do país. Vir no inverno distribui o turismo pelo ano inteiro e alivia quem lá vive — e há dias amenos, luz suave e ruas tranquilas.",
+      body: "São dos lugares mais visitados do país. Vir no inverno distribui o turismo pelo ano inteiro e alivia quem lá vive, e há dias amenos, luz suave e ruas tranquilas.",
     },
     book: "Reservar esta viagem",
   },
 
   credits: {
-    meta: { title: "Créditos fotográficos — Sustain" },
+    meta: { title: "Créditos fotográficos | Sustain" },
     title: "Créditos fotográficos",
-    lead: "As fotografias deste site mostram os lugares reais por onde passam as nossas viagens. São partilhadas com licenças livres pelos fotógrafos abaixo — obrigado.",
+    lead: "As fotografias deste site mostram os lugares reais por onde passam as nossas viagens. São partilhadas com licenças livres pelos fotógrafos abaixo. Obrigado.",
     general: "No resto do site",
     viewSource: "Ver na Wikimedia Commons",
     resized: "Redimensionada a partir do original.",

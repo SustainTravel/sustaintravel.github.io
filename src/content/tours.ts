@@ -1,4 +1,4 @@
-// Tour content, EN + PT-PT (AO90). Titles of three tours are quoted in the dictionaries' testimonials — keep them in sync.
+// Tour content, EN + PT-PT (AO90). Titles of three tours are quoted in the dictionaries' testimonials, so keep them in sync.
 import type { Localized, Tour } from "./types";
 
 const images = (slug: string) => [1, 2, 3, 4].map((n) => `/images/tours/${slug}-${n}.jpg`);
@@ -51,13 +51,13 @@ export const tours: Tour[] = [
     },
     food: {
       en: [
-        "Chanfana — goat slow-cooked in red wine in a black clay pot",
+        "Chanfana: goat slow-cooked in red wine in a black clay pot",
         "Serra da Lousã DOP honey, straight from the hive",
         "Broa de milho and fresh goat’s cheese at field picnics",
         "Medronho, the strawberry-tree brandy, by the fire",
       ],
       pt: [
-        "Chanfana — cabra cozinhada lentamente em vinho tinto, em caçoila de barro preto",
+        "Chanfana: cabra cozinhada lentamente em vinho tinto, em caçoila de barro preto",
         "Mel da Serra da Lousã DOP, acabado de sair da colmeia",
         "Broa de milho e queijo fresco de cabra nos piqueniques do terreno",
         "Aguardente de medronho à lareira",
@@ -81,8 +81,8 @@ export const tours: Tour[] = [
     },
     notIncluded,
     impact: {
-      en: "Each guest plants around 30 native trees on land burned in 2017. Our partners, a local forest owners’ association, water and tend them for the first three summers — when most young trees are lost.",
-      pt: "Cada viajante planta cerca de 30 árvores autóctones em terrenos que arderam em 2017. Os nossos parceiros, uma associação local de proprietários florestais, regam-nas e cuidam delas durante os três primeiros verões — quando se perde a maioria das árvores jovens.",
+      en: "Each guest plants around 30 native trees on land burned in 2017. Our partners, a local forest owners’ association, water and tend them for the first three summers, when most young trees are lost.",
+      pt: "Cada viajante planta cerca de 30 árvores autóctones em terrenos que arderam em 2017. Os nossos parceiros, uma associação local de proprietários florestais, regam-nas e cuidam delas durante os três primeiros verões, quando se perde a maioria das árvores jovens.",
     },
     itinerary: [
       {
@@ -109,15 +109,15 @@ export const tours: Tour[] = [
       {
         title: { en: "The beekeeper’s table", pt: "À mesa do apicultor" },
         body: {
-          en: "A short walk to meet a beekeeper whose hives sit among heather and chestnut. Lunch at his farm: honey, fresh cheese, broa and whatever the garden gives. Spend the afternoon at the river beach below Lousã castle — or simply resting.",
-          pt: "Uma curta caminhada até às colmeias de um apicultor, entre urzes e castanheiros. Almoço na quinta dele: mel, queijo fresco, broa e o que a horta der. À tarde, a praia fluvial da Senhora da Piedade, junto ao castelo da Lousã — ou simplesmente descanso.",
+          en: "A short walk to meet a beekeeper whose hives sit among heather and chestnut. Lunch at his farm: honey, fresh cheese, broa and whatever the garden gives. Spend the afternoon at the river beach below Lousã castle, or simply rest.",
+          pt: "Uma curta caminhada até às colmeias de um apicultor, entre urzes e castanheiros. Almoço na quinta dele: mel, queijo fresco, broa e o que a horta der. À tarde, a praia fluvial da Senhora da Piedade, junto ao castelo da Lousã, ou simplesmente descanso.",
         },
       },
       {
         title: { en: "Second planting morning", pt: "Segunda manhã de plantação" },
         body: {
-          en: "Back to the hillside to plant again and to check on last year’s trees — most are now knee-high. Every tree you plant is logged with its location so you can follow it from home. Free afternoon.",
-          pt: "Regresso à encosta para plantar e ver como estão as árvores do ano passado — a maioria já chega ao joelho. Cada árvore que planta fica registada com a sua localização, para a poder acompanhar a partir de casa. Tarde livre.",
+          en: "Back to the hillside to plant again and to check on last year’s trees. Most are now knee-high. Every tree you plant is logged with its location so you can follow it from home. Free afternoon.",
+          pt: "Regresso à encosta para plantar e ver como estão as árvores do ano passado. A maioria já chega ao joelho. Cada árvore que planta fica registada com a sua localização, para a poder acompanhar a partir de casa. Tarde livre.",
         },
       },
       {
@@ -199,8 +199,8 @@ export const tours: Tour[] = [
     },
     notIncluded,
     impact: {
-      en: "The national park’s villages have lost most of their young people. Your stay pays families to keep their guesthouses, communal ovens and herds going — and part of every booking funds the upkeep of the old paths you walk on.",
-      pt: "As aldeias do parque nacional perderam a maioria dos seus jovens. A sua estadia paga às famílias para manterem as casas, os fornos comunitários e os rebanhos — e parte de cada reserva financia a manutenção dos caminhos antigos por onde caminha.",
+      en: "The national park’s villages have lost most of their young people. Your stay pays families to keep their guesthouses, communal ovens and herds going. Part of every booking funds the upkeep of the old paths you walk on.",
+      pt: "As aldeias do parque nacional perderam a maioria dos seus jovens. A sua estadia paga às famílias para manterem as casas, os fornos comunitários e os rebanhos. Parte de cada reserva financia a manutenção dos caminhos antigos por onde caminha.",
     },
     itinerary: [
       {
@@ -234,8 +234,8 @@ export const tours: Tour[] = [
       {
         title: { en: "A day of rest", pt: "Um dia de descanso" },
         body: {
-          en: "Nothing planned. Read on the terrace, swim in the river in summer, or walk with the guide up to the Galician border — about 8 km there and back.",
-          pt: "Nada planeado. Leia no terraço, dê um mergulho no rio no verão ou suba com o guia até à fronteira com a Galiza — cerca de 8 km, ida e volta.",
+          en: "Nothing planned. Read on the terrace, swim in the river in summer, or walk with the guide up to the Galician border (about 8 km there and back).",
+          pt: "Nada planeado. Leia no terraço, dê um mergulho no rio no verão ou suba com o guia até à fronteira com a Galiza (cerca de 8 km, ida e volta).",
         },
       },
       {
@@ -416,13 +416,13 @@ export const tours: Tour[] = [
     },
     food: {
       en: [
-        "Açorda alentejana — bread, garlic, coriander and olive oil — cooked with the farm’s cook",
+        "Açorda alentejana: bread, garlic, coriander and olive oil, cooked with the farm’s cook",
         "Migas with black pork in Évora",
         "Olive oil and sheep’s cheese at a neighbouring family farm",
         "Sericaia with Elvas plums",
       ],
       pt: [
-        "Açorda alentejana — pão, alho, coentros e azeite — feita com a cozinheira da herdade",
+        "Açorda alentejana: pão, alho, coentros e azeite, feita com a cozinheira da herdade",
         "Migas com carne de porco preto, em Évora",
         "Azeite e queijo de ovelha numa quinta familiar vizinha",
         "Sericaia com ameixas de Elvas",
@@ -446,8 +446,8 @@ export const tours: Tour[] = [
     },
     notIncluded,
     impact: {
-      en: "The montado is one of Europe’s richest farmed landscapes, and it only survives if cork, cattle and visitors make it pay. Your stay supports a farm that harvests cork the traditional way — by hand, every nine years, without felling a single tree.",
-      pt: "O montado é uma das paisagens agrícolas mais ricas da Europa e só sobrevive se a cortiça, o gado e os visitantes o tornarem viável. A sua estadia apoia uma herdade que tira a cortiça à maneira tradicional — à mão, de nove em nove anos, sem abater uma única árvore.",
+      en: "The montado is one of Europe’s richest farmed landscapes, and it only survives if cork, cattle and visitors make it pay. Your stay supports a farm that harvests cork the traditional way: by hand, every nine years, without felling a single tree.",
+      pt: "O montado é uma das paisagens agrícolas mais ricas da Europa e só sobrevive se a cortiça, o gado e os visitantes o tornarem viável. A sua estadia apoia uma herdade que tira a cortiça à maneira tradicional: à mão, de nove em nove anos, sem abater uma única árvore.",
     },
     itinerary: [
       {
@@ -467,8 +467,8 @@ export const tours: Tour[] = [
       {
         title: { en: "The cork harvester", pt: "O tirador de cortiça" },
         body: {
-          en: "Walk the farm with a cork harvester and learn how the bark is stripped by hand every nine years — and why each tree has a number painted on its trunk. Free afternoon; sunset practice.",
-          pt: "Percorra a herdade com um tirador de cortiça e descubra como se tira a casca à mão, de nove em nove anos — e porque é que cada sobreiro tem um número pintado no tronco. Tarde livre; prática ao pôr do sol.",
+          en: "Walk the farm with a cork harvester and learn how the bark is stripped by hand every nine years, and why each tree has a number painted on its trunk. Free afternoon; sunset practice.",
+          pt: "Percorra a herdade com um tirador de cortiça e descubra como se tira a casca à mão, de nove em nove anos, e porque é que cada sobreiro tem um número pintado no tronco. Tarde livre; prática ao pôr do sol.",
         },
       },
       {
@@ -536,8 +536,8 @@ export const tours: Tour[] = [
     title: { en: "Sintra & Lisbon, Quietly", pt: "Sintra e Lisboa, com Calma" },
     region: { en: "Sintra and Lisbon", pt: "Sintra e Lisboa" },
     summary: {
-      en: "Portugal’s most-visited corner, in the months when it belongs to the people who live there. Mist in the gardens of Sintra, wine grown in the sand at Colares and Lisbon’s hills in soft winter light — November to March only.",
-      pt: "O canto mais visitado de Portugal, nos meses em que volta a ser de quem lá vive. Nevoeiro nos jardins de Sintra, vinho nascido na areia em Colares e as colinas de Lisboa com a luz macia do inverno — só de novembro a março.",
+      en: "Portugal’s most-visited corner, in the months when it belongs to the people who live there. Mist in the gardens of Sintra, wine grown in the sand at Colares and Lisbon’s hills in soft winter light. November to March only.",
+      pt: "O canto mais visitado de Portugal, nos meses em que volta a ser de quem lá vive. Nevoeiro nos jardins de Sintra, vinho nascido na areia em Colares e as colinas de Lisboa com a luz macia do inverno. Só de novembro a março.",
     },
     highlights: {
       en: [
@@ -585,8 +585,8 @@ export const tours: Tour[] = [
     },
     notIncluded,
     impact: {
-      en: "Coming in winter spreads tourism income across the year, so the cafés, guides and guesthouses of Sintra and Lisbon don’t depend on three crowded summer months — and it takes pressure off housing and water when they are most stretched.",
-      pt: "Viajar no inverno distribui o rendimento do turismo ao longo do ano, para que os cafés, os guias e as casas de Sintra e Lisboa não dependam de três meses de verão cheios — e alivia a pressão sobre a habitação e a água quando ela é maior.",
+      en: "Coming in winter spreads tourism income across the year, so the cafés, guides and guesthouses of Sintra and Lisbon don’t depend on three crowded summer months, and it takes pressure off housing and water when they are most stretched.",
+      pt: "Viajar no inverno distribui o rendimento do turismo ao longo do ano, para que os cafés, os guias e as casas de Sintra e Lisboa não dependam de três meses de verão cheios, e alivia a pressão sobre a habitação e a água quando ela é maior.",
     },
     itinerary: [
       {
@@ -599,8 +599,8 @@ export const tours: Tour[] = [
       {
         title: { en: "Pena before the crowds", pt: "A Pena antes de toda a gente" },
         body: {
-          en: "Walk up through the forest to Pena Palace for opening time, then along the ridge to the Moorish Castle — about 7 km in all. Free afternoon in the old town, with travesseiros at the pastry shop where they were invented.",
-          pt: "Suba pela floresta até ao Palácio da Pena à hora de abertura e siga pela cumeada até ao Castelo dos Mouros — cerca de 7 km no total. Tarde livre na vila velha, com travesseiros na pastelaria onde foram inventados.",
+          en: "Walk up through the forest to Pena Palace for opening time, then along the ridge to the Moorish Castle, about 7 km in all. Free afternoon in the old town, with travesseiros at the pastry shop where they were invented.",
+          pt: "Suba pela floresta até ao Palácio da Pena à hora de abertura e siga pela cumeada até ao Castelo dos Mouros, cerca de 7 km no total. Tarde livre na vila velha, com travesseiros na pastelaria onde foram inventados.",
         },
       },
       {
@@ -613,8 +613,8 @@ export const tours: Tour[] = [
       {
         title: { en: "Wine in the sand", pt: "Vinho na areia" },
         body: {
-          en: "Walk 10 km from Peninha down to Cabo da Roca, the westernmost point of mainland Europe. Electric transfer to Colares for a late lunch with a winemaker whose ungrafted vines grow in the dunes — phylloxera never reached them.",
-          pt: "Caminhe 10 km da Peninha até ao Cabo da Roca, o ponto mais ocidental da Europa continental. Transfer elétrico até Colares para um almoço tardio com um produtor cujas vinhas, sem enxerto, crescem nas dunas — a filoxera nunca lá chegou.",
+          en: "Walk 10 km from Peninha down to Cabo da Roca, the westernmost point of mainland Europe. Electric transfer to Colares for a late lunch with a winemaker whose ungrafted vines grow in the dunes. Phylloxera never reached them.",
+          pt: "Caminhe 10 km da Peninha até ao Cabo da Roca, o ponto mais ocidental da Europa continental. Transfer elétrico até Colares para um almoço tardio com um produtor cujas vinhas, sem enxerto, crescem nas dunas. A filoxera nunca lá chegou.",
         },
       },
       {
@@ -627,8 +627,8 @@ export const tours: Tour[] = [
       {
         title: { en: "Market and nata", pt: "Mercado e pastéis de nata" },
         body: {
-          en: "A morning at a neighbourhood market with a Lisbon cook, then bake pastéis de nata in a small workshop. The afternoon is free — winter is the best time for the museums, or for a tram ride without the queues.",
-          pt: "Manhã num mercado de bairro com uma cozinheira lisboeta e uma aula de pastéis de nata numa pequena oficina. Tarde livre — o inverno é a melhor altura para os museus ou para uma viagem de elétrico sem filas.",
+          en: "A morning at a neighbourhood market with a Lisbon cook, then bake pastéis de nata in a small workshop. The afternoon is free. Winter is the best time for the museums, or for a tram ride without the queues.",
+          pt: "Manhã num mercado de bairro com uma cozinheira lisboeta e uma aula de pastéis de nata numa pequena oficina. Tarde livre. O inverno é a melhor altura para os museus ou para uma viagem de elétrico sem filas.",
         },
       },
       {
@@ -654,8 +654,8 @@ export const tours: Tour[] = [
     title: { en: "Algarve in Winter", pt: "Algarve no inverno" },
     region: { en: "Western Algarve and the Costa Vicentina", pt: "Barlavento algarvio e Costa Vicentina" },
     summary: {
-      en: "The Algarve as it was before the summer rush: almond trees in blossom, oranges ripe on the branch, mild days for walking and wild beaches with nobody on them. From the cork hills of Monchique to the cliffs of the Costa Vicentina, on foot and by bike — November to March only.",
-      pt: "O Algarve como era antes da enchente do verão: amendoeiras em flor, laranjas maduras nas árvores, dias amenos para caminhar e praias selvagens sem ninguém. Das serras de sobreiros de Monchique às falésias da Costa Vicentina, a pé e de bicicleta — só de novembro a março.",
+      en: "The Algarve as it was before the summer rush: almond trees in blossom, oranges ripe on the branch, mild days for walking and wild beaches with nobody on them. From the cork hills of Monchique to the cliffs of the Costa Vicentina, on foot and by bike. November to March only.",
+      pt: "O Algarve como era antes da enchente do verão: amendoeiras em flor, laranjas maduras nas árvores, dias amenos para caminhar e praias selvagens sem ninguém. Das serras de sobreiros de Monchique às falésias da Costa Vicentina, a pé e de bicicleta. Só de novembro a março.",
     },
     highlights: {
       en: [
@@ -705,8 +705,8 @@ export const tours: Tour[] = [
     },
     notIncluded,
     impact: {
-      en: "In summer the western Algarve fills several times over, straining water and housing; in winter many of its guesthouses and restaurants struggle to stay open. Your trip helps them keep staff all year — and uses the coast when it has room to spare.",
-      pt: "No verão, o barlavento algarvio enche várias vezes acima da sua capacidade, com pressão sobre a água e a habitação; no inverno, muitas casas e restaurantes têm dificuldade em manter as portas abertas. A sua viagem ajuda-os a manter trabalhadores todo o ano — e usa a costa quando ela tem espaço de sobra.",
+      en: "In summer the western Algarve fills several times over, straining water and housing; in winter many of its guesthouses and restaurants struggle to stay open. Your trip helps them keep staff all year, and uses the coast when it has room to spare.",
+      pt: "No verão, o barlavento algarvio enche várias vezes acima da sua capacidade, com pressão sobre a água e a habitação; no inverno, muitas casas e restaurantes têm dificuldade em manter as portas abertas. A sua viagem ajuda-os a manter trabalhadores todo o ano, e usa a costa quando ela tem espaço de sobra.",
     },
     itinerary: [
       {

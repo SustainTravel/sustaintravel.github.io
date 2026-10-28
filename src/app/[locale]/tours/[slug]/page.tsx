@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const tour = getTour(slug);
   if (!isLocale(locale) || !tour) return {};
-  return { title: `${tour.title[locale]} — Sustain`, description: tour.summary[locale] };
+  return { title: `${tour.title[locale]} | Sustain`, description: tour.summary[locale] };
 }
 
 // No checkout (owner decision): a real, styled, focusable button that intentionally does nothing.
@@ -154,11 +154,13 @@ export default async function TourPage({ params }: Props) {
               </h2>
               <ul className="mt-6 divide-y-2 divide-dotted divide-sage-pale">
                 {tour.food[locale].map((item) => {
-                  const [dish, ...rest] = item.split(" — ");
+                  const sep = item.indexOf(": ");
+                  const dish = sep < 0 ? item : item.slice(0, sep);
+                  const desc = sep < 0 ? "" : item.slice(sep + 2);
                   return (
                     <li key={item} className="py-4 first:pt-0 last:pb-0">
                       <span className="block font-display text-xl leading-snug">{dish}</span>
-                      {rest.length > 0 && <span className="mt-1 block leading-relaxed text-leaf">{rest.join(" — ")}</span>}
+                      {desc && <span className="mt-1 block leading-relaxed text-leaf">{desc}</span>}
                     </li>
                   );
                 })}

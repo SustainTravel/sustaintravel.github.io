@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 
-/** A real sequence, so it gets numbers — set in the logo's open circle and joined by a winding path. */
+/** A real sequence, so it gets numbers, set in the logo's open circle and joined by a winding path. */
 export function HowItWorks({ dict }: { dict: Dictionary }) {
   const t = dict.how;
   return (

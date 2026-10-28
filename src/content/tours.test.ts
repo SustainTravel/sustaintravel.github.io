@@ -106,3 +106,11 @@ describe("tours", () => {
     expect(getTour("nope")).toBeUndefined();
   });
 });
+
+describe("always included", () => {
+  it.each(tours.map((t) => [t.slug, t] as const))("%s includes travel to Portugal and insurance", (_, tour) => {
+    expect(tour.included.en).toEqual(expect.arrayContaining(["Travel to and from Portugal", "Travel insurance"]));
+    expect(tour.included.pt).toEqual(expect.arrayContaining(["Viagem de ida e volta para Portugal", "Seguro de viagem"]));
+    expect(tour.notIncluded.en.join(" ")).not.toMatch(/insurance|to and from Portugal/);
+  });
+});

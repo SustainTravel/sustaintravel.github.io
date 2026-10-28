@@ -3,19 +3,15 @@ import type { Localized, Tour } from "./types";
 
 const images = (slug: string) => [1, 2, 3, 4].map((n) => `/images/tours/${slug}-${n}.jpg`);
 
+// Every journey includes these on top of its own list.
+const alwaysIncluded: Localized<string[]> = {
+  en: ["Travel to and from Portugal", "Travel insurance"],
+  pt: ["Viagem de ida e volta para Portugal", "Seguro de viagem"],
+};
+
 const notIncluded: Localized<string[]> = {
-  en: [
-    "Travel to and from Portugal",
-    "Travel insurance",
-    "Drinks outside meals and personal expenses",
-    "Optional extras, arranged with us on request",
-  ],
-  pt: [
-    "Viagem de ida e volta para Portugal",
-    "Seguro de viagem",
-    "Bebidas fora das refeições e despesas pessoais",
-    "Extras opcionais, combinados connosco a pedido",
-  ],
+  en: ["Drinks outside meals and personal expenses", "Optional extras, arranged with us on request"],
+  pt: ["Bebidas fora das refeições e despesas pessoais", "Extras opcionais, combinados connosco a pedido"],
 };
 
 export const tours: Tour[] = [
@@ -70,6 +66,7 @@ export const tours: Tour[] = [
         "Electric transfers to and from Coimbra-B station",
         "Bikes, helmets, planting tools and gloves",
         "A local guide throughout, and a forester on planting days",
+        ...alwaysIncluded.en,
       ],
       pt: [
         "6 noites numa casa de turismo rural familiar, numa aldeia de xisto",
@@ -77,6 +74,7 @@ export const tours: Tour[] = [
         "Transfers elétricos de e para a estação de Coimbra-B",
         "Bicicletas, capacetes, ferramentas e luvas de plantação",
         "Guia local durante toda a viagem e técnico florestal nos dias de plantação",
+        ...alwaysIncluded.pt,
       ],
     },
     notIncluded,
@@ -188,6 +186,7 @@ export const tours: Tour[] = [
         "Electric transfers from and to Porto, and between valleys",
         "Luggage moved ahead on walking days",
         "A local mountain guide throughout",
+        ...alwaysIncluded.en,
       ],
       pt: [
         "7 noites em casas de pedra no Soajo, no Lindoso, em Sistelo e em Castro Laboreiro",
@@ -195,6 +194,7 @@ export const tours: Tour[] = [
         "Transfers elétricos de e para o Porto, e entre vales",
         "Transporte da bagagem nos dias de caminhada",
         "Guia de montanha local durante toda a viagem",
+        ...alwaysIncluded.pt,
       ],
     },
     notIncluded,
@@ -316,6 +316,7 @@ export const tours: Tour[] = [
         "Luggage moved ahead on riding days",
         "Electric transfers from and to Coimbra-B station",
         "A local cycling guide throughout",
+        ...alwaysIncluded.en,
       ],
       pt: [
         "6 noites em pequenos hotéis e quintas em Viseu, Tondela e Santa Comba Dão",
@@ -324,6 +325,7 @@ export const tours: Tour[] = [
         "Transporte da bagagem nos dias de bicicleta",
         "Transfers elétricos de e para a estação de Coimbra-B",
         "Guia de ciclismo local durante toda a viagem",
+        ...alwaysIncluded.pt,
       ],
     },
     notIncluded,
@@ -435,6 +437,7 @@ export const tours: Tour[] = [
         "Two yoga sessions a day with an experienced teacher; mats and props",
         "Electric transfers from and to Lisbon, and to Évora and Monsaraz",
         "A local guide for walks and visits",
+        ...alwaysIncluded.en,
       ],
       pt: [
         "7 noites numa herdade de sobreiros e 2 noites em Monsaraz",
@@ -442,6 +445,7 @@ export const tours: Tour[] = [
         "Duas sessões de ioga por dia com um professor experiente; tapetes e acessórios",
         "Transfers elétricos de e para Lisboa, e até Évora e Monsaraz",
         "Guia local nas caminhadas e visitas",
+        ...alwaysIncluded.pt,
       ],
     },
     notIncluded,
@@ -574,6 +578,7 @@ export const tours: Tour[] = [
         "Entrance to Pena Palace, Monserrate and the Quinta da Regaleira",
         "Electric transfers from and to Lisbon airport, and from Sintra to Lisbon",
         "A local guide throughout",
+        ...alwaysIncluded.en,
       ],
       pt: [
         "6 noites: 4 numa quinta com lareira em Sintra e 2 numa casa de hóspedes na Graça, em Lisboa",
@@ -581,6 +586,7 @@ export const tours: Tour[] = [
         "Entradas no Palácio da Pena, em Monserrate e na Quinta da Regaleira",
         "Transfers elétricos de e para o aeroporto de Lisboa, e de Sintra para Lisboa",
         "Guia local durante toda a viagem",
+        ...alwaysIncluded.pt,
       ],
     },
     notIncluded,
@@ -693,6 +699,7 @@ export const tours: Tour[] = [
         "Luggage moved ahead on walking and riding days",
         "Electric transfers from and to Faro airport or Lagos station",
         "A local guide throughout",
+        ...alwaysIncluded.en,
       ],
       pt: [
         "8 noites em casas familiares em Monchique, Aljezur, Vila do Bispo, Sagres e Lagos",
@@ -701,6 +708,7 @@ export const tours: Tour[] = [
         "Transporte da bagagem nos dias de caminhada e de bicicleta",
         "Transfers elétricos de e para o aeroporto de Faro ou a estação de Lagos",
         "Guia local durante toda a viagem",
+        ...alwaysIncluded.pt,
       ],
     },
     notIncluded,
@@ -828,6 +836,7 @@ export const tours: Tour[] = [
         "Bikes and helmets, planting tools, yoga mats",
         "Electric transfers for every journey between regions, from Porto at the start to Lisbon at the end",
         "One guide with you from start to finish, plus local guides in each region",
+        ...alwaysIncluded.en,
       ],
       pt: [
         "13 noites em casas de turismo rural familiares, quintas e uma herdade de sobreiros",
@@ -835,6 +844,7 @@ export const tours: Tour[] = [
         "Bicicletas e capacetes, ferramentas de plantação, tapetes de ioga",
         "Transfers elétricos em todas as deslocações entre regiões, do Porto no início a Lisboa no fim",
         "Um guia consigo do primeiro ao último dia, e guias locais em cada região",
+        ...alwaysIncluded.pt,
       ],
     },
     notIncluded,

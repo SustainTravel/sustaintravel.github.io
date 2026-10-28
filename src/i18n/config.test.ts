@@ -25,7 +25,8 @@ describe("pickInitialLocale", () => {
 describe("switchLocalePath", () => {
   it("home", () => expect(switchLocalePath("/en/", "pt")).toBe("/pt/"));
   it("keeps the rest of the path", () =>
-    expect(switchLocalePath("/en/book/replant-the-serra/", "pt")).toBe("/pt/book/replant-the-serra/"));
+    expect(switchLocalePath("/en/tours/replant-the-serra/", "pt")).toBe("/pt/tours/replant-the-serra/"));
+  it("works without a trailing slash", () => expect(switchLocalePath("/en/tours", "pt")).toBe("/pt/tours"));
   it("pt to en", () => expect(switchLocalePath("/pt/tours/", "en")).toBe("/en/tours/"));
   it("root", () => expect(switchLocalePath("/", "pt")).toBe("/pt/"));
 });

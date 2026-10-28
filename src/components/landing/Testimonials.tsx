@@ -5,7 +5,7 @@ export function Testimonials({ dict }: { dict: Dictionary }) {
   const t = dict.testimonials;
   return (
     <section id="testimonials" aria-labelledby="testimonials-title" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
-      <h2 id="testimonials-title" className="font-display text-4xl sm:text-5xl">
+      <h2 id="testimonials-title" className="font-display text-4xl text-balance sm:text-5xl">
         {t.title}
       </h2>
       <div className="mt-8 grid gap-8 md:mt-12 md:grid-cols-3 md:gap-0 md:divide-x-2 md:divide-sage-pale">

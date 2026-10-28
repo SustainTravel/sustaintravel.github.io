@@ -28,7 +28,6 @@ export const tours: Tour[] = [
     featured: true,
     allowedMonths: null,
     badges: { ev: true, bike: true, farm: true },
-    extras: ["ebike", "picnic", "trees"],
     images: images("replant-the-serra"),
     title: { en: "Replant the Serra", pt: "Replantar a Serra" },
     region: { en: "Serra da Lousã, Central Portugal", pt: "Serra da Lousã, Centro" },
@@ -54,7 +53,7 @@ export const tours: Tour[] = [
       en: [
         "Chanfana — goat slow-cooked in red wine in a black clay pot",
         "Serra da Lousã DOP honey, straight from the hive",
-        "Broa de milho and fresh goat's cheese at field picnics",
+        "Broa de milho and fresh goat’s cheese at field picnics",
         "Medronho, the strawberry-tree brandy, by the fire",
       ],
       pt: [
@@ -82,7 +81,7 @@ export const tours: Tour[] = [
     },
     notIncluded,
     impact: {
-      en: "Each guest plants around 30 native trees on land burned in 2017. Our partners, a local forest owners' association, water and tend them for the first three summers — when most young trees are lost.",
+      en: "Each guest plants around 30 native trees on land burned in 2017. Our partners, a local forest owners’ association, water and tend them for the first three summers — when most young trees are lost.",
       pt: "Cada viajante planta cerca de 30 árvores autóctones em terrenos que arderam em 2017. Os nossos parceiros, uma associação local de proprietários florestais, regam-nas e cuidam delas durante os três primeiros verões — quando se perde a maioria das árvores jovens.",
     },
     itinerary: [
@@ -108,7 +107,7 @@ export const tours: Tour[] = [
         },
       },
       {
-        title: { en: "The beekeeper's table", pt: "À mesa do apicultor" },
+        title: { en: "The beekeeper’s table", pt: "À mesa do apicultor" },
         body: {
           en: "A short walk to meet a beekeeper whose hives sit among heather and chestnut. Lunch at his farm: honey, fresh cheese, broa and whatever the garden gives. Spend the afternoon at the river beach below Lousã castle — or simply resting.",
           pt: "Uma curta caminhada até às colmeias de um apicultor, entre urzes e castanheiros. Almoço na quinta dele: mel, queijo fresco, broa e o que a horta der. À tarde, a praia fluvial da Senhora da Piedade, junto ao castelo da Lousã — ou simplesmente descanso.",
@@ -117,7 +116,7 @@ export const tours: Tour[] = [
       {
         title: { en: "Second planting morning", pt: "Segunda manhã de plantação" },
         body: {
-          en: "Back to the hillside to plant again and to check on last year's trees — most are now knee-high. Every tree you plant is logged with its location so you can follow it from home. Free afternoon.",
+          en: "Back to the hillside to plant again and to check on last year’s trees — most are now knee-high. Every tree you plant is logged with its location so you can follow it from home. Free afternoon.",
           pt: "Regresso à encosta para plantar e ver como estão as árvores do ano passado — a maioria já chega ao joelho. Cada árvore que planta fica registada com a sua localização, para a poder acompanhar a partir de casa. Tarde livre.",
         },
       },
@@ -147,19 +146,18 @@ export const tours: Tour[] = [
     featured: false,
     allowedMonths: null,
     badges: { ev: true, bike: false, farm: true },
-    extras: ["picnic", "trees"],
     images: images("peneda-geres-village-trails"),
     title: { en: "Peneda-Gerês Village Trails", pt: "Trilhos das Aldeias da Peneda-Gerês" },
     region: { en: "Peneda-Gerês National Park, Minho", pt: "Parque Nacional da Peneda-Gerês, Minho" },
     summary: {
-      en: "Eight days on foot between the granite hamlets of Portugal's only national park: stone granaries, shepherds' summer villages, terraced valleys and long-horned cattle grazing free. Bake broa and cook caldo verde with a family in Soajo.",
+      en: "Eight days on foot between the granite hamlets of Portugal’s only national park: stone granaries, shepherds’ summer villages, terraced valleys and long-horned cattle grazing free. Bake broa and cook caldo verde with a family in Soajo.",
       pt: "Oito dias a pé entre as aldeias de granito do único parque nacional português: espigueiros, brandas de pastores, vales em socalcos e vacas de cornos compridos a pastar em liberdade. Coza broa e faça caldo verde com uma família no Soajo.",
     },
     highlights: {
       en: [
-        "Walk 8–14 km a day on old mule tracks and shepherds' paths",
+        "Walk 8–14 km a day on old mule tracks and shepherds’ paths",
         "The granite granaries of Soajo and Lindoso",
-        "Sistelo's terraced valley, Portugal's little Tibet",
+        "Sistelo’s terraced valley, Portugal’s little Tibet",
         "The summer and winter villages of Castro Laboreiro",
       ],
       pt: [
@@ -171,7 +169,7 @@ export const tours: Tour[] = [
     },
     food: {
       en: [
-        "Baking broa in Soajo's communal oven and cooking caldo verde with a village family",
+        "Baking broa in Soajo’s communal oven and cooking caldo verde with a village family",
         "Cachena da Peneda DOP beef with the farmer who raises it",
         "Alvarinho from Melgaço and vinho verde from the Lima valley",
         "Mountain honey and presunto from the village smokehouse",
@@ -201,7 +199,7 @@ export const tours: Tour[] = [
     },
     notIncluded,
     impact: {
-      en: "The national park's villages have lost most of their young people. Your stay pays families to keep their guesthouses, communal ovens and herds going — and part of every booking funds the upkeep of the old paths you walk on.",
+      en: "The national park’s villages have lost most of their young people. Your stay pays families to keep their guesthouses, communal ovens and herds going — and part of every booking funds the upkeep of the old paths you walk on.",
       pt: "As aldeias do parque nacional perderam a maioria dos seus jovens. A sua estadia paga às famílias para manterem as casas, os fornos comunitários e os rebanhos — e parte de cada reserva financia a manutenção dos caminhos antigos por onde caminha.",
     },
     itinerary: [
@@ -213,7 +211,7 @@ export const tours: Tour[] = [
         },
       },
       {
-        title: { en: "Soajo's old paths", pt: "Os caminhos velhos do Soajo" },
+        title: { en: "Soajo’s old paths", pt: "Os caminhos velhos do Soajo" },
         body: {
           en: "A 10 km loop through oak woods and past abandoned watermills, with a picnic by the river. Back in time for a long, unhurried afternoon.",
           pt: "Um percurso circular de 10 km por carvalhais e moinhos de água abandonados, com piquenique junto ao rio. Regresso a tempo de uma tarde longa e sem pressa.",
@@ -273,7 +271,6 @@ export const tours: Tour[] = [
     featured: true,
     allowedMonths: null,
     badges: { ev: true, bike: true, farm: true },
-    extras: ["ebike", "picnic", "trees"],
     images: images("ecopista-do-dao-by-bike"),
     title: { en: "Ecopista do Dão by Bike", pt: "Ecopista do Dão de Bicicleta" },
     region: { en: "Dão and Viseu, Central Portugal", pt: "Dão e Viseu, Centro" },
@@ -286,7 +283,7 @@ export const tours: Tour[] = [
         "Ride the whole Ecopista do Dão in easy stages",
         "Never more than 25 km in the saddle in a day",
         "Lunch among the vines with a family winegrower",
-        "Taste Serra da Estrela cheese at a shepherd's farm",
+        "Taste Serra da Estrela cheese at a shepherd’s farm",
         "Good for families: gentle gradients, no traffic and plenty of shade",
       ],
       pt: [
@@ -302,7 +299,7 @@ export const tours: Tour[] = [
         "Dão reds and Encruzado whites with the people who grow them",
         "Queijo Serra da Estrela DOP, curdled with thistle flower",
         "Veal roasted the Lafões way",
-        "Castanhas doces, Viseu's egg-yolk sweets",
+        "Castanhas doces, Viseu’s egg-yolk sweets",
       ],
       pt: [
         "Tintos do Dão e brancos de Encruzado, com quem os produz",
@@ -359,8 +356,8 @@ export const tours: Tour[] = [
       {
         title: { en: "A day among the vines", pt: "Um dia entre vinhas" },
         body: {
-          en: "A short 15 km ride on quiet lanes to a family quinta. Walk the vineyard with the winegrower, then stay for a long lunch at their table with Touriga Nacional and Encruzado. Free afternoon.",
-          pt: "Uma pedalada curta de 15 km por estradas sossegadas até uma quinta familiar. Percorra a vinha com o vinicultor e fique para um almoço demorado à mesa da família, com Touriga Nacional e Encruzado. Tarde livre.",
+          en: "A short 15 km round trip from Tondela on quiet lanes to a family quinta and back. Walk the vineyard with the winegrower, then stay for a long lunch at their table with Touriga Nacional and Encruzado. Free afternoon.",
+          pt: "Uma pedalada curta de 15 km, ida e volta a partir de Tondela, por estradas sossegadas até uma quinta familiar. Percorra a vinha com o vinicultor e fique para um almoço demorado à mesa da família, com Touriga Nacional e Encruzado. Tarde livre.",
         },
       },
       {
@@ -371,9 +368,9 @@ export const tours: Tour[] = [
         },
       },
       {
-        title: { en: "The shepherd's cheese", pt: "O queijo do pastor" },
+        title: { en: "The shepherd’s cheese", pt: "O queijo do pastor" },
         body: {
-          en: "Electric transfer to a shepherd's farm in the Serra da Estrela foothills (about 50 minutes). Meet the Bordaleira sheep, learn how the milk is set with thistle flower and taste the cheese at different ages over lunch.",
+          en: "Electric transfer to a shepherd’s farm in the Serra da Estrela foothills (about 50 minutes). Meet the Bordaleira sheep, learn how the milk is set with thistle flower and taste the cheese at different ages over lunch.",
           pt: "Transfer elétrico até uma quinta de pastores no sopé da Serra da Estrela (cerca de 50 minutos). Conheça as ovelhas bordaleiras, veja como se coalha o leite com flor de cardo e prove o queijo em diferentes curas, ao almoço.",
         },
       },
@@ -396,7 +393,6 @@ export const tours: Tour[] = [
     featured: false,
     allowedMonths: null,
     badges: { ev: true, bike: false, farm: true },
-    extras: ["picnic", "trees"],
     images: images("alentejo-slow-yoga-retreat"),
     title: { en: "Alentejo Slow Yoga Retreat", pt: "Retiro de Ioga Lento no Alentejo" },
     region: { en: "Cork-oak country, Alentejo", pt: "Montado alentejano" },
@@ -420,9 +416,9 @@ export const tours: Tour[] = [
     },
     food: {
       en: [
-        "Açorda alentejana — bread, garlic, coriander and olive oil — cooked with the farm's cook",
+        "Açorda alentejana — bread, garlic, coriander and olive oil — cooked with the farm’s cook",
         "Migas with black pork in Évora",
-        "Olive oil and sheep's cheese at a neighbouring family farm",
+        "Olive oil and sheep’s cheese at a neighbouring family farm",
         "Sericaia with Elvas plums",
       ],
       pt: [
@@ -450,7 +446,7 @@ export const tours: Tour[] = [
     },
     notIncluded,
     impact: {
-      en: "The montado is one of Europe's richest farmed landscapes, and it only survives if cork, cattle and visitors make it pay. Your stay supports a farm that harvests cork the traditional way — by hand, every nine years, without felling a single tree.",
+      en: "The montado is one of Europe’s richest farmed landscapes, and it only survives if cork, cattle and visitors make it pay. Your stay supports a farm that harvests cork the traditional way — by hand, every nine years, without felling a single tree.",
       pt: "O montado é uma das paisagens agrícolas mais ricas da Europa e só sobrevive se a cortiça, o gado e os visitantes o tornarem viável. A sua estadia apoia uma herdade que tira a cortiça à maneira tradicional — à mão, de nove em nove anos, sem abater uma única árvore.",
     },
     itinerary: [
@@ -478,7 +474,7 @@ export const tours: Tour[] = [
       {
         title: { en: "Bread and açorda", pt: "Pão e açorda" },
         body: {
-          en: "Bake Alentejo bread in the wood oven with the farm's cook, then turn yesterday's loaves into açorda with garlic, coriander and a poached egg. Lunch is what you made.",
+          en: "Bake Alentejo bread in the wood oven with the farm’s cook, then turn yesterday’s loaves into açorda with garlic, coriander and a poached egg. Lunch is what you made.",
           pt: "Coza pão alentejano no forno a lenha com a cozinheira da herdade e transforme o pão da véspera numa açorda com alho, coentros e ovo escalfado. O almoço é o que fizer.",
         },
       },
@@ -499,14 +495,14 @@ export const tours: Tour[] = [
       {
         title: { en: "Olive oil and cheese", pt: "Azeite e queijo" },
         body: {
-          en: "Walk 5 km to a neighbouring family farm for an olive oil tasting and a long lunch of their sheep's cheese, bread and garden vegetables. Yoga nidra in the evening.",
+          en: "Walk 5 km to a neighbouring family farm for an olive oil tasting and a long lunch of their sheep’s cheese, bread and garden vegetables. Yoga nidra in the evening.",
           pt: "Caminhe 5 km até uma quinta vizinha para uma prova de azeite e um almoço demorado com o queijo de ovelha da família, pão e legumes da horta. Ioga nidra ao fim do dia.",
         },
       },
       {
         title: { en: "To Monsaraz", pt: "Rumo a Monsaraz" },
         body: {
-          en: "Electric transfer to Monsaraz (about 1 h 15 min), a walled hilltop village above the Alqueva lake. After dinner, a guided night under one of Europe's darkest skies.",
+          en: "Electric transfer to Monsaraz (about 1 h 15 min), a walled hilltop village above the Alqueva lake. After dinner, a guided night under one of Europe’s darkest skies.",
           pt: "Transfer elétrico até Monsaraz (cerca de 1 h 15 min), uma aldeia amuralhada no alto de um monte sobre o lago do Alqueva. Depois do jantar, uma noite guiada sob um dos céus mais escuros da Europa.",
         },
       },
@@ -536,12 +532,11 @@ export const tours: Tour[] = [
     featured: true,
     allowedMonths: [11, 12, 1, 2, 3],
     badges: { ev: true, bike: false, farm: true },
-    extras: ["picnic", "trees"],
     images: images("sintra-lisbon-quietly"),
     title: { en: "Sintra & Lisbon, Quietly", pt: "Sintra e Lisboa, com Calma" },
     region: { en: "Sintra and Lisbon", pt: "Sintra e Lisboa" },
     summary: {
-      en: "Portugal's most-visited corner, in the months when it belongs to the people who live there. Mist in the gardens of Sintra, wine grown in the sand at Colares and Lisbon's hills in soft winter light — November to March only.",
+      en: "Portugal’s most-visited corner, in the months when it belongs to the people who live there. Mist in the gardens of Sintra, wine grown in the sand at Colares and Lisbon’s hills in soft winter light — November to March only.",
       pt: "O canto mais visitado de Portugal, nos meses em que volta a ser de quem lá vive. Nevoeiro nos jardins de Sintra, vinho nascido na areia em Colares e as colinas de Lisboa com a luz macia do inverno — só de novembro a março.",
     },
     highlights: {
@@ -560,7 +555,7 @@ export const tours: Tour[] = [
     },
     food: {
       en: [
-        "Travesseiros and queijadas from Sintra's old pastry shops",
+        "Travesseiros and queijadas from Sintra’s old pastry shops",
         "Colares wine and queijo saloio with the family who make them",
         "A pastéis de nata baking class in Lisbon",
         "Bacalhau à Brás and ginjinha in a family tasca",
@@ -574,7 +569,7 @@ export const tours: Tour[] = [
     },
     included: {
       en: [
-        "6 nights: 4 in a quinta with a fireplace in Sintra, 2 in a guesthouse in Lisbon's Graça",
+        "6 nights: 4 in a quinta with a fireplace in Sintra, 2 in a guesthouse in Lisbon’s Graça",
         "Full board, with local wine at dinner",
         "Entrance to Pena Palace, Monserrate and the Quinta da Regaleira",
         "Electric transfers from and to Lisbon airport, and from Sintra to Lisbon",
@@ -590,7 +585,7 @@ export const tours: Tour[] = [
     },
     notIncluded,
     impact: {
-      en: "Coming in winter spreads tourism income across the year, so the cafés, guides and guesthouses of Sintra and Lisbon don't depend on three crowded summer months — and it takes pressure off housing and water when they are most stretched.",
+      en: "Coming in winter spreads tourism income across the year, so the cafés, guides and guesthouses of Sintra and Lisbon don’t depend on three crowded summer months — and it takes pressure off housing and water when they are most stretched.",
       pt: "Viajar no inverno distribui o rendimento do turismo ao longo do ano, para que os cafés, os guias e as casas de Sintra e Lisboa não dependam de três meses de verão cheios — e alivia a pressão sobre a habitação e a água quando ela é maior.",
     },
     itinerary: [
@@ -611,7 +606,7 @@ export const tours: Tour[] = [
       {
         title: { en: "Gardens in the mist", pt: "Jardins no nevoeiro" },
         body: {
-          en: "Monserrate's gardens in the morning, then 6 km on forest paths to the Quinta da Regaleira and its initiation well. In winter you may have the spiral stairs to yourself.",
+          en: "Monserrate’s gardens in the morning, then 6 km on forest paths to the Quinta da Regaleira and its initiation well. In winter you may have the spiral stairs to yourself.",
           pt: "Os jardins de Monserrate de manhã e 6 km por caminhos de floresta até à Quinta da Regaleira e ao seu poço iniciático. No inverno, a escadaria em espiral pode ser só sua.",
         },
       },
@@ -655,9 +650,8 @@ export const tours: Tour[] = [
     featured: false,
     allowedMonths: [11, 12, 1, 2, 3],
     badges: { ev: true, bike: true, farm: true },
-    extras: ["ebike", "picnic", "trees"],
     images: images("algarve-in-winter"),
-    title: { en: "Algarve in Winter", pt: "Algarve no Inverno" },
+    title: { en: "Algarve in Winter", pt: "Algarve no inverno" },
     region: { en: "Western Algarve and the Costa Vicentina", pt: "Barlavento algarvio e Costa Vicentina" },
     summary: {
       en: "The Algarve as it was before the summer rush: almond trees in blossom, oranges ripe on the branch, mild days for walking and wild beaches with nobody on them. From the cork hills of Monchique to the cliffs of the Costa Vicentina, on foot and by bike — November to March only.",
@@ -668,7 +662,7 @@ export const tours: Tour[] = [
         "Walk sections of the Rota Vicentina along the clifftops",
         "Ride from the Monchique hills down to the Atlantic",
         "Sunset at Cabo de São Vicente, the south-western tip of Europe",
-        "Cataplana cooked by fishermen at Arrifana's little harbour",
+        "Cataplana cooked by fishermen at Arrifana’s little harbour",
       ],
       pt: [
         "Caminhe troços da Rota Vicentina pelo alto das falésias",
@@ -725,7 +719,7 @@ export const tours: Tour[] = [
       {
         title: { en: "Up to Fóia", pt: "Subida à Fóia" },
         body: {
-          en: "A 12 km walk to Fóia, the Algarve's highest point, with the whole coast below on a clear winter day. Lunch with a family who distil medronho and cure their own sausages; the afternoon is free.",
+          en: "A 12 km walk to Fóia, the Algarve’s highest point, with the whole coast below on a clear winter day. Lunch with a family who distil medronho and cure their own sausages; the afternoon is free.",
           pt: "Uma caminhada de 12 km até à Fóia, o ponto mais alto do Algarve, com a costa inteira lá em baixo nos dias limpos de inverno. Almoço com uma família que destila medronho e faz os seus próprios enchidos; tarde livre.",
         },
       },
@@ -739,14 +733,14 @@ export const tours: Tour[] = [
       {
         title: { en: "Cataplana at Arrifana", pt: "Cataplana na Arrifana" },
         body: {
-          en: "Walk 12 km on the Rota Vicentina from Aljezur to the clifftop at Arrifana. Lunch at the little harbour with the fishermen, who cook a cataplana with the morning's catch.",
+          en: "Walk 12 km on the Rota Vicentina from Aljezur to the clifftop at Arrifana. Lunch at the little harbour with the fishermen, who cook a cataplana with the morning’s catch.",
           pt: "Caminhe 12 km pela Rota Vicentina, de Aljezur até às falésias da Arrifana. Almoço no pequeno porto com os pescadores, que fazem uma cataplana com o peixe dessa manhã.",
         },
       },
       {
         title: { en: "A free day in Aljezur", pt: "Dia livre em Aljezur" },
         body: {
-          en: "Sleep in, climb to the castle above the town, try a beginners' surf lesson on the winter waves or walk among almond trees in blossom (late January to February).",
+          en: "Sleep in, climb to the castle above the town, try a beginners’ surf lesson on the winter waves or walk among almond trees in blossom (late January to February).",
           pt: "Acorde tarde, suba ao castelo sobre a vila, experimente uma aula de surf para principiantes nas ondas de inverno ou passeie entre amendoeiras em flor (do fim de janeiro a fevereiro).",
         },
       },
@@ -790,13 +784,12 @@ export const tours: Tour[] = [
     featured: true,
     allowedMonths: null,
     badges: { ev: true, bike: true, farm: true },
-    extras: ["ebike", "picnic", "trees"],
     images: images("slow-portugal-journey"),
     title: { en: "The Slow Portugal Journey", pt: "A Grande Viagem Lenta por Portugal" },
     region: { en: "North to south: Minho, Centro and Alentejo", pt: "De norte a sul: Minho, Centro e Alentejo" },
     summary: {
       en: "Our signature journey: two weeks from the granite villages of Peneda-Gerês to the cork-oak plains of the Alentejo, without a single domestic flight or diesel engine. Walk, cycle the old Dão railway, plant trees in the Serra da Lousã and end with yoga among the oaks.",
-      pt: "A nossa viagem de assinatura: duas semanas das aldeias de granito da Peneda-Gerês aos montados do Alentejo, sem um único voo doméstico nem motor a gasóleo. Caminhe, pedale pela antiga linha do Dão, plante árvores na Serra da Lousã e termine com ioga entre os sobreiros.",
+      pt: "A nossa viagem emblemática: duas semanas das aldeias de granito da Peneda-Gerês aos montados do Alentejo, sem um único voo doméstico nem motor a gasóleo. Caminhe, pedale pela antiga linha do Dão, plante árvores na Serra da Lousã e termine com ioga entre os sobreiros.",
     },
     highlights: {
       en: [
@@ -860,7 +853,7 @@ export const tours: Tour[] = [
       {
         title: { en: "Granaries and watermills", pt: "Espigueiros e moinhos" },
         body: {
-          en: "A 10 km loop past Soajo's stone granaries, oak woods and old watermills, with a picnic by the river. Free afternoon.",
+          en: "A 10 km loop past Soajo’s stone granaries, oak woods and old watermills, with a picnic by the river. Free afternoon.",
           pt: "Um percurso circular de 10 km pelos espigueiros do Soajo, carvalhais e velhos moinhos de água, com piquenique junto ao rio. Tarde livre.",
         },
       },
@@ -909,14 +902,14 @@ export const tours: Tour[] = [
       {
         title: { en: "Schist trails and honey", pt: "Trilhos de xisto e mel" },
         body: {
-          en: "A 9 km walk between the schist villages to a beekeeper's farm, and lunch on his Serra da Lousã honey, fresh cheese and broa.",
+          en: "A 9 km walk between the schist villages to a beekeeper’s farm, and lunch on his Serra da Lousã honey, fresh cheese and broa.",
           pt: "Uma caminhada de 9 km entre as aldeias de xisto até à quinta de um apicultor, com almoço de mel da Serra da Lousã, queijo fresco e broa.",
         },
       },
       {
         title: { en: "A day of rest", pt: "Um dia de descanso" },
         body: {
-          en: "Nothing planned. Read, nap, swim at the river beach below the castle, or plant a few more trees if you can't help yourself.",
+          en: "Nothing planned. Read, nap, swim at the river beach below the castle, or plant a few more trees if you can’t help yourself.",
           pt: "Nada planeado. Leia, durma a sesta, dê um mergulho na praia fluvial junto ao castelo ou plante mais umas árvores, se não resistir.",
         },
       },
@@ -930,7 +923,7 @@ export const tours: Tour[] = [
       {
         title: { en: "Cork and açorda", pt: "Cortiça e açorda" },
         body: {
-          en: "Sunrise yoga, then a walk through the montado with a cork harvester. Bake bread with the farm's cook and make açorda for lunch.",
+          en: "Sunrise yoga, then a walk through the montado with a cork harvester. Bake bread with the farm’s cook and make açorda for lunch.",
           pt: "Ioga ao nascer do sol e passeio pelo montado com um tirador de cortiça. Coza pão com a cozinheira da herdade e faça açorda para o almoço.",
         },
       },

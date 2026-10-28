@@ -7,6 +7,9 @@
   --color-sage: #8baa6b;
   --color-sage-pale: #c9d8b0;
   --color-sun: #edab4b;
+  /* Hover / pressed shades of sun for buttons (bark text stays AA). */
+  --color-sun-deep: #e39d36;
+  --color-sun-press: #d9922c;
   --color-terracotta: #c8693a;
   --color-wicker: #9a6a3a;
   /* Darkest green: text on sun (AA 6:1) and on sage-pale. */
@@ -19,19 +22,26 @@
 }
 
 html {
+  color-scheme: light;
   scroll-behavior: smooth;
+  /* Anchors and keyboard focus both clear the sticky header. */
+  scroll-padding-top: 5.5rem;
   -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgb(139 170 107 / 0.3);
+  touch-action: manipulation;
+}
+
+/* Tour pages below lg: keep focused elements clear of the sticky booking bar too. */
+@media (width < 64rem) {
+  html:has(.book-bar) {
+    scroll-padding-bottom: 6.5rem;
+  }
 }
 
 body {
   background: var(--color-cream);
   color: var(--color-forest);
   font-family: var(--nf-body), system-ui, sans-serif;
-}
-
-/* Anchored sections clear the sticky header. */
-[id] {
-  scroll-margin-top: 5.5rem;
 }
 
 :focus-visible {

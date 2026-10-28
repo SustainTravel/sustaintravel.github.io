@@ -24,6 +24,7 @@ export function LanguageSwitch({ locale, label, className = "" }: { locale: Loca
             key={l}
             href={href.endsWith("/") ? href : `${href}/`}
             hrefLang={l}
+            translate="no"
             lang={l === "pt" ? "pt-PT" : "en"}
             aria-current={active ? "true" : undefined}
             onClick={() => remember(l)}

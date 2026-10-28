@@ -7,6 +7,13 @@ export interface PhotoCredit {
   source: string;
 }
 
+/** Creative Commons deed for a licence name, e.g. "CC BY-SA 4.0" → https://creativecommons.org/licenses/by-sa/4.0/. */
+export function licenseUrl(license: string): string | undefined {
+  if (license === "CC0") return "https://creativecommons.org/publicdomain/zero/1.0/";
+  const m = /^CC (BY(?:-SA)?) (\d\.\d)$/.exec(license);
+  return m ? `https://creativecommons.org/licenses/${m[1].toLowerCase()}/${m[2]}/` : undefined;
+}
+
 export const photoCredits: PhotoCredit[] = [
   {
     file: "/images/hero.jpg",

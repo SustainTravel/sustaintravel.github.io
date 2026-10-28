@@ -13,7 +13,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-2 px-4 sm:px-6 lg:h-20 lg:gap-3 lg:px-8">
         <Link href={`/${locale}/`} className="mr-auto flex min-h-11 shrink-0 items-center gap-2.5 rounded-full pr-2">
           <Image src="/logo.jpg" alt="" width={48} height={48} className="size-11 lg:size-13" preload />
-          <span className="font-display text-2xl leading-none text-forest lg:text-[1.7rem]">{dict.common.brand}</span>
+          <span translate="no" className="font-display text-2xl leading-none text-forest lg:text-[1.7rem]">{dict.common.brand}</span>
         </Link>
 
         <nav aria-label={dict.nav.label} className="hidden md:block">
@@ -36,7 +36,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
 
         <Link
           href={`/${locale}/tours/`}
-          className="hidden min-h-11 items-center rounded-full bg-sun px-4 font-semibold whitespace-nowrap text-bark transition-colors hover:bg-[#e39d36] md:inline-flex lg:px-5"
+          className="hidden min-h-11 items-center rounded-full bg-sun px-4 font-semibold whitespace-nowrap text-bark transition-colors hover:bg-sun-deep md:inline-flex lg:px-5"
         >
           {dict.common.bookTrip}
         </Link>
@@ -45,6 +45,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           locale={locale}
           items={items}
           labels={{
+            brand: dict.common.brand,
             open: dict.common.openMenu,
             close: dict.common.closeMenu,
             nav: dict.nav.label,

@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 // No checkout (owner decision): a real, styled, focusable button that intentionally does nothing.
 const bookButton =
-  "min-h-12 items-center justify-center rounded-full bg-sun font-semibold whitespace-nowrap text-bark transition-colors hover:bg-[#e39d36] active:bg-[#d9922c]";
+  "min-h-12 items-center justify-center rounded-full bg-sun font-semibold whitespace-nowrap text-bark transition-colors hover:bg-sun-deep active:bg-sun-press";
 
 export default async function TourPage({ params }: Props) {
   const { locale, slug } = await params;
@@ -75,7 +75,7 @@ export default async function TourPage({ params }: Props) {
 
       <div className="mx-auto mt-10 grid max-w-7xl gap-12 px-5 pb-16 sm:px-8 lg:mt-16 lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-16 lg:pb-24 xl:grid-cols-[minmax(0,1fr)_23rem]">
         {/* Facts first in the DOM (they open the page on mobile); from lg they become the sticky side card. */}
-        <aside className="lg:sticky lg:top-28 lg:col-start-2 lg:row-start-1 lg:self-start">
+        <aside aria-label={t.facts.label} className="lg:sticky lg:top-28 lg:col-start-2 lg:row-start-1 lg:self-start">
           <div className="rounded-3xl bg-meadow p-6 text-bark sm:p-7">
             <p className="text-sm font-semibold text-leaf">{t.facts.price}</p>
             <p className="mt-1 font-display text-4xl leading-tight">{price}</p>
@@ -112,15 +112,17 @@ export default async function TourPage({ params }: Props) {
           </section>
 
           {tour.allowedMonths && (
-            <aside className="mt-10 flex max-w-2xl gap-4 rounded-3xl border-2 border-dashed border-wicker/50 p-5 sm:p-6">
+            <section aria-labelledby="offseason-title" className="mt-10 flex max-w-2xl gap-4 rounded-3xl border-2 border-dashed border-wicker/50 p-5 sm:p-6">
               <span className="grid size-10 shrink-0 place-items-center rounded-full bg-forest text-sun sm:size-12">
                 <Moon className="size-6" />
               </span>
               <div>
-                <h2 className="font-display text-xl leading-snug">{t.offSeason.title}</h2>
+                <h2 id="offseason-title" className="font-display text-xl leading-snug">
+                  {t.offSeason.title}
+                </h2>
                 <p className="mt-1.5 leading-relaxed">{t.offSeason.body}</p>
               </div>
-            </aside>
+            </section>
           )}
 
           <section aria-labelledby="highlights-title" className="mt-14">
@@ -230,7 +232,7 @@ export default async function TourPage({ params }: Props) {
       </div>
 
       {/* Mobile booking bar: sticky inside the article, so it rests above the footer instead of covering it. */}
-      <div className="sticky bottom-0 z-30 border-t border-forest/10 bg-cream/95 px-5 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur supports-[backdrop-filter]:bg-cream/85 sm:px-8 lg:hidden">
+      <div className="book-bar sticky bottom-0 z-30 border-t border-forest/10 bg-cream/95 px-5 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur supports-[backdrop-filter]:bg-cream/85 sm:px-8 lg:hidden">
         <div className="flex items-center justify-between gap-3">
           <p className="leading-tight whitespace-nowrap">
             <span className="block font-display text-lg text-forest sm:text-xl">{price}</span>

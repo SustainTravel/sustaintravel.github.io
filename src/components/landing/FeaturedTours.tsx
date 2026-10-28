@@ -9,7 +9,7 @@ export function FeaturedTours({ locale, dict }: { locale: Locale; dict: Dictiona
   return (
     <section id="featured" aria-labelledby="featured-title" className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:py-20">
       <div className="flex flex-wrap items-end justify-between gap-4">
-        <h2 id="featured-title" className="font-display text-4xl sm:text-5xl">
+        <h2 id="featured-title" className="font-display text-4xl text-balance sm:text-5xl">
           {t.title}
         </h2>
         <Link

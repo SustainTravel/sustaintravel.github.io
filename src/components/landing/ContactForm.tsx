@@ -67,7 +67,7 @@ export function ContactForm({ t }: { t: Dictionary["contact"] }) {
   return (
     <form noValidate onSubmit={onSubmit} className="grid gap-5">
       {field("name", t.fields.name, { autoComplete: "name" })}
-      {field("email", t.fields.email, { type: "email", autoComplete: "email", inputMode: "email" })}
+      {field("email", t.fields.email, { type: "email", autoComplete: "email", inputMode: "email", spellCheck: false })}
       <div>
         <label htmlFor="contact-message" className="font-semibold">
           {t.fields.message}
@@ -82,13 +82,13 @@ export function ContactForm({ t }: { t: Dictionary["contact"] }) {
         />
         {errors.message && <ErrorText id="contact-message-error">{errors.message}</ErrorText>}
       </div>
-      <label className="flex cursor-pointer items-start gap-3 py-1">
+      <label className="flex min-h-11 cursor-pointer items-start gap-3 py-1">
         <input type="checkbox" name="newsletter" className="mt-0.5 size-6 shrink-0 accent-forest" />
         <span className="leading-snug">{t.fields.newsletter}</span>
       </label>
       <button
         type="submit"
-        className="inline-flex min-h-12 items-center justify-center justify-self-start rounded-full bg-sun px-8 text-lg font-semibold text-bark transition-colors hover:bg-[#e39d36]"
+        className="inline-flex min-h-12 items-center justify-center justify-self-start rounded-full bg-sun px-8 text-lg font-semibold text-bark transition-colors hover:bg-sun-deep"
       >
         {t.submit}
       </button>

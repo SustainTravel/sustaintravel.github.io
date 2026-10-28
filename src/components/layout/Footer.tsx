@@ -5,7 +5,8 @@ import { fill, type Dictionary } from "@/i18n/get-dictionary";
 import { Facebook, Hills, Instagram, Mail, Pin } from "@/components/icons";
 import { navItems } from "./nav";
 
-const linkClass = "inline-flex min-h-11 items-center gap-2 hover:text-sun hover:underline underline-offset-4";
+// Hover keeps cream (sun on forest is only 3.8:1) and adds an underline.
+const linkClass = "inline-flex min-h-11 min-w-11 items-center gap-2 underline-offset-4 hover:underline";
 
 export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const t = dict.footer;
@@ -21,9 +22,12 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         <div className="col-span-2 lg:col-span-1">
           <Link href={`/${locale}/`} className="inline-flex items-center gap-4 rounded-full">
             <span className="grid size-24 shrink-0 place-items-center rounded-full bg-cream p-1.5">
-              <Image src="/logo.jpg" alt="" width={84} height={84} className="rounded-full" />
+              {/* Eager: the header already loaded this file; lazy here only trips Chrome's CLS issue. */}
+              <Image src="/logo.jpg" alt="" width={84} height={84} loading="eager" className="rounded-full" />
             </span>
-            <span className="font-display text-3xl">{dict.common.brand}</span>
+            <span translate="no" className="font-display text-3xl">
+              {dict.common.brand}
+            </span>
           </Link>
           <p className="mt-5 max-w-sm leading-relaxed text-sage-pale">{t.mission}</p>
         </div>
@@ -74,7 +78,9 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                   className="grid size-12 place-items-center rounded-full border border-cream/30 transition-colors hover:border-sun hover:text-sun"
                 >
                   <Icon className="size-5" />
-                  <span className="sr-only">{label}</span>
+                  <span className="sr-only">
+                    {label} {dict.common.newTab}
+                  </span>
                 </a>
               </li>
             ))}

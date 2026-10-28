@@ -8,7 +8,7 @@ import { Birds, Close, Hills, Menu, Sun } from "@/components/icons";
 import { LanguageSwitch } from "./LanguageSwitch";
 import type { NavItem } from "./nav";
 
-type Labels = { open: string; close: string; nav: string; language: string; cta: string };
+type Labels = { brand: string; open: string; close: string; nav: string; language: string; cta: string };
 
 /**
  * Hamburger + full-screen sheet below `md`. A modal <dialog> makes the rest of the page inert (focus trap)
@@ -71,13 +71,14 @@ export function MobileMenu({ locale, items, labels }: { locale: Locale; items: N
         aria-label={labels.nav}
         onClose={() => setOpen(false)}
         onKeyDown={trapTab}
-        className="menu-sheet fixed inset-0 m-0 h-dvh max-h-none w-full max-w-none overflow-y-auto bg-cream p-0 text-forest"
+        className="menu-sheet fixed inset-0 m-0 h-dvh max-h-none w-full max-w-none overflow-y-auto overscroll-contain bg-cream p-0 text-forest"
       >
         <div className="relative flex min-h-full flex-col">
           <div className="flex h-16 items-center justify-between px-5">
-            <span className="flex items-center gap-2.5 font-display text-2xl">
-              <Image src="/logo.jpg" alt="" width={44} height={44} className="size-11" />
-              Sustain
+            <span translate="no" className="flex items-center gap-2.5 font-display text-2xl">
+              {/* Eager: the header already loaded this file; a lazy copy trips Chrome's CLS issue. */}
+              <Image src="/logo.jpg" alt="" width={44} height={44} loading="eager" className="size-11" />
+              {labels.brand}
             </span>
             <button
               type="button"
@@ -89,11 +90,12 @@ export function MobileMenu({ locale, items, labels }: { locale: Locale; items: N
             </button>
           </div>
 
-          <nav aria-label={labels.nav} className="px-5 pt-6">
-            <ul onClick={close}>
+          {/* The dialog already carries the navigation name; a second identical label would be announced twice. */}
+          <nav className="px-5 pt-6">
+            <ul>
               {items.map((item) => (
                 <li key={item.href} className="border-b border-forest/10">
-                  <Link href={item.href} className="flex min-h-14 items-center font-display text-3xl">
+                  <Link href={item.href} onClick={close} className="flex min-h-14 items-center font-display text-3xl hover:text-leaf">
                     {item.label}
                   </Link>
                 </li>
@@ -105,7 +107,7 @@ export function MobileMenu({ locale, items, labels }: { locale: Locale; items: N
             <Link
               href={`/${locale}/tours/`}
               onClick={close}
-              className="inline-flex min-h-12 items-center rounded-full bg-sun px-6 font-semibold text-bark hover:bg-[#e39d36]"
+              className="inline-flex min-h-12 items-center rounded-full bg-sun px-6 font-semibold text-bark hover:bg-sun-deep"
             >
               {labels.cta}
             </Link>

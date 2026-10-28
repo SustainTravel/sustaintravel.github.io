@@ -2,7 +2,10 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 import { Mail } from "@/components/icons";
 import { ContactForm } from "./ContactForm";
 
-/** The form sits on the logo's picnic gingham. The negative bottom margin runs the cloth under the footer's hills. */
+/**
+ * The form sits on the logo's picnic gingham. The negative bottom margin runs the cloth under the footer's hills:
+ * -mb-16/sm:-mb-24 must equal the footer's mt-16/sm:mt-24 (Footer.tsx), or a cream strip shows between them.
+ */
 export function Contact({ dict }: { dict: Dictionary }) {
   const t = dict.contact;
   return (

@@ -1,15 +1,27 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import type { TourType } from "@/content/types";
-import type { Dictionary } from "@/i18n/get-dictionary";
+import { fill, type Dictionary } from "@/i18n/get-dictionary";
 
 type Filter = TourType | "all";
 const filters: Filter[] = ["all", "planting", "hiking", "biking", "yoga", "offseason"];
 
-/** Chips filter server-rendered cards by experience type; state is local (no URL param needed). */
+/** Chips filter server-rendered cards by experience type. The choice lives in `?type=` so a filtered list can be shared. */
 export function TourFilter({ items, t }: { items: { key: string; types: TourType[]; card: ReactNode }[]; t: Dictionary["tours"] }) {
   const [active, setActive] = useState<Filter>("all");
+
+  // The page is prerendered without a query, so the URL is read after hydration.
+  useEffect(() => {
+    const type = new URLSearchParams(location.search).get("type") as Filter | null;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-off sync from the URL after hydration
+    if (type && filters.includes(type)) setActive(type);
+  }, []);
+
+  const choose = (f: Filter) => {
+    setActive(f);
+    history.replaceState(history.state, "", f === "all" ? location.pathname : `?type=${f}`);
+  };
   const shown = active === "all" ? items : items.filter((item) => item.types.includes(active));
 
   return (
@@ -23,7 +35,7 @@ export function TourFilter({ items, t }: { items: { key: string; types: TourType
                 key={f}
                 type="button"
                 aria-pressed={on}
-                onClick={() => setActive(f)}
+                onClick={() => choose(f)}
                 className={`min-h-11 rounded-full px-4 font-semibold transition-colors ${
                   on ? "bg-forest text-cream" : "border-2 border-forest/20 text-forest hover:border-forest hover:bg-sage-pale/50"
                 }`}
@@ -34,7 +46,7 @@ export function TourFilter({ items, t }: { items: { key: string; types: TourType
           })}
         </div>
         <p aria-live="polite" className="font-medium text-leaf">
-          {t.count.replace("{n}", String(shown.length))}
+          {shown.length === 1 ? t.countOne : fill(t.count, { n: shown.length })}
         </p>
       </div>
 
@@ -51,8 +63,8 @@ export function TourFilter({ items, t }: { items: { key: string; types: TourType
           <p className="text-lg text-bark">{t.empty}</p>
           <button
             type="button"
-            onClick={() => setActive("all")}
-            className="mt-5 inline-flex min-h-12 items-center rounded-full bg-sun px-6 font-semibold text-bark transition-colors hover:bg-[#e39d36]"
+            onClick={() => choose("all")}
+            className="mt-5 inline-flex min-h-12 items-center rounded-full bg-sun px-6 font-semibold text-bark transition-colors hover:bg-sun-deep"
           >
             {t.showAll}
           </button>

@@ -1,24 +1,37 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Chevron } from "@/components/icons";
 
 type Labels = { label: string; previous: string; next: string; photoOf: string };
 
 /**
  * A row of arched "village windows": scroll-snap swipe on small screens, all four side by side from lg.
- * The strip itself is focusable so arrow keys scroll it; the buttons step one photo at a time.
+ * While it overflows, the strip is focusable so arrow keys scroll it; the buttons step one photo at a time.
  */
 export function Gallery({ images, title, t }: { images: string[]; title: string; t: Labels }) {
   const ref = useRef<HTMLUListElement>(null);
-  const [edge, setEdge] = useState({ start: true, end: false });
+  const [edge, setEdge] = useState({ start: true, end: false, scrollable: true });
 
   const onScroll = () => {
     const el = ref.current;
     if (!el) return;
-    setEdge({ start: el.scrollLeft <= 2, end: el.scrollLeft + el.clientWidth >= el.scrollWidth - 2 });
+    setEdge({
+      start: el.scrollLeft <= 2,
+      end: el.scrollLeft + el.clientWidth >= el.scrollWidth - 2,
+      scrollable: el.scrollWidth > el.clientWidth + 2,
+    });
   };
+
+  // From lg all four photos fit and nothing scrolls, so the strip leaves the tab order.
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const ro = new ResizeObserver(onScroll);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   const step = (dir: 1 | -1) => {
     const el = ref.current;
@@ -36,9 +49,9 @@ export function Gallery({ images, title, t }: { images: string[]; title: string;
       <ul
         ref={ref}
         onScroll={onScroll}
-        tabIndex={0}
+        tabIndex={edge.scrollable ? 0 : undefined}
         aria-label={t.label}
-        className="flex snap-x focus-visible:outline-offset-[-3px] snap-mandatory scroll-px-5 gap-4 overflow-x-auto scroll-smooth px-5 pb-2 [scrollbar-width:none] sm:scroll-px-8 sm:px-8 lg:mx-auto lg:max-w-7xl lg:items-end lg:overflow-visible [&::-webkit-scrollbar]:hidden"
+        className="flex snap-x focus-visible:outline-offset-[-3px] snap-mandatory scroll-px-5 gap-4 overflow-x-auto overscroll-x-contain scroll-smooth px-5 pb-2 [scrollbar-width:none] sm:scroll-px-8 sm:px-8 lg:mx-auto lg:max-w-7xl lg:items-end lg:overflow-visible [&::-webkit-scrollbar]:hidden"
       >
         {images.map((src, i) => (
           <li
@@ -48,10 +61,11 @@ export function Gallery({ images, title, t }: { images: string[]; title: string;
             <Image
               src={src}
               alt={`${title}. ${t.photoOf.replace("{n}", String(i + 1)).replace("{total}", String(images.length))}`}
-              fill
+              width={1600}
+              height={1067}
               preload={i === 0}
               sizes="(min-width: 1024px) 300px, (min-width: 640px) 46vw, 82vw"
-              className="object-cover"
+              className="absolute inset-0 size-full object-cover"
             />
           </li>
         ))}

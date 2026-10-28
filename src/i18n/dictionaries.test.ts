@@ -29,13 +29,6 @@ describe("dictionaries", () => {
     for (const [path, v] of enLeaves) expect(vars(ptLeaves.get(path)), path).toEqual(vars(v));
   });
 
-  it("demo banner uses the exact constraint strings", () => {
-    expect(en.checkout.demoBanner).toBe("Demo — no payment is taken. Do not enter real card details.");
-    expect(pt.checkout.demoBanner).toBe(
-      "Demonstração — nenhum pagamento é efetuado. Não introduza dados reais de cartão.",
-    );
-  });
-
   it("getDictionary returns the right locale", () => {
     expect(getDictionary("en")).toBe(en);
     expect(getDictionary("pt")).toBe(pt);

@@ -1,39 +1,8 @@
-"use client";
+import { en } from "@/i18n/dictionaries/en";
+import { pt } from "@/i18n/dictionaries/pt";
+import { NotFoundContent } from "./NotFoundContent";
 
-import Link from "next/link";
-import { useParams } from "next/navigation";
-import { defaultLocale, isLocale } from "@/i18n/config";
-import { getDictionary } from "@/i18n/get-dictionary";
-import { Arc, Birds, Sun } from "@/components/icons";
-
-// not-found gets no props, so the locale comes from the URL.
+// not-found gets no props, so the client child reads the locale from the URL; only these few strings ship to it.
 export default function NotFound() {
-  const param = useParams<{ locale?: string }>()?.locale ?? "";
-  const locale = isLocale(param) ? param : defaultLocale;
-  const t = getDictionary(locale).notFound;
-  return (
-    <section className="mx-auto flex max-w-3xl flex-col items-center px-5 py-16 text-center sm:py-24">
-      <div className="relative size-40">
-        <Arc className="absolute inset-0 size-full text-forest" />
-        <Sun className="absolute top-8 left-1/2 size-10 -translate-x-1/2" />
-        <Birds className="absolute bottom-12 left-1/2 w-16 -translate-x-1/2 text-forest" />
-      </div>
-      <h1 className="mt-8 font-display text-4xl text-balance sm:text-5xl">{t.title}</h1>
-      <p className="mt-4 max-w-md text-lg leading-relaxed">{t.body}</p>
-      <div className="mt-8 flex flex-wrap justify-center gap-3">
-        <Link
-          href={`/${locale}/`}
-          className="inline-flex min-h-12 items-center rounded-full bg-sun px-7 font-semibold text-bark hover:bg-[#e39d36]"
-        >
-          {t.home}
-        </Link>
-        <Link
-          href={`/${locale}/tours/`}
-          className="inline-flex min-h-12 items-center rounded-full border-2 border-forest/25 px-6 font-semibold hover:border-forest"
-        >
-          {t.tours}
-        </Link>
-      </div>
-    </section>
-  );
+  return <NotFoundContent strings={{ en: en.notFound, pt: pt.notFound }} />;
 }

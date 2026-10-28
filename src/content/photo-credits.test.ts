@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { photoCredits } from "./photo-credits";
+import { licenseUrl, photoCredits } from "./photo-credits";
 import { tours } from "./tours";
 
 const LICENSES = [
@@ -31,5 +31,13 @@ describe("photo credits", () => {
     expect(c.author.trim()).not.toBe("");
     expect(c.source).toMatch(/^https:\/\/\S+$/);
     expect(LICENSES).toContain(c.license);
+    if (c.license.startsWith("CC")) expect(licenseUrl(c.license)).toMatch(/^https:\/\/creativecommons\.org\/.+\/$/);
+  });
+
+  it("maps licence names to their deeds", () => {
+    expect(licenseUrl("CC BY-SA 4.0")).toBe("https://creativecommons.org/licenses/by-sa/4.0/");
+    expect(licenseUrl("CC BY 2.0")).toBe("https://creativecommons.org/licenses/by/2.0/");
+    expect(licenseUrl("CC0")).toBe("https://creativecommons.org/publicdomain/zero/1.0/");
+    expect(licenseUrl("Public domain")).toBeUndefined();
   });
 });

@@ -25,7 +25,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href={`/${locale}/tours/`}
-              className="inline-flex min-h-12 items-center rounded-full bg-sun px-7 text-lg font-semibold text-bark transition-colors hover:bg-[#e39d36]"
+              className="inline-flex min-h-12 items-center rounded-full bg-sun px-7 text-lg font-semibold text-bark transition-colors hover:bg-sun-deep"
             >
               {t.cta}
             </Link>
@@ -44,10 +44,11 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             <Image
               src="/images/hero.jpg"
               alt={t.imageAlt}
-              fill
+              width={1600}
+              height={908}
               preload
               sizes="(min-width: 1024px) 40vw, 80vw"
-              className="object-cover object-[50%_45%]"
+              className="absolute inset-0 size-full object-cover object-[50%_45%]"
             />
           </div>
           <Sun className="absolute top-[3%] right-[6%] size-[17%]" />

@@ -1,4 +1,7 @@
 import { describe, expect, it } from "vitest";
+import { en } from "@/i18n/dictionaries/en";
+import { pt } from "@/i18n/dictionaries/pt";
+import type { TourType } from "./types";
 import { getTour, tours } from "./tours";
 
 const table = {
@@ -69,8 +72,8 @@ describe("tours", () => {
       }
     });
 
-    it("has at least 3 images at /images/tours/<slug>-<n>.jpg", () => {
-      expect(tour.images.length).toBeGreaterThanOrEqual(3);
+    it("has 4 images at /images/tours/<slug>-<n>.jpg", () => {
+      expect(tour.images).toHaveLength(4);
       const re = new RegExp(`^/images/tours/${slug}-\\d\\.jpg$`);
       for (const img of tour.images) expect(img).toMatch(re);
     });
@@ -79,11 +82,23 @@ describe("tours", () => {
       expect(tour.allowedMonths).toEqual(row.offseason ? [11, 12, 1, 2, 3] : null);
     });
 
-    it("offers picnic and trees, and an e-bike exactly when it has the bike badge", () => {
-      expect(tour.extras).toContain("picnic");
-      expect(tour.extras).toContain("trees");
-      expect(tour.extras.includes("ebike")).toBe(tour.badges.bike);
+  });
+
+  it("testimonials quote the exact titles of the tours they mention", () => {
+    const pinned = {
+      "replant-the-serra": ["Replant the Serra", "Replantar a Serra"],
+      "ecopista-do-dao-by-bike": ["Ecopista do Dão by Bike", "Ecopista do Dão de Bicicleta"],
+      "sintra-lisbon-quietly": ["Sintra & Lisbon, Quietly", "Sintra e Lisboa, com Calma"],
+    };
+    Object.entries(pinned).forEach(([slug, [enTitle, ptTitle]], i) => {
+      expect(getTour(slug)?.title).toEqual({ en: enTitle, pt: ptTitle });
+      expect(en.testimonials.items[i].tour).toBe(enTitle);
+      expect(pt.testimonials.items[i].tour).toBe(ptTitle);
     });
+  });
+
+  it.each(["planting", "hiking", "biking", "yoga", "offseason"] satisfies TourType[])("type %s matches at least 2 tours", (type) => {
+    expect(tours.filter((t) => t.types.includes(type)).length).toBeGreaterThanOrEqual(2);
   });
 
   it("getTour finds by slug and returns undefined for unknown slugs", () => {

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { isLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -9,6 +9,8 @@ import { body, display } from "../fonts";
 import "../globals.css";
 
 export const dynamicParams = false;
+
+export const viewport: Viewport = { themeColor: "#f9f7eb" };
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -32,7 +34,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className="flex min-h-dvh flex-col">
         <a
           href="#main"
-          className="sr-only z-50 rounded-full bg-sun px-5 py-3 font-semibold text-bark focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+          className="sr-only z-50 rounded-full bg-sun font-semibold text-bark focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:px-5 focus:py-3"
         >
           {dict.common.skipToContent}
         </a>

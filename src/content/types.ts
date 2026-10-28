@@ -2,7 +2,6 @@ import type { Locale } from "@/i18n/config";
 
 export type Localized<T> = Record<Locale, T>;
 export type TourType = "planting" | "hiking" | "biking" | "yoga" | "offseason";
-export type ExtraId = "ebike" | "picnic" | "trees";
 
 export interface ItineraryDay {
   title: Localized<string>;
@@ -19,7 +18,6 @@ export interface Tour {
   /** 1–12; null = all year */
   allowedMonths: number[] | null;
   badges: { ev: true; bike: boolean; farm: boolean };
-  extras: ExtraId[];
   /** '/images/tours/<slug>-<n>.jpg', [0] = card/hero */
   images: string[];
   title: Localized<string>;

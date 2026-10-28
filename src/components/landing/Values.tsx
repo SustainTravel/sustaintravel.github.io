@@ -6,8 +6,10 @@ const icons = { ev: Bus, bikes: Bike, local: BasketLine, offseason: Moon, smallG
 export function Values({ dict }: { dict: Dictionary }) {
   const t = dict.values;
   return (
-    <section id="values" aria-labelledby="values-title" className="relative mt-16 bg-meadow sm:mt-24">
+    <section id="values" aria-labelledby="values-title" className="relative mt-16 mb-6 bg-meadow sm:mt-24 sm:mb-8">
       <Hills colors={["#c9d8b0", "#d4dfbe", "#dfe7cc"]} className="absolute bottom-full h-10 w-full sm:h-16" />
+      {/* Same hills, upside down: the band ends in a ridge instead of a straight edge. */}
+      <Hills colors={["#ebeedb", "#e5ebd3", "#dfe7cc"]} className="absolute top-full h-10 w-full rotate-180 sm:h-16" />
       <div className="mx-auto max-w-7xl px-5 pt-10 pb-16 sm:px-8 lg:pb-24">
         <h2 id="values-title" className="max-w-2xl font-display text-4xl leading-tight text-balance text-bark sm:text-5xl">
           {t.title}

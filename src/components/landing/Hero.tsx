@@ -8,7 +8,7 @@ import { Arc, Birds, Sprout, Sun } from "@/components/icons";
 export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const t = dict.hero;
   return (
-    <section aria-labelledby="hero-title" className="overflow-hidden">
+    <section id="top" aria-labelledby="hero-title" className="overflow-hidden">
       <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 pt-8 pb-4 sm:px-8 md:pt-12 lg:grid-cols-[1.1fr_1fr] lg:gap-12 lg:pt-16 lg:pb-8">
         <div>
           <p className="flex items-center gap-2 font-semibold text-leaf">

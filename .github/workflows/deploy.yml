@@ -27,7 +27,7 @@ jobs:
       - run: npm test
       - run: npm run build
         env:
-          NEXT_PUBLIC_SITE_URL: https://janislapa44.github.io
+          NEXT_PUBLIC_SITE_URL: https://sustaintravel.github.io
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out

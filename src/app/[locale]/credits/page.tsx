@@ -27,7 +27,7 @@ export default async function CreditsPage({ params }: Props) {
   ];
 
   return (
-    <main className="mx-auto max-w-4xl px-5 py-12 text-forest">
+    <div className="mx-auto max-w-4xl px-5 py-12 text-forest">
       <h1 className="font-display text-4xl">{t.title}</h1>
       <p className="mt-4 max-w-2xl text-lg">{t.lead}</p>
       {groups.map(({ heading, credits }) => (
@@ -56,6 +56,6 @@ export default async function CreditsPage({ params }: Props) {
           </ul>
         </section>
       ))}
-    </main>
+    </div>
   );
 }

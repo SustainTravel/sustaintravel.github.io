@@ -28,6 +28,7 @@ export const pt: Dictionary = {
     about: "Sobre nós",
     faq: "Perguntas",
     contact: "Contacto",
+    businessModel: "Modelo de negócio",
   },
 
   hero: {
@@ -298,6 +299,87 @@ export const pt: Dictionary = {
     author: "Autor",
     license: "Licença",
     source: "Fonte",
+  },
+
+  businessModel: {
+    meta: {
+      title: "Modelo de negócio | Sustain",
+      description:
+        "O Business Model Canvas da Sustain: como uma agência de turismo lento e circular no Portugal rural cria, entrega e capta valor.",
+    },
+    eyebrow: "Business Model Canvas",
+    title: "O nosso modelo de negócio",
+    lead: "Os nove blocos por trás de cada viagem Sustain. É assim que criamos, entregamos e captamos valor com um turismo lento e circular.",
+    blocks: {
+      keyPartners: {
+        title: "Parcerias-chave",
+        items: [
+          "Viveiros de árvores",
+          "Fornecedores de alojamento",
+          "Operadores de transfers do aeroporto",
+          "Comércio local",
+          "Operadores de transfers (circulares)",
+          "Seguros de viagem",
+          "Bancos e entidades de crédito (para o financiamento inicial)",
+        ],
+      },
+      keyActivities: {
+        title: "Atividades-chave",
+        items: ["Ligação a fornecedores locais", "Backend do site", "Organização de viagens", "Campanhas de marketing"],
+      },
+      keyResources: {
+        title: "Recursos-chave",
+        items: [
+          "Recursos financeiros",
+          "Profissionais de informática",
+          "Operadores turísticos",
+          "Fornecedores",
+          "Especialista em marketing",
+          "Contabilista",
+        ],
+      },
+      valueProposition: {
+        title: "Proposta de valor",
+        items: [
+          "Viagens sustentáveis",
+          "Turismo rural",
+          "Turismo lento",
+          "Descobrir tesouros escondidos",
+          "Experiências únicas",
+          "Ligação à natureza",
+          "Estilo de vida local",
+          "Agricultura circular",
+          "Apoio à comunidade local",
+          "Menos turismo de massas",
+        ],
+      },
+      customerRelationships: {
+        title: "Relação com clientes",
+        items: ["Cartões e programa de fidelização", "Redes sociais", "Atividades ao ar livre", "Cartões-oferta"],
+      },
+      channels: {
+        title: "Canais",
+        items: ["Aplicação", "Site", "Escritório (plano futuro)"],
+      },
+      customerSegments: {
+        title: "Segmentos de clientes",
+        items: [
+          "Famílias (pela natureza)",
+          "Casais",
+          "Ativistas da natureza",
+          "Pessoas ativas",
+          "Quem procura experiências novas ou tranquilas",
+        ],
+      },
+      costStructure: {
+        title: "Estrutura de custos",
+        items: ["Manutenção do site e da aplicação", "Marketing", "Pessoal", "Fornecimentos", "Logística"],
+      },
+      revenueStreams: {
+        title: "Fontes de receita",
+        items: ["Os turistas pagam os pacotes", "Venda de lembranças", "Venda de produtos locais específicos", "Eventos sazonais"],
+      },
+    },
   },
 
   notFound: {

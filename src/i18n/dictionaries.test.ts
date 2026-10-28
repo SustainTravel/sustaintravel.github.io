@@ -40,3 +40,16 @@ describe("fill", () => {
   it("handles numbers and repeats", () => expect(fill("{n} of {n}", { n: 3 })).toBe("3 of 3"));
   it("leaves unknown placeholders intact", () => expect(fill("Hi {name}", {})).toBe("Hi {name}"));
 });
+
+describe("business model canvas", () => {
+  const keys = Object.keys(en.businessModel.blocks) as (keyof typeof en.businessModel.blocks)[];
+
+  it("has the nine canvas blocks", () => expect(keys).toHaveLength(9));
+
+  it("every block has items, and en and pt have the same number per block", () => {
+    for (const key of keys) {
+      expect(en.businessModel.blocks[key].items.length, key).toBeGreaterThan(0);
+      expect(pt.businessModel.blocks[key].items.length, key).toBe(en.businessModel.blocks[key].items.length);
+    }
+  });
+});

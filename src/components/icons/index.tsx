@@ -91,6 +91,81 @@ export function Hands(props: P) {
   );
 }
 
+/** A dotted trail over a hill to a map pin: planning and running the journeys. */
+export function Route(props: P) {
+  return (
+    <svg viewBox="0 0 48 48" {...base} {...props}>
+      <path d="M2 40c10-8 34-8 44 0v4H2z" fill="#8baa6b" />
+      <path d="M9 37c6-7 15-2 18-9s7-6 11-6" fill="none" stroke="#2f5d3a" strokeWidth="3" strokeLinecap="round" strokeDasharray="0.5 6" />
+      <circle cx="9" cy="37" r="3.5" fill="#edab4b" />
+      <path d="M38 23s-8-7-8-12.5a8 8 0 0 1 16 0C46 16 38 23 38 23z" fill="#c8693a" />
+      <circle cx="38" cy="10.5" r="3" fill="#f9f7eb" />
+    </svg>
+  );
+}
+
+/** A heart with a leaf: the bond with travellers. */
+export function Heart(props: P) {
+  return (
+    <svg viewBox="0 0 48 48" {...base} {...props}>
+      <path d="M24 43S5 32 5 19a9.5 9.5 0 0 1 19-3 9.5 9.5 0 0 1 19 3c0 13-19 24-19 24z" fill="#c8693a" />
+      <path d="M24 17c0-7 5-12 12-12 0 7-5 12-12 12z" fill="#495e35" />
+    </svg>
+  );
+}
+
+/** A wooden signpost: the ways people reach us. */
+export function Signpost(props: P) {
+  return (
+    <svg viewBox="0 0 48 48" {...base} {...props}>
+      <rect x="21" y="6" width="5" height="38" rx="1.5" fill="#9a6a3a" />
+      <path d="M8 10h25l6 5.5-6 5.5H8z" fill="#edab4b" />
+      <path d="M40 25H15l-6 5.5 6 5.5h25z" fill="#8baa6b" />
+      <path d="M12 44h24" stroke="#2f5d3a" strokeWidth="4" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+/** Two grown-ups and a child, in the same shapes as Hands. */
+export function Family(props: P) {
+  return (
+    <svg viewBox="0 0 48 48" {...base} {...props}>
+      <circle cx="13" cy="12" r="5.5" fill="#495e35" />
+      <path d="M4 42c0-10 4-18 9-18s9 8 9 18z" fill="#495e35" />
+      <circle cx="35" cy="12" r="5.5" fill="#c8693a" />
+      <path d="M26 42c0-10 4-18 9-18s9 8 9 18z" fill="#c8693a" />
+      <circle cx="24" cy="25" r="4.5" fill="#edab4b" stroke="#f9f7eb" strokeWidth="2" />
+      <path d="M17 43c0-7 3-12 7-12s7 5 7 12z" fill="#edab4b" stroke="#f9f7eb" strokeWidth="2" />
+    </svg>
+  );
+}
+
+/** A stack of coins: what it takes to run. */
+export function Coins(props: P) {
+  return (
+    <svg viewBox="0 0 48 48" {...base} {...props}>
+      <rect x="6" y="35" width="28" height="8" rx="4" fill="#9a6a3a" />
+      <rect x="10" y="27" width="28" height="8" rx="4" fill="#edab4b" />
+      <rect x="6" y="19" width="28" height="8" rx="4" fill="#9a6a3a" />
+      <circle cx="37" cy="11" r="7" fill="#edab4b" />
+      <circle cx="37" cy="11" r="3.5" fill="none" stroke="#f9f7eb" strokeOpacity=".7" strokeWidth="2" />
+    </svg>
+  );
+}
+
+/** A coin with a sprout growing from it: income that comes back to the land. */
+export function CoinSprout(props: P) {
+  return (
+    <svg viewBox="0 0 48 48" {...base} {...props}>
+      <path d="M24 26V12" stroke="#2f5d3a" strokeWidth="3" strokeLinecap="round" />
+      <path d="M24 16c0-7 5-11 12-11 0 7-5 11-12 11z" fill="#495e35" />
+      <path d="M24 21c0-6-4-10-10-10 0 6 4 10 10 10z" fill="#8baa6b" />
+      <circle cx="24" cy="34" r="11" fill="#edab4b" />
+      <circle cx="24" cy="34" r="6" fill="none" stroke="#f9f7eb" strokeOpacity=".7" strokeWidth="2" />
+    </svg>
+  );
+}
+
 export function Bus(props: P) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...base} {...props}>

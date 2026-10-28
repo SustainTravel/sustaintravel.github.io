@@ -27,6 +27,7 @@ export const en = {
     about: "About us",
     faq: "FAQ",
     contact: "Contact",
+    businessModel: "Business model",
   },
 
   hero: {
@@ -297,6 +298,74 @@ export const en = {
     author: "Author",
     license: "Licence",
     source: "Source",
+  },
+
+  businessModel: {
+    meta: {
+      title: "Business model | Sustain",
+      description:
+        "The Sustain Business Model Canvas: how a slow, circular travel agency in rural Portugal creates, delivers and captures value.",
+    },
+    eyebrow: "Business Model Canvas",
+    title: "Our business model",
+    lead: "The nine building blocks behind every Sustain journey. This is how we create, deliver and capture value through slow, circular tourism.",
+    blocks: {
+      keyPartners: {
+        title: "Key partners",
+        items: [
+          "Tree nurseries",
+          "Housing providers",
+          "Airport transfer providers",
+          "Local businesses",
+          "Transfer providers (circular)",
+          "Travel insurance",
+          "Banks and loan providers (for initial financing)",
+        ],
+      },
+      keyActivities: {
+        title: "Key activities",
+        items: ["Connecting with local suppliers", "Website backend", "Organising trips", "Marketing campaigns"],
+      },
+      keyResources: {
+        title: "Key resources",
+        items: ["Financial resources", "IT workers", "Tour operators", "Suppliers", "Marketing expert", "Accountant"],
+      },
+      valueProposition: {
+        title: "Value proposition",
+        items: [
+          "Sustainable travel",
+          "Rural tourism",
+          "Slow tourism",
+          "Exploring hidden gems",
+          "Unique experiences",
+          "Connection with nature",
+          "Local lifestyle",
+          "Circular agriculture",
+          "Supporting the local community",
+          "Reducing mass tourism",
+        ],
+      },
+      customerRelationships: {
+        title: "Customer relationships",
+        items: ["Loyalty cards and programme", "Social media", "Outdoor activities", "Gift cards"],
+      },
+      channels: {
+        title: "Channels",
+        items: ["App", "Website", "Office (future plan)"],
+      },
+      customerSegments: {
+        title: "Customer segments",
+        items: ["Families (nature aspect)", "Couples", "Nature activists", "Active people", "People looking for new or calm experiences"],
+      },
+      costStructure: {
+        title: "Cost structure",
+        items: ["Website and app upkeep", "Marketing", "Personnel", "Supplies", "Logistics"],
+      },
+      revenueStreams: {
+        title: "Revenue streams",
+        items: ["Tourists pay for the packages", "Sale of souvenirs", "Sale of specific local products", "Seasonal events"],
+      },
+    },
   },
 
   notFound: {

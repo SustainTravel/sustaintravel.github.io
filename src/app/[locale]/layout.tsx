@@ -22,7 +22,12 @@ export async function generateMetadata({ params }: Omit<Props, "children">): Pro
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const { meta } = getDictionary(locale).common;
-  return { title: meta.title, description: meta.description };
+  return {
+    // Only needed to turn the opengraph-image path into an absolute URL; set NEXT_PUBLIC_SITE_URL at build time.
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+    title: meta.title,
+    description: meta.description,
+  };
 }
 
 export default async function LocaleLayout({ children, params }: Props) {

@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { licenseUrl, photoCredits } from "./photo-credits";
+import { licenseUrl, photoCredits, thumbUrl } from "./photo-credits";
 import { tours } from "./tours";
 
 const LICENSES = [
@@ -21,6 +21,10 @@ describe("photo credits", () => {
   it.each(files)("%s exists on disk and has a credit", (file) => {
     expect(existsSync(join(process.cwd(), "public", file))).toBe(true);
     expect(photoCredits.filter((c) => c.file === file)).toHaveLength(1);
+  });
+
+  it.each(files)("%s has a thumbnail", (file) => {
+    expect(existsSync(join(process.cwd(), "public", thumbUrl(file)))).toBe(true);
   });
 
   it("has no credit for a file that is not used", () => {

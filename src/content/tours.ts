@@ -356,7 +356,7 @@ export const tours: Tour[] = [
       {
         title: { en: "A day among the vines", pt: "Um dia entre vinhas" },
         body: {
-          en: "A short 15 km round trip from Tondela on quiet lanes to a family quinta and back. Walk the vineyard with the winegrower, then stay for a long lunch at their table with Touriga Nacional and Encruzado. Free afternoon.",
+          en: "A short 15 km round trip from Tondela on quiet lanes to a family quinta. Walk the vineyard with the winegrower, then stay for a long lunch at their table with Touriga Nacional and Encruzado. Free afternoon.",
           pt: "Uma pedalada curta de 15 km, ida e volta a partir de Tondela, por estradas sossegadas até uma quinta familiar. Percorra a vinha com o vinicultor e fique para um almoço demorado à mesa da família, com Touriga Nacional e Encruzado. Tarde livre.",
         },
       },

@@ -14,6 +14,9 @@ export function licenseUrl(license: string): string | undefined {
   return m ? `https://creativecommons.org/licenses/${m[1].toLowerCase()}/${m[2]}/` : undefined;
 }
 
+/** 192 px-wide copy of a photo in public/images/thumbs/, used on the credits page so it does not load full-size files. */
+export const thumbUrl = (file: string) => `/images/thumbs/${file.split("/").pop()}`;
+
 export const photoCredits: PhotoCredit[] = [
   {
     file: "/images/hero.jpg",

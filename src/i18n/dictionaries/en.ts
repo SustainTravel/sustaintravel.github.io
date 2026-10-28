@@ -151,7 +151,7 @@ export const en = {
         tour: "Ecopista do Dão by Bike",
       },
       {
-        quote: "I’ve lived in Portugal all my life and never seen Sintra like this — mist in the gardens, a fire in the guesthouse, the palaces almost to ourselves.",
+        quote: "I’ve lived in Portugal all my life and never seen Sintra like this — mist in the gardens, a fire lit in the guesthouse, the palaces almost to ourselves.",
         name: "Marta Oliveira",
         from: "Porto, Portugal",
         tour: "Sintra & Lisbon, Quietly",
@@ -231,6 +231,7 @@ export const en = {
       title: "Where to start",
       viewAll: "See all journeys",
     },
+    listTitle: "All journeys",
     filterLabel: "Filter by experience",
     filterAll: "All",
     types: {

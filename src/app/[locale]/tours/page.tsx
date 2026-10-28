@@ -35,6 +35,7 @@ export default async function ToursPage({ params }: Props) {
       <div className="relative">
         <Hills colors={["#c9d8b0", "#ebeedb", "#f9f7eb"]} className="absolute bottom-full h-10 w-full sm:h-16" />
         <div className="mx-auto max-w-7xl px-5 pt-4 pb-20 sm:px-8 lg:pb-28">
+          <h2 className="sr-only">{t.listTitle}</h2>
           <TourFilter
             t={t}
             items={tours.map((tour) => ({

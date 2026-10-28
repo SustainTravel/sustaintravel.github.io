@@ -232,6 +232,7 @@ export const pt: Dictionary = {
       title: "Por onde começar",
       viewAll: "Ver todas as viagens",
     },
+    listTitle: "Todas as viagens",
     filterLabel: "Filtrar por experiência",
     filterAll: "Todas",
     types: {
@@ -279,7 +280,7 @@ export const pt: Dictionary = {
     impact: "O seu impacto",
     transport: {
       title: "Como nos deslocamos",
-      ev: "Todas as deslocações são feitas em carro ou autocarro elétrico.",
+      ev: "Todas as deslocações são feitas em carros e autocarros elétricos.",
       bike: "Nos dias de bicicleta, segue-se de um sítio para o outro a pedalar — há bicicletas elétricas para as subidas — e a bagagem vai à frente.",
     },
     offSeason: {

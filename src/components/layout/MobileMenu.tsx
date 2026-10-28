@@ -7,6 +7,7 @@ import type { Locale } from "@/i18n/config";
 import { Birds, Close, Hills, Menu, Sun } from "@/components/icons";
 import { LanguageSwitch } from "./LanguageSwitch";
 import type { NavItem } from "./nav";
+import { NavLink } from "./NavLink";
 
 type Labels = { brand: string; open: string; close: string; nav: string; language: string; cta: string };
 
@@ -95,9 +96,14 @@ export function MobileMenu({ locale, items, labels }: { locale: Locale; items: N
             <ul>
               {items.map((item) => (
                 <li key={item.href} className="border-b border-forest/10">
-                  <Link href={item.href} onClick={close} className="flex min-h-14 items-center font-display text-3xl hover:text-leaf">
+                  <NavLink
+                    href={item.href}
+                    onClick={close}
+                    className="flex min-h-14 items-center font-display text-3xl hover:text-leaf"
+                    activeClassName="underline decoration-sun decoration-4 underline-offset-8"
+                  >
                     {item.label}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
             </ul>

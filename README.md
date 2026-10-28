@@ -24,6 +24,8 @@ The first `npm run build` (and `npm run dev`) needs an internet connection once,
 
 ## Deploy
 
+Set `NEXT_PUBLIC_SITE_URL` (for example `https://sustain.example`) when running `npm run build`, so the shared-link preview image in `og:image` gets the real address. Without it, it defaults to `http://localhost:3000`.
+
 `npm run build` writes the complete site to `out/`. Any static host works.
 
 - **Netlify (recommended):** go to <https://app.netlify.com/drop> and drag the `out/` folder onto the page. You get a public URL straight away.
@@ -55,9 +57,11 @@ Both dictionaries must keep exactly the same keys; `npm test` fails if one langu
 
 ### Swap the team photo
 
-Replace `public/images/team.jpg` with the real photo, keeping the same file name. A 3:2 landscape image works best (for example 1500 × 1000 px); other shapes are cropped to fit. Then remove the "Team photo coming soon" label: delete the `<figcaption>` in `src/components/landing/About.tsx`, and update `about.photoAlt` in both dictionaries to describe the photo.
+Replace `public/images/team.jpg` with the real photo, keeping the same file name. A 3:2 landscape image works best (for example 1500 × 1000 px); other shapes are cropped to fit. Then remove the "Team photo coming soon" label: delete the `<figcaption>` in `src/components/landing/About.tsx`, and set the image `alt` in `About.tsx` to `t.photoAlt` (it is `""` while the placeholder shows), updating `about.photoAlt` in both dictionaries to describe the photo.
 
 ### Replace tour photos
+
+The credits page shows 192 px-wide copies from `public/images/thumbs/<same file name>`. After adding or replacing a photo, regenerate its thumbnail (for example `python3 -c "from PIL import Image; im=Image.open('public/images/tours/x-1.jpg'); im.thumbnail((192,999)); im.convert('RGB').save('public/images/thumbs/x-1.jpg',quality=75)"`); a test checks that it exists.
 
 Each journey uses four photos, `public/images/tours/<slug>-1.jpg` to `-4.jpg`; the first one is the card image. Every photo needs an entry in `src/content/photo-credits.ts` (a test checks this).
 

@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import Image from "next/image";
-import { licenseUrl, photoCredits } from "@/content/photo-credits";
+import { licenseUrl, photoCredits, thumbUrl } from "@/content/photo-credits";
 import { tours } from "@/content/tours";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -42,10 +42,10 @@ export default async function CreditsPage({ params }: Props) {
               return (
                 <li key={c.file} className="flex gap-4 py-4">
                   <Image
-                    src={c.file}
+                    src={thumbUrl(c.file)}
                     alt=""
-                    width={96}
-                    height={72}
+                    width={192}
+                    height={144}
                     sizes="96px"
                     className="h-18 w-24 shrink-0 rounded-lg bg-sage-pale object-cover"
                   />

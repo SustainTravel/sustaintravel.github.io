@@ -4,6 +4,7 @@ import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { LanguageSwitch } from "./LanguageSwitch";
 import { MobileMenu } from "./MobileMenu";
+import { NavLink } from "./NavLink";
 import { navItems } from "./nav";
 
 export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
@@ -21,12 +22,13 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             {items.map((item, i) => (
               // md–lg: no room for both, so the "Book a trip" CTA stands in for "Tours" (same URL).
               <li key={item.href} className={i === 0 ? "md:max-lg:hidden" : undefined}>
-                <Link
+                <NavLink
                   href={item.href}
                   className="flex min-h-11 items-center rounded-full px-1.5 font-medium whitespace-nowrap text-forest transition-colors hover:bg-sage-pale/70 lg:px-3.5"
+                  activeClassName="bg-sage-pale/60 font-semibold underline decoration-sun decoration-2 underline-offset-8"
                 >
                   {item.label}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>

@@ -9,12 +9,3 @@ export function formatPrice(amount: number, locale: Locale): string {
     maximumFractionDigits: 0,
   }).format(amount);
 }
-
-/** `isoDate` is 'YYYY-MM-DD'; parsed and formatted in UTC so no visitor timezone can shift the day. */
-export function formatDate(
-  isoDate: string,
-  locale: Locale,
-  opts: Intl.DateTimeFormatOptions = { day: "numeric", month: "long", year: "numeric" },
-): string {
-  return new Date(`${isoDate}T00:00:00Z`).toLocaleDateString(tag(locale), { ...opts, timeZone: "UTC" });
-}

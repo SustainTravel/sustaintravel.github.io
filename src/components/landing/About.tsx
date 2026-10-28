@@ -22,7 +22,7 @@ export function About({ dict }: { dict: Dictionary }) {
           <div className="relative aspect-[3/2] overflow-hidden rounded-[2rem] bg-sage-pale ring-2 ring-sage-pale">
             <Image
               src="/images/team.jpg"
-              alt={t.photoAlt}
+              alt="" /* placeholder: use t.photoAlt with the real photo */
               width={1500}
               height={1000}
               sizes="(min-width: 1024px) 600px, 92vw"

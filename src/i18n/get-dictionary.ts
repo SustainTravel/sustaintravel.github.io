@@ -8,7 +8,7 @@ export function getDictionary(locale: Locale): Dictionary {
   return dictionaries[locale];
 }
 
-/** fill('Pay {total}', { total: '€10' }) → 'Pay €10'. Unknown placeholders are left as-is. */
+/** fill('from {price}', { price: '€890' }) → 'from €890'. Unknown placeholders are left as-is. */
 export function fill(template: string, vars: Record<string, string | number>): string {
   return template.replace(/\{(\w+)\}/g, (match, key: string) => (key in vars ? String(vars[key]) : match));
 }

@@ -57,7 +57,7 @@ Both dictionaries must keep exactly the same keys; `npm test` fails if one langu
 
 ### Swap the team photo
 
-Replace `public/images/team.jpg` with the real photo, keeping the same file name. A 3:2 landscape image works best (for example 1500 × 1000 px); other shapes are cropped to fit. Then remove the "Team photo coming soon" label: delete the `<figcaption>` in `src/components/landing/About.tsx`, and set the image `alt` in `About.tsx` to `t.photoAlt` (it is `""` while the placeholder shows), updating `about.photoAlt` in both dictionaries to describe the photo.
+Replace `public/images/team.jpg`, keeping the same file name. A 3:2 landscape image works best (for example 1500 × 1000 px); other shapes are cropped to fit. Update `about.photoAlt` in both dictionaries to describe the new photo.
 
 ### Replace tour photos
 

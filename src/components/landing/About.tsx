@@ -17,21 +17,17 @@ export function About({ dict }: { dict: Dictionary }) {
           </div>
         </div>
 
-        <figure className="relative">
-          {/* Final team photo drops in as /images/team.jpg at the same 3:2 ratio. */}
+        <figure>
           <div className="relative aspect-[3/2] overflow-hidden rounded-[2rem] bg-sage-pale ring-2 ring-sage-pale">
             <Image
               src="/images/team.jpg"
-              alt="" /* placeholder: use t.photoAlt with the real photo */
+              alt={t.photoAlt}
               width={1500}
               height={1000}
               sizes="(min-width: 1024px) 600px, 92vw"
               className="absolute inset-0 size-full object-cover"
             />
           </div>
-          <figcaption className="absolute bottom-4 left-4 rounded-full bg-cream px-4 py-2 text-sm font-semibold text-bark">
-            {t.photoComingSoon}
-          </figcaption>
         </figure>
       </div>
     </section>

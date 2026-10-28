@@ -112,26 +112,25 @@ export const en = {
   impact: {
     eyebrow: "Impact in numbers",
     title: "What slow travel adds up to",
-    lead: "Small groups, many seasons. Here is what our guests have done so far.",
+    lead: "Small groups, many seasons. Here is what we are working towards.",
     stats: {
       trees: { value: "18,400", label: "native trees planted" },
       km: { value: "96,000", label: "kilometres cycled instead of driven" },
       producers: { value: "64", label: "local farmers and producers we buy from" },
       ev: { value: "100%", label: "of transfers in electric vehicles" },
     },
-    note: "Figures since our first season in 2019, updated every spring.",
+    note: "Our goals for the first five seasons, reviewed every spring.",
   },
 
   about: {
     eyebrow: "About us",
-    title: "A small team from the Portuguese interior",
+    title: "Born on an Erasmus+ programme",
     story: [
-      "Sustain began in 2019 around a kitchen table in a schist village in the Serra da Lousã, two years after the great fires. We were two guides, a cook and a forester, and we had watched the same thing happen for years: coaches filling Sintra in August while the villages a few hours inland quietly emptied.",
-      "So we started doing it differently. Fewer people, longer stays, and money spent where it stays — with the family that cooks your dinner, the shepherd who makes your cheese, the village that puts you up for the night.",
-      "We are still small, and we mean to stay that way. Every journey we sell is one we have walked, cycled and eaten our way through ourselves.",
+      "Sustain started in 2026, when the seven of us met in Portugal on a BIP (Blended Intensive Programme) of Erasmus+. We came from different countries and different courses, and we kept coming back to the same question: why does tourism so often take more from a place than it gives back?",
+      "Our answer is a travel business built on a sustainable, circular economy. Small groups and longer stays. Electric transfers and bikes instead of coaches. Meals bought from the farmers and families who grow them, and money that stays in the villages that host you. Whatever a journey uses, it should help put back, starting with the trees we plant.",
+      "We are small, and we mean to stay that way. Every journey is designed together with the people who live along its route.",
     ],
-    photoAlt: "The Sustain team",
-    photoComingSoon: "Team photo coming soon",
+    photoAlt: "The seven members of the Sustain team outside a university building in Portugal",
   },
 
   testimonials: {

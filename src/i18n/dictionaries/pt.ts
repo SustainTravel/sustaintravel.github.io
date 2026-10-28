@@ -113,26 +113,25 @@ export const pt: Dictionary = {
   impact: {
     eyebrow: "O impacto em números",
     title: "Aquilo que o turismo lento já somou",
-    lead: "Grupos pequenos, muitas estações. Eis o que os nossos viajantes já fizeram.",
+    lead: "Grupos pequenos, muitas estações. Eis aquilo por que trabalhamos.",
     stats: {
       trees: { value: "18\u00a0400", label: "árvores autóctones plantadas" },
       km: { value: "96\u00a0000", label: "quilómetros de bicicleta em vez de carro" },
       producers: { value: "64", label: "agricultores e produtores locais parceiros" },
       ev: { value: "100%", label: "das deslocações em veículos elétricos" },
     },
-    note: "Números desde a nossa primeira temporada, em 2019, atualizados todas as primaveras.",
+    note: "As nossas metas para as primeiras cinco temporadas, revistas todas as primaveras.",
   },
 
   about: {
     eyebrow: "Sobre nós",
-    title: "Uma equipa pequena, do interior do país",
+    title: "Nascemos num programa Erasmus+",
     story: [
-      "A Sustain nasceu em 2019, à mesa da cozinha de uma aldeia de xisto na Serra da Lousã, dois anos depois dos grandes incêndios. Éramos dois guias, uma cozinheira e um engenheiro florestal, e há anos que víamos a mesma coisa: autocarros a encher Sintra em agosto, enquanto as aldeias a poucas horas dali se iam esvaziando.",
-      "Decidimos fazer de outra maneira. Menos gente, estadias mais longas, e o dinheiro gasto onde fica — na família que lhe faz o jantar, no pastor que faz o queijo, na aldeia que o recebe para dormir.",
-      "Continuamos pequenos, e queremos continuar assim. Cada viagem que vendemos é uma que já percorremos a pé, de bicicleta e à mesa.",
+      "A Sustain nasceu em 2026, quando nós os sete nos conhecemos em Portugal, num BIP (Blended Intensive Programme) do Erasmus+. Vínhamos de países e cursos diferentes e voltávamos sempre à mesma pergunta: porque é que o turismo tantas vezes tira mais a um lugar do que lhe devolve?",
+      "A nossa resposta é uma empresa de viagens assente numa economia sustentável e circular. Grupos pequenos e estadias mais longas. Transfers elétricos e bicicletas em vez de autocarros de turismo. Refeições compradas aos agricultores e às famílias que as produzem, e dinheiro que fica nas aldeias que o recebem. O que uma viagem gasta, deve ajudar a devolver — a começar pelas árvores que plantamos.",
+      "Somos pequenos e queremos continuar assim. Cada viagem é desenhada em conjunto com quem vive ao longo do seu percurso.",
     ],
-    photoAlt: "A equipa da Sustain",
-    photoComingSoon: "Fotografia da equipa em breve",
+    photoAlt: "Os sete membros da equipa da Sustain à porta de um edifício universitário em Portugal",
   },
 
   testimonials: {

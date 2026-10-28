@@ -1,5 +1,5 @@
 // All photos are from Wikimedia Commons; author/licence/source copied from each file's page. Resized to 1600 px, EXIF stripped.
-// public/images/team.jpg is a generated placeholder (no credit needed).
+// public/images/team.jpg is the team's own photo (no credit needed).
 export interface PhotoCredit {
   file: string;
   author: string;

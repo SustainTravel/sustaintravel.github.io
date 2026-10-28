@@ -69,7 +69,6 @@ Routes (all under `/[locale]`, locale ∈ `en`, `pt`; `/` sends visitors to thei
 - `/[locale]` — Landing page
 - `/[locale]/tours` — Tour catalogue with filter by experience type
 - `/[locale]/tours/[slug]` — Tour detail
-- `/[locale]/book/[slug]` — Simulated checkout
 - `/[locale]/credits` — Photo credits
 
 Header on every page: logo + "Sustain", nav (Tours, Values, About us, FAQ, Contact), **EN | PT switch** (keeps the visitor on the equivalent page; choice remembered in `localStorage`), "Book a trip" CTA. Mobile: hamburger menu.
@@ -115,7 +114,9 @@ All multi-day, slow-paced. Each includes regional food moments with local produc
 
 Prices in EUR per person, realistic for small-group full-board slow tours (builder sets, roughly €1,100–€2,900). Text for both languages written by the builder; Portuguese should be European Portuguese (pt-PT).
 
-## 8. Simulated checkout
+## 8. Simulated checkout — DROPPED (owner amendment 2026-10-28)
+
+The owner removed the checkout: "Book" buttons do nothing for now. The text below is kept for a possible later phase only.
 
 Must feel like a real live checkout. Nothing is sent, stored or validated against any service. Persistent banner: "Demo — no payment is taken. Do not enter real card details."
 

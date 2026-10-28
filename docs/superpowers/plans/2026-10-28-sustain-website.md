@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** A bilingual (EN / PT-PT) demo website for Sustain, a slow-travel agency in rural Portugal, with a landing page, a tour catalogue of 7 tours and a realistic but fully simulated checkout.
+**Goal:** A bilingual (EN / PT-PT) demo website for Sustain, a slow-travel agency in rural Portugal, with a landing page and a tour catalogue of 7 tours. (Owner amendment 2026-10-28: no checkout — "Book" buttons do nothing for now.)
 
-**Architecture:** Next.js App Router with static export (`output: 'export'`). All pages live under `src/app/[locale]/…` and are pre-rendered for `en` and `pt` via `generateStaticParams`. Content (tours, UI strings, photo credits) lives in typed TS files per locale. Pure logic (departures, pricing, payment validation, locale helpers) lives in `src/lib` and is unit-tested with Vitest. The checkout is one client component tree with in-memory state only.
+**Architecture:** Next.js App Router with static export (`output: 'export'`). All pages live under `src/app/[locale]/…` and are pre-rendered for `en` and `pt` via `generateStaticParams`. Content (tours, UI strings, photo credits) lives in typed TS files per locale. Pure logic (locale helpers, formatting) is unit-tested with Vitest. No checkout.
 
 **Tech Stack:** Next.js (latest, App Router) + React + TypeScript, Tailwind CSS v4, `next/font` (self-hosted at build), Vitest.
 
@@ -15,7 +15,7 @@
 - Static export only: `output: 'export'`, `trailingSlash: true`, `images: { unoptimized: true }`. No API routes, no server actions, no middleware.
 - No network requests at runtime to third parties: fonts via `next/font` (self-hosted), all photos in `public/`, no CDNs.
 - Nothing the user types is sent anywhere or persisted. The only `localStorage` key allowed is `sustain-locale`.
-- Checkout always shows the banner: EN "Demo — no payment is taken. Do not enter real card details." / PT "Demonstração — nenhum pagamento é efetuado. Não introduza dados reais de cartão."
+- No checkout (owner amendment 2026-10-28): every "Book this journey" control is a `<button type="button">` with no handler and no navigation. The header "Book a trip" CTA links to the tours catalogue.
 - Every user-visible string exists in EN and PT-PT (European Portuguese, not Brazilian: "autocarro" not "ônibus", "telemóvel" not "celular", "pequeno-almoço" not "café da manhã").
 - Palette tokens (in `globals.css` `@theme`): `cream #F9F7EB` (page bg = logo bg), `forest #2F5D3A`, `leaf #495E35`, `sage #8BAA6B`, `sage-pale #C9D8B0`, `sun #EDAB4B`, `terracotta #C8693A`, `wicker #9A6A3A`. Text on cream uses `forest` or darker; WCAG AA contrast everywhere (check `sun` buttons use dark text).
 - Mobile first-class: every page checked at 360, 390, 768 and 1440 px wide; no horizontal scroll; touch targets ≥ 44 px; inputs ≥ 16 px font (prevents iOS zoom).
@@ -25,11 +25,11 @@
 
 ## Review Focus
 
-1. **Departure dates computed at build time** — the export is static, so dates baked into HTML go stale. `getDepartures` must only run client-side (after mount); test in Task 7 pins that it depends only on the `today` argument, and Task 8 computes it in an effect.
-2. **Timezone drift** — a visitor in UTC−x seeing Fridays instead of Saturdays. All date math in UTC on `YYYY-MM-DD` strings; Task 7 test asserts every date is a Saturday via `getUTCDay()`.
-3. **Off-season tour opened in summer** — calendar must open on the first month that has departures (November), never on an empty current month. Task 7 test: first departure month ∈ allowed months; Task 8 sets the initial calendar month from `departures[0]`.
-4. **More travellers than spots left** — "2 spots left" departure must cap the traveller stepper at 2 and clamp an already-chosen higher number. Task 7 test on `maxTravellers`; Task 8 clamps on date change.
-5. **Switching language mid-flow / long PT strings** — `/en/book/<slug>/` must map to `/pt/book/<slug>/` (Task 2 test), and Portuguese labels must not overflow buttons, nav or the checkout stepper at 360 px (Task 9 visual check in PT).
+1. **Switching language on a deep page** — `/en/tours/<slug>/` must map to `/pt/tours/<slug>/` (Task 2 test), and the switch must keep the visitor on the same page.
+2. **Long PT strings** — Portuguese labels must not overflow buttons, nav, filter chips or tour cards at 360 px (Task 9 visual check in PT).
+3. **Unknown tour slug** — `/en/tours/nope/` serves the localized 404 (`dynamicParams = false`; Task 6 build check).
+4. **Dead "Book" button** — must not look broken: it is a real focusable button, keeps hover/focus styles, and does not navigate or throw (Task 6/9 browser check).
+5. **Root redirect with blocked storage** — `/` must still redirect when `localStorage` throws (parked T1 minor, fixed in Task 9).
 
 ---
 
@@ -46,8 +46,7 @@ sustain/
   src/app/[locale]/page.tsx         landing
   src/app/[locale]/tours/page.tsx   catalogue
   src/app/[locale]/tours/[slug]/page.tsx
-  src/app/[locale]/book/[slug]/page.tsx
-  src/app/[locale]/credits/page.tsx
+    src/app/[locale]/credits/page.tsx
   src/app/[locale]/not-found.tsx
   src/i18n/config.ts                locales, Locale, isLocale, switchLocalePath, pickInitialLocale
   src/i18n/dictionaries/en.ts       UI strings (source of the Dictionary type)
@@ -57,14 +56,10 @@ sustain/
   src/content/tours.ts              the 7 tours
   src/content/photo-credits.ts
   src/lib/format.ts                 formatPrice, formatDate
-  src/lib/departures.ts
-  src/lib/pricing.ts
-  src/lib/payment.ts                card / expiry / cvc / MB WAY validation, booking ref
   src/components/icons/*.tsx        Sun, Birds, Sprout, Basket, Bus, Bike (flat SVG in logo style)
   src/components/layout/{Header,MobileMenu,LanguageSwitch,Footer}.tsx
   src/components/landing/{Hero,Different,FeaturedTours,Values,HowItWorks,Impact,About,Testimonials,Faq,Contact}.tsx
   src/components/tours/{TourCard,TourBadges,TourFilter,Gallery,Itinerary}.tsx
-  src/components/checkout/{Checkout,Stepper,DemoBanner,StepDate,DateCalendar,StepTravellers,StepDetails,StepPayment,Confirmation,OrderSummary}.tsx
   public/logo.jpg                   (exists)
   public/images/hero.jpg, team.jpg, tours/<slug>-<n>.jpg
   README.md                         run, build, deploy, swap team photo
@@ -231,7 +226,7 @@ All `maxGroup: 12`, `badges.ev: true`, `badges.farm: true`. `badges.bike` true f
 
 **Interfaces:**
 - Consumes: `tours`, `getTour`, `TourCard`, `TourBadges`, `getDictionary`, `formatPrice`
-- Produces: tour detail route `/[locale]/tours/[slug]/` with `generateStaticParams` over locales × slugs and `dynamicParams = false`; "Book this journey" links to `/[locale]/book/[slug]/`
+- Produces: tour detail route `/[locale]/tours/[slug]/` with `generateStaticParams` over locales × slugs and `dynamicParams = false`; "Book this journey" is a `<button type="button">` that does nothing (no checkout)
 
 - [ ] **Step 1:** Invoke `frontend-design` (same direction as Task 5).
 - [ ] **Step 2:** Catalogue: intro, `TourFilter` (client; chips: All, Tree planting, Hiking, Biking, Yoga, Off-season classics; filters by `types`; filter state in `?type=` query param is not needed — local state), grid of `TourCard`s, empty state never possible but handled.
@@ -241,69 +236,9 @@ All `maxGroup: 12`, `badges.ev: true`, `badges.farm: true`. `badges.bike` true f
 
 ---
 
-### Task 7: Booking logic (departures, pricing, payment)
+### Task 7: (dropped 2026-10-28 — owner removed the simulated checkout)
 
-**Files:**
-- Create: `src/lib/departures.ts`, `src/lib/pricing.ts`, `src/lib/payment.ts`
-- Test: `src/lib/departures.test.ts`, `src/lib/pricing.test.ts`, `src/lib/payment.test.ts`
-
-**Interfaces:**
-- Consumes: `Tour`, `ExtraId`
-- Produces:
-```ts
-// departures.ts
-export type DepartureStatus = 'open' | 'few' | 'soldout';
-export interface Departure { date: string; status: DepartureStatus; spotsLeft: number } // date = 'YYYY-MM-DD'
-export function getDepartures(tour: Pick<Tour,'allowedMonths'|'maxGroup'>, today: Date): Departure[]
-// pricing.ts
-export const EXTRA_PRICES: Record<ExtraId, { amount: number; per: 'person' | 'booking' }>
-  // ebike 120/person, picnic 35/person, trees 40/booking
-export interface PriceLine { key: 'base' | ExtraId; amount: number }
-export function computeTotal(tour: Pick<Tour,'priceFrom'>, travellers: number, extras: ExtraId[]): { lines: PriceLine[]; total: number }
-export function maxTravellers(tour: Pick<Tour,'maxGroup'>, departure: Departure | null): number
-// payment.ts
-export function formatCardNumber(input: string): string   // digits only, groups of 4, max 19 digits
-export function isValidCardNumber(input: string): boolean // 13–19 digits and Luhn
-export function formatExpiry(input: string): string       // 'MM/YY'
-export function isValidExpiry(input: string, today: Date): boolean
-export function isValidCvc(input: string): boolean        // 3–4 digits
-export function isValidPtMobile(input: string): boolean   // 9 digits starting 9, optional +351 / spaces
-export function makeBookingRef(rand?: () => number): string // /^SUS-[A-HJ-NP-Z2-9]{6}$/
-```
-Departure rule (algorithm the signature doesn't fix): work in UTC; start = first Saturday ≥ `today + 14 days`; take every second Saturday from there while `< today + 365 days`; drop dates whose month ∉ `allowedMonths` (when non-null); then by index `i` in the kept list: `i % 6 === 2` → `soldout`, `spotsLeft 0`; `i % 6 === 4` → `few`, `spotsLeft 2`; else `open`, `spotsLeft maxGroup`.
-
-- [ ] **Step 1: Write failing tests:**
-  - departures, `today = new Date(Date.UTC(2026, 6, 1))` (1 Jul 2026): all-year tour → every `date` parses to `getUTCDay() === 6`; first date ≥ `2026-07-15`; last < `2027-07-01`; consecutive dates in the all-year list are 14 days apart; contains at least one `soldout` and one `few`; calling twice gives deep-equal results.
-  - departures, off-season tour same `today`: every month ∈ `{11,12,1,2,3}`; first date is in November 2026; list non-empty.
-  - departures, `today` with `T23:30:00-05:00` style offset input (`new Date('2026-07-01T23:30:00-05:00')`) → still all Saturdays.
-  - pricing: `computeTotal({priceFrom:1190}, 2, ['picnic','trees']).total === 2490`; lines are `base 2380`, `picnic 70`, `trees 40`; `computeTotal({priceFrom:1350}, 3, ['ebike']).total === 4410`; no extras → only `base` line.
-  - `maxTravellers({maxGroup:12}, {date:'2026-11-14',status:'few',spotsLeft:2})` → `2`; with `open` 12 → `12`; with `null` → `12`.
-  - payment: `formatCardNumber('4242424242424242')` → `'4242 4242 4242 4242'`; `formatCardNumber('4242-4242 abc')` → `'4242 4242'`; `isValidCardNumber('4242 4242 4242 4242')` true; `'4242 4242 4242 4241'` false; `'1234'` false; `isValidExpiry('12/26', new Date(Date.UTC(2026,10,1)))` true; `'10/26'` false (past); `'13/27'` false; `'00/27'` false; `isValidCvc('123')` true, `'12'` false; `isValidPtMobile('912 345 678')` true, `'+351912345678'` true, `'212345678'` false; `makeBookingRef(() => 0)` matches the regex; 50 calls with `Math.random` all match.
-- [ ] **Step 2:** `npm test` → FAIL.
-- [ ] **Step 3:** Implement.
-- [ ] **Step 4:** `npm test` → PASS.
-- [ ] **Step 5:** Commit `feat: add booking logic for departures, pricing and payment`.
-
----
-
-### Task 8: Simulated checkout
-
-**Files:**
-- Create: `src/app/[locale]/book/[slug]/page.tsx`, `src/components/checkout/*`
-
-**Interfaces:**
-- Consumes: everything from Task 7, `getTour`, `TourBadges`, `getDictionary`, `formatPrice`, `formatDate`
-- Produces: route `/[locale]/book/[slug]/` (static params locales × slugs, `dynamicParams = false`)
-
-State (in `Checkout`, `useReducer`): `step: 0..4`, `departure: Departure | null`, `travellers: number` (default 2, clamped by `maxTravellers`), `extras: ExtraId[]`, `details {name,email,phone,country,diet}`, `method: 'card' | 'mbway'`, `card {number,expiry,cvc,holder}`, `mbwayPhone`, `processing: boolean`, `ref: string | null`.
-
-- [ ] **Step 1:** Invoke `frontend-design` (same direction; checkout should feel like a trustworthy real payment page).
-- [ ] **Step 2:** `DemoBanner` always visible at top (exact strings from Global Constraints). `Stepper` with 5 labelled steps (Date, Travellers & extras, Your details, Payment, Confirmation), current step `aria-current="step"`, compact on mobile. Focus moves to the new step heading on step change.
-- [ ] **Step 3:** `StepDate` + `DateCalendar`: departures from `getDepartures(tour, new Date())` computed in `useEffect` (never at render on the server). Month grid with prev/next; initial month = month of `departures[0]`; departure days are buttons showing status ("sold out" disabled, "2 spots left" badge); non-departure days inert. Off-season tours show the Nov–Mar explanation. Choosing a date clamps `travellers` to `maxTravellers`.
-- [ ] **Step 4:** `StepTravellers`: −/+ stepper (min 1, max `maxTravellers`), extras as checkboxes from `tour.extras` with prices from `EXTRA_PRICES`. `StepDetails`: labelled inputs with `autocomplete` (`name`, `email`, `tel`, `country-name`), `type="email"`/`type="tel"`, inline errors on blur/submit. `StepPayment`: Card | MB WAY tabs; card number `inputMode="numeric"` `autocomplete="cc-number"` formatted live; expiry `cc-exp`; CVC `cc-csc`; hint "Test card: 4242 4242 4242 4242"; MB WAY phone field. "Pay {total}" → `processing` spinner ~1.5 s → `ref = makeBookingRef()` → step 4.
-- [ ] **Step 5:** `OrderSummary`: tour photo, title, date, travellers, `computeTotal` lines and total, updating live. Desktop: sticky side panel. Mobile: collapsed bottom bar with total + expandable details. `Confirmation`: ref, summary, "what happens next", impact of the booking (e.g. trees planted), links back to tours/home.
-- [ ] **Step 6:** `npm run build`. In the browser at 390 px and 1440 px, EN and PT: complete a booking end-to-end for `sintra-lisbon-quietly` (calendar opens on November, sold-out date not clickable, choose a "2 spots left" date with 3 travellers pre-set → clamped to 2) and for `slow-portugal-journey` with MB WAY. Confirm the Network panel shows no request on Pay.
-- [ ] **Step 7:** Commit `feat: add simulated checkout`.
+### Task 8: (dropped 2026-10-28 — owner removed the simulated checkout)
 
 ---
 
@@ -313,9 +248,10 @@ State (in `Checkout`, `useReducer`): `step: 0..4`, `departure: Departure | null`
 - Modify: whatever the review flags
 - Create: `README.md`
 
-- [ ] **Step 1:** Invoke the `web-design-guidelines` skill and review every page type (`/en/`, `/pt/`, catalogue, one detail page, checkout each step, credits, 404). Fix every finding; note any deliberately not fixed with a one-line reason in the final report.
-- [ ] **Step 2:** Mobile pass in **PT** (longer strings) at 360 px: header, mobile menu, filter chips, tour cards, stepper, summary bar, buttons — no overflow, no horizontal scroll, touch targets ≥ 44 px. Repeat spot checks at 768 and 1440 px.
-- [ ] **Step 3:** Lighthouse (devtools MCP) on `/en/` and one checkout page, mobile profile: Accessibility ≥ 95, no console errors. Keyboard-only run through the full checkout.
+- [ ] **Step 0:** Remove the now-unused `checkout` block from both dictionaries and its demo-banner test; delete any `book` route if present. Apply the parked minors listed in the ledger.
+- [ ] **Step 1:** Invoke the `web-design-guidelines` skill and review every page type (`/en/`, `/pt/`, catalogue, one detail page, credits, 404). Fix every finding; note any deliberately not fixed with a one-line reason in the final report.
+- [ ] **Step 2:** Mobile pass in **PT** (longer strings) at 360 px: header, mobile menu, filter chips, tour cards, itinerary, sticky book bar, buttons — no overflow, no horizontal scroll, touch targets ≥ 44 px. Repeat spot checks at 768 and 1440 px.
+- [ ] **Step 3:** Lighthouse (devtools MCP) on `/en/` and one tour detail page, mobile profile: Accessibility ≥ 95, no console errors. Keyboard-only run through landing → catalogue → tour page.
 - [ ] **Step 4:** `README.md`: `npm install`, `npm run dev`, `npm test`, `npm run build` → `out/`, deploy (drag `out/` to Netlify, or GitHub Pages), offline backup `npx serve out`, **swap team photo = replace `public/images/team.jpg` (3:2 landscape recommended)**, where copy lives (`src/i18n/dictionaries/*.ts`, `src/content/tours.ts`).
 - [ ] **Step 5:** `npm test` and `npm run build` both pass.
 - [ ] **Step 6:** Commit `chore: QA fixes and README`.

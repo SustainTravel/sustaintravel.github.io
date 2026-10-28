@@ -3,8 +3,12 @@ import Link from "next/link";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { Arc, Birds, Sprout, Sun } from "@/components/icons";
+import { HeroScene } from "./HeroScene";
 
-/** The logo's open circle, filled with a real Alentejo cork oak: the one bold move on the page. */
+/**
+ * The logo's open circle, filled with a real Alentejo cork oak photo as the server-rendered poster,
+ * then a live low-poly landscape fades in over it: the one bold move on the page.
+ */
 export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const t = dict.hero;
   return (
@@ -38,7 +42,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[22rem] sm:max-w-[28rem] lg:max-w-none">
+        <div className="group relative mx-auto w-full max-w-[22rem] sm:max-w-[28rem] lg:max-w-none">
           <Arc className="absolute inset-0 size-full text-forest" />
           <div className="relative m-[9%] aspect-square overflow-hidden rounded-full bg-sage-pale">
             <Image
@@ -50,8 +54,10 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               sizes="(min-width: 1024px) 40vw, 80vw"
               className="absolute inset-0 size-full object-cover object-[50%_45%]"
             />
+            <HeroScene />
           </div>
-          <Sun className="absolute top-[3%] right-[6%] size-[17%]" />
+          {/* The live scene brings its own sun, so this one steps aside once it is showing. */}
+          <Sun className="absolute top-[3%] right-[6%] size-[17%] transition-opacity duration-[1600ms] group-has-[[data-ready]]:opacity-0" />
           <Birds className="absolute top-[14%] left-[1%] w-[17%] text-forest" />
         </div>
       </div>

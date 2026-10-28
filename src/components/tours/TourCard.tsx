@@ -10,15 +10,15 @@ import { TourBadges } from "./TourBadges";
 /** Arched photo like a village window; the whole card is one link via the title's stretched ::after. */
 export function TourCard({ tour, locale, dict }: { tour: Tour; locale: Locale; dict: Dictionary }) {
   return (
-    <article className="group relative flex flex-1 flex-col">
-      <div className="relative aspect-[4/3] overflow-hidden rounded-t-full rounded-b-xl bg-sage-pale xl:aspect-[4/5]">
+    <article className="tour-card group relative flex flex-1 flex-col">
+      <div className="tour-card-frame relative aspect-[4/3] overflow-hidden rounded-t-full rounded-b-xl bg-sage-pale xl:aspect-[4/5]">
         <Image
           src={tour.images[0]}
           alt=""
           width={1600}
           height={1067}
           sizes="(min-width: 1280px) 290px, (min-width: 640px) 45vw, 92vw"
-          className="absolute inset-0 size-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+          className="tour-card-photo absolute inset-0 size-full object-cover"
         />
         {tour.allowedMonths && (
           <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-cream py-1 pr-3 pl-2 text-sm font-semibold text-bark">
@@ -33,7 +33,7 @@ export function TourCard({ tour, locale, dict }: { tour: Tour; locale: Locale; d
         <h3 className="mt-1 font-display text-2xl leading-tight text-forest">
           <Link
             href={`/${locale}/tours/${tour.slug}/`}
-            className="after:absolute after:inset-0 after:rounded-t-[999px] after:rounded-b-xl group-hover:underline decoration-sun decoration-2 underline-offset-4"
+            className="after:absolute after:inset-x-0 after:top-0 after:-bottom-1 after:rounded-t-[999px] after:rounded-b-xl group-hover:underline decoration-sun decoration-2 underline-offset-4"
           >
             {tour.title[locale]}
           </Link>

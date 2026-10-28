@@ -22,13 +22,13 @@ export function NotFoundContent({ strings }: { strings: Record<Locale, Dictionar
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Link
           href={`/${locale}/`}
-          className="inline-flex min-h-12 items-center rounded-full bg-sun px-7 font-semibold text-bark transition-colors hover:bg-sun-deep"
+          className="inline-flex min-h-12 items-center rounded-full bg-sun px-7 font-semibold text-bark press hover:bg-sun-deep"
         >
           {t.home}
         </Link>
         <Link
           href={`/${locale}/tours/`}
-          className="inline-flex min-h-12 items-center rounded-full border-2 border-forest/25 px-6 font-semibold transition-colors hover:border-forest"
+          className="inline-flex min-h-12 items-center rounded-full border-2 border-forest/25 px-6 font-semibold press hover:border-forest"
         >
           {t.tours}
         </Link>

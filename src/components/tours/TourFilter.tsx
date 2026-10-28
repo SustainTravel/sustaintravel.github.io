@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
 import type { TourType } from "@/content/types";
 import { fill, type Dictionary } from "@/i18n/get-dictionary";
 
@@ -36,7 +36,7 @@ export function TourFilter({ items, t }: { items: { key: string; types: TourType
                 type="button"
                 aria-pressed={on}
                 onClick={() => choose(f)}
-                className={`min-h-11 rounded-full px-4 font-semibold transition-colors ${
+                className={`press min-h-11 rounded-full px-4 font-semibold ${
                   on ? "bg-forest text-cream" : "border-2 border-forest/20 text-forest hover:border-forest hover:bg-sage-pale/50"
                 }`}
               >
@@ -52,8 +52,8 @@ export function TourFilter({ items, t }: { items: { key: string; types: TourType
 
       {shown.length > 0 ? (
         <ul className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {shown.map((item) => (
-            <li key={item.key} className="flex flex-col">
+          {shown.map((item, i) => (
+            <li key={item.key} className="reveal flex flex-col" style={{ "--i": i % 4 } as CSSProperties}>
               {item.card}
             </li>
           ))}
@@ -64,7 +64,7 @@ export function TourFilter({ items, t }: { items: { key: string; types: TourType
           <button
             type="button"
             onClick={() => choose("all")}
-            className="mt-5 inline-flex min-h-12 items-center rounded-full bg-sun px-6 font-semibold text-bark transition-colors hover:bg-sun-deep"
+            className="press mt-5 inline-flex min-h-12 items-center rounded-full bg-sun px-6 font-semibold text-bark hover:bg-sun-deep"
           >
             {t.showAll}
           </button>

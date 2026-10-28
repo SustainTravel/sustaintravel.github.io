@@ -29,13 +29,13 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href={`/${locale}/tours/`}
-              className="inline-flex min-h-12 items-center rounded-full bg-sun px-7 text-lg font-semibold text-bark transition-colors hover:bg-sun-deep"
+              className="inline-flex min-h-12 items-center rounded-full bg-sun px-7 text-lg font-semibold text-bark press hover:bg-sun-deep"
             >
               {t.cta}
             </Link>
             <Link
               href={`/${locale}/#how`}
-              className="inline-flex min-h-12 items-center rounded-full border-2 border-forest/25 px-6 text-lg font-semibold text-forest transition-colors hover:border-forest"
+              className="inline-flex min-h-12 items-center rounded-full border-2 border-forest/25 px-6 text-lg font-semibold text-forest press hover:border-forest"
             >
               {t.secondaryCta}
             </Link>

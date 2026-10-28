@@ -235,7 +235,7 @@ export function Pin(props: P) {
 /** Layered rolling hills used as a section edge. `colors` go back-to-front; the last one should match the next section. */
 export function Hills({ colors, className }: { colors: [string, string, string]; className?: string }) {
   return (
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className={className} {...base}>
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className={`hill-drift ${className ?? ""}`} {...base}>
       <path d="M0 70C180 30 360 20 560 48s420 40 600 6 240-30 280-24v90H0z" fill={colors[0]} />
       <path d="M0 92c200-34 420-40 640-14s400 30 560 4 220-14 240-10v48H0z" fill={colors[1]} />
       <path d="M0 108c240-18 480-22 720-6s480 16 720-2v20H0z" fill={colors[2]} />

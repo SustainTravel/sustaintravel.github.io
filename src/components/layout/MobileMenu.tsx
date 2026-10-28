@@ -113,7 +113,7 @@ export function MobileMenu({ locale, items, labels }: { locale: Locale; items: N
             <Link
               href={`/${locale}/tours/`}
               onClick={close}
-              className="inline-flex min-h-12 items-center rounded-full bg-sun px-6 font-semibold text-bark hover:bg-sun-deep"
+              className="inline-flex min-h-12 items-center rounded-full bg-sun px-6 font-semibold text-bark hover:bg-sun-deep press"
             >
               {labels.cta}
             </Link>

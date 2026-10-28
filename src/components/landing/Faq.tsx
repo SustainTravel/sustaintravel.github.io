@@ -7,7 +7,7 @@ export function Faq({ dict }: { dict: Dictionary }) {
   return (
     <section id="faq" aria-labelledby="faq-title" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-20">
       <div className="grid gap-10 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
-        <h2 id="faq-title" className="font-display text-4xl leading-tight text-balance sm:text-5xl lg:sticky lg:top-28 lg:self-start">
+        <h2 id="faq-title" className="reveal font-display text-4xl leading-tight text-balance sm:text-5xl lg:sticky lg:top-28 lg:self-start">
           {t.title}
         </h2>
         <div className="border-t-2 border-sage-pale">

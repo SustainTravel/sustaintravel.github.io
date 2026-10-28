@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
@@ -8,7 +9,7 @@ export function FeaturedTours({ locale, dict }: { locale: Locale; dict: Dictiona
   const t = dict.tours.featured;
   return (
     <section id="featured" aria-labelledby="featured-title" className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:py-20">
-      <div className="flex flex-wrap items-end justify-between gap-4">
+      <div className="reveal flex flex-wrap items-end justify-between gap-4">
         <h2 id="featured-title" className="font-display text-4xl text-balance sm:text-5xl">
           {t.title}
         </h2>
@@ -22,8 +23,10 @@ export function FeaturedTours({ locale, dict }: { locale: Locale; dict: Dictiona
       <div className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 xl:grid-cols-4">
         {tours
           .filter((tour) => tour.featured)
-          .map((tour) => (
-            <TourCard key={tour.slug} tour={tour} locale={locale} dict={dict} />
+          .map((tour, i) => (
+            <div key={tour.slug} className="reveal flex flex-col" style={{ "--i": i } as CSSProperties}>
+              <TourCard tour={tour} locale={locale} dict={dict} />
+            </div>
           ))}
       </div>
     </section>

@@ -3,8 +3,8 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Decorative live landscape laid over the hero photo. three.js loads after idle, only without
- * reduced motion; on any failure (or with JS off) this stays an empty layer and the photo shows.
+ * Decorative live landscape laid over the hero photo. three.js loads after idle, only with WebGL
+ * and without reduced motion; on any failure (or with JS off) this stays an empty layer and the photo shows.
  */
 export function HeroScene() {
   const ref = useRef<HTMLDivElement>(null);
@@ -26,11 +26,16 @@ export function HeroScene() {
     const start = () => {
       const mine = ++run;
       const load = async () => {
+        // Probe first, so devices without WebGL never download three.js or log its context error.
+        const probe = document.createElement("canvas");
+        const gl = probe.getContext("webgl2") ?? probe.getContext("webgl");
+        if (!gl) return;
+        gl.getExtension("WEBGL_lose_context")?.loseContext();
         try {
           const { mountLandscape } = await import("./hero-landscape");
           if (mine === run) dispose = mountLandscape(host, () => (host.dataset.ready = ""));
         } catch {
-          // No WebGL or the chunk failed to load: the photo stays.
+          // The chunk failed to load or the scene threw: the photo stays.
         }
       };
       if ("requestIdleCallback" in window) {

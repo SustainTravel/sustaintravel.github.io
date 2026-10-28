@@ -12,10 +12,10 @@ export function Contact({ dict }: { dict: Dictionary }) {
     <section id="contact" aria-labelledby="contact-title" className="gingham -mb-16 pt-16 pb-32 sm:-mb-24 sm:pb-44 lg:pt-24">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[1fr_1.1fr] lg:items-start lg:gap-16">
         <div>
-          <h2 id="contact-title" className="font-display text-4xl leading-tight text-balance sm:text-5xl">
+          <h2 id="contact-title" className="reveal font-display text-4xl leading-tight text-balance sm:text-5xl">
             {t.title}
           </h2>
-          <p className="mt-4 max-w-lg text-lg leading-relaxed">{t.lead}</p>
+          <p className="reveal mt-4 max-w-lg text-lg leading-relaxed">{t.lead}</p>
           <a
             href={`mailto:${dict.footer.email}`}
             className="mt-6 inline-flex min-h-11 items-center gap-2 font-semibold underline decoration-sun decoration-2 underline-offset-4"

@@ -7,17 +7,17 @@ export function About({ dict }: { dict: Dictionary }) {
     <section id="about" aria-labelledby="about-title" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:py-24">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
-          <h2 id="about-title" className="max-w-xl font-display text-4xl leading-tight text-balance sm:text-5xl">
+          <h2 id="about-title" className="reveal max-w-xl font-display text-4xl leading-tight text-balance sm:text-5xl">
             {t.title}
           </h2>
-          <div className="mt-6 max-w-xl space-y-4 text-lg leading-relaxed">
+          <div className="reveal mt-6 max-w-xl space-y-4 text-lg leading-relaxed">
             {t.story.map((para) => (
               <p key={para.slice(0, 24)}>{para}</p>
             ))}
           </div>
         </div>
 
-        <figure>
+        <figure className="reveal">
           <div className="relative aspect-[3/2] overflow-hidden rounded-[2rem] bg-sage-pale ring-2 ring-sage-pale">
             <Image
               src="/images/team.jpg"

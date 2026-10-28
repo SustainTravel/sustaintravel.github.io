@@ -88,7 +88,7 @@ export function ContactForm({ t }: { t: Dictionary["contact"] }) {
       </label>
       <button
         type="submit"
-        className="inline-flex min-h-12 items-center justify-center justify-self-start rounded-full bg-sun px-8 text-lg font-semibold text-bark transition-colors hover:bg-sun-deep"
+        className="inline-flex min-h-12 items-center justify-center justify-self-start rounded-full bg-sun px-8 text-lg font-semibold text-bark press hover:bg-sun-deep"
       >
         {t.submit}
       </button>

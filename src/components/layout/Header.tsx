@@ -38,7 +38,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
 
         <Link
           href={`/${locale}/tours/`}
-          className="hidden min-h-11 items-center rounded-full bg-sun px-4 font-semibold whitespace-nowrap text-bark transition-colors hover:bg-sun-deep md:inline-flex lg:px-5"
+          className="hidden min-h-11 items-center rounded-full bg-sun px-4 font-semibold whitespace-nowrap text-bark press hover:bg-sun-deep md:inline-flex lg:px-5"
         >
           {dict.common.bookTrip}
         </Link>

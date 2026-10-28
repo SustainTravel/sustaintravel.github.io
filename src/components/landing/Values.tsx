@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { BasketLine, Bike, Bus, Hills, Home, Moon, Tree } from "@/components/icons";
 
@@ -11,16 +12,16 @@ export function Values({ dict }: { dict: Dictionary }) {
       {/* Same hills, upside down: the band ends in a ridge instead of a straight edge. */}
       <Hills colors={["#ebeedb", "#e5ebd3", "#dfe7cc"]} className="absolute top-full h-10 w-full rotate-180 sm:h-16" />
       <div className="mx-auto max-w-7xl px-5 pt-10 pb-16 sm:px-8 lg:pb-24">
-        <h2 id="values-title" className="max-w-2xl font-display text-4xl leading-tight text-balance text-bark sm:text-5xl">
+        <h2 id="values-title" className="reveal max-w-2xl font-display text-4xl leading-tight text-balance text-bark sm:text-5xl">
           {t.title}
         </h2>
-        <p className="mt-4 max-w-xl text-lg leading-relaxed text-bark">{t.lead}</p>
+        <p className="reveal mt-4 max-w-xl text-lg leading-relaxed text-bark">{t.lead}</p>
         <ul className="mt-10 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-          {(Object.keys(icons) as (keyof typeof icons)[]).map((key) => {
+          {(Object.keys(icons) as (keyof typeof icons)[]).map((key, i) => {
             const Icon = icons[key];
             const item = t.items[key];
             return (
-              <li key={key} className="flex gap-4">
+              <li key={key} className="reveal flex gap-4" style={{ "--i": i % 3 } as CSSProperties}>
                 <span className="grid size-14 shrink-0 place-items-center rounded-full bg-cream text-forest ring-2 ring-forest/10">
                   <Icon className="size-7" />
                 </span>

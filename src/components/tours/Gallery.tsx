@@ -42,7 +42,7 @@ export function Gallery({ images, title, t }: { images: string[]; title: string;
 
   // aria-disabled, not disabled: a disabled button drops keyboard focus at the end of the strip.
   const button =
-    "grid size-12 place-items-center rounded-full border-2 border-forest/20 bg-cream text-forest transition-colors hover:border-forest hover:bg-sage-pale/50 aria-disabled:cursor-default aria-disabled:border-forest/10 aria-disabled:text-forest/35 aria-disabled:hover:border-forest/10 aria-disabled:hover:bg-cream";
+    "grid size-12 place-items-center rounded-full border-2 border-forest/20 bg-cream text-forest press hover:border-forest hover:bg-sage-pale/50 aria-disabled:cursor-default aria-disabled:border-forest/10 aria-disabled:text-forest/35 aria-disabled:hover:border-forest/10 aria-disabled:hover:bg-cream";
 
   return (
     <div>

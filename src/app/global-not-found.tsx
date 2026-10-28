@@ -44,13 +44,13 @@ export default function GlobalNotFound() {
                 <div className="mt-auto flex flex-wrap justify-center gap-3 pt-6">
                   <Link
                     href={`/${locale}/`}
-                    className="inline-flex min-h-12 items-center rounded-full bg-sun px-6 font-semibold text-bark transition-colors hover:bg-sun-deep"
+                    className="inline-flex min-h-12 items-center rounded-full bg-sun px-6 font-semibold text-bark press hover:bg-sun-deep"
                   >
                     {t.home}
                   </Link>
                   <Link
                     href={`/${locale}/tours/`}
-                    className="inline-flex min-h-12 items-center rounded-full border-2 border-forest/25 px-5 font-semibold transition-colors hover:border-forest"
+                    className="inline-flex min-h-12 items-center rounded-full border-2 border-forest/25 px-5 font-semibold press hover:border-forest"
                   >
                     {t.tours}
                   </Link>

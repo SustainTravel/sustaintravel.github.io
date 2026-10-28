@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 // No checkout (owner decision): a real, styled, focusable button that intentionally does nothing.
 const bookButton =
-  "min-h-12 items-center justify-center rounded-full bg-sun font-semibold whitespace-nowrap text-bark transition-colors hover:bg-sun-deep active:bg-sun-press";
+  "min-h-12 items-center justify-center rounded-full bg-sun font-semibold whitespace-nowrap text-bark hover:bg-sun-deep active:bg-sun-press press";
 
 export default async function TourPage({ params }: Props) {
   const { locale, slug } = await params;

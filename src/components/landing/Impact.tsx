@@ -1,5 +1,6 @@
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { Birds, Hills } from "@/components/icons";
+import { CountUp } from "./CountUp";
 
 export function Impact({ dict }: { dict: Dictionary }) {
   const t = dict.impact;
@@ -10,15 +11,17 @@ export function Impact({ dict }: { dict: Dictionary }) {
       <Hills colors={["#c9d8b0", "#8baa6b", "#2f5d3a"]} className="absolute top-full h-12 w-full rotate-180 sm:h-20" />
       <div className="relative mx-auto max-w-7xl px-5 pt-10 pb-16 sm:px-8 lg:pb-24">
         <Birds className="absolute top-6 right-6 w-16 text-sage-pale/70 sm:right-10 sm:w-20" />
-        <h2 id="impact-title" className="max-w-xl pr-16 font-display text-4xl leading-tight text-balance sm:text-5xl">
+        <h2 id="impact-title" className="reveal max-w-xl pr-16 font-display text-4xl leading-tight text-balance sm:text-5xl">
           {t.title}
         </h2>
-        <p className="mt-4 max-w-xl text-lg leading-relaxed text-sage-pale">{t.lead}</p>
+        <p className="reveal mt-4 max-w-xl text-lg leading-relaxed text-sage-pale">{t.lead}</p>
         <dl className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-4">
           {stats.map((s) => (
             <div key={s.label} className="flex flex-col-reverse justify-end gap-2 border-l-2 border-sun/60 pl-4 sm:pl-6">
               <dt className="leading-snug text-sage-pale">{s.label}</dt>
-              <dd className="font-display text-4xl text-sun tabular-nums sm:text-6xl">{s.value}</dd>
+              <dd className="font-display text-4xl text-sun tabular-nums sm:text-6xl">
+                <CountUp value={s.value} />
+              </dd>
             </div>
           ))}
         </dl>

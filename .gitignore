@@ -2,3 +2,10 @@
 node_modules/
 .next/
 out/
+# misc
+.DS_Store
+*.pem
+.env*
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*

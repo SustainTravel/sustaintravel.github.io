@@ -51,7 +51,7 @@ export function Gallery({ images, title, t }: { images: string[]; title: string;
         onScroll={onScroll}
         tabIndex={edge.scrollable ? 0 : undefined}
         aria-label={t.label}
-        className="flex snap-x focus-visible:outline-offset-[-3px] snap-mandatory scroll-px-5 gap-4 overflow-x-auto overscroll-x-contain scroll-smooth px-5 pb-2 [scrollbar-width:none] sm:scroll-px-8 sm:px-8 lg:mx-auto lg:max-w-7xl lg:items-end lg:overflow-visible [&::-webkit-scrollbar]:hidden"
+        className="reveal reveal-group flex snap-x focus-visible:outline-offset-[-3px] snap-mandatory scroll-px-5 gap-4 overflow-x-auto overscroll-x-contain scroll-smooth px-5 pb-2 [scrollbar-width:none] sm:scroll-px-8 sm:px-8 lg:mx-auto lg:max-w-7xl lg:items-end lg:overflow-visible [&::-webkit-scrollbar]:hidden"
       >
         {images.map((src, i) => (
           <li

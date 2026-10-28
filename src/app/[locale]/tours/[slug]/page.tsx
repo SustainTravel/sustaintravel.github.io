@@ -47,7 +47,7 @@ export default async function TourPage({ params }: Props) {
           <Chevron className="size-4 rotate-180" />
           {dict.common.backToTours}
         </Link>
-        <div className="relative mt-4 max-w-4xl">
+        <div className="enter relative mt-4 max-w-4xl">
           <p className="flex items-center gap-1.5 font-medium text-leaf">
             <Pin className="size-5 shrink-0" />
             {tour.region[locale]}
@@ -76,7 +76,7 @@ export default async function TourPage({ params }: Props) {
       <div className="mx-auto mt-10 grid max-w-7xl gap-12 px-5 pb-16 sm:px-8 lg:mt-16 lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-16 lg:pb-24 xl:grid-cols-[minmax(0,1fr)_23rem]">
         {/* Facts first in the DOM (they open the page on mobile); from lg they become the sticky side card. */}
         <aside aria-label={t.facts.label} className="lg:sticky lg:top-28 lg:col-start-2 lg:row-start-1 lg:self-start">
-          <div className="rounded-3xl bg-meadow p-6 text-bark sm:p-7">
+          <div className="reveal reveal-card rounded-3xl bg-meadow p-6 text-bark sm:p-7">
             <p className="text-sm font-semibold text-leaf">{t.facts.price}</p>
             <p className="mt-1 font-display text-4xl leading-tight">{price}</p>
             <p>{dict.common.perPerson}</p>
@@ -102,7 +102,7 @@ export default async function TourPage({ params }: Props) {
         </aside>
 
         <div className="min-w-0 lg:col-start-1 lg:row-start-1">
-          <section aria-labelledby="overview-title">
+          <section aria-labelledby="overview-title" className="reveal">
             <h2 id="overview-title" className="sr-only">
               {t.overview}
             </h2>
@@ -112,7 +112,7 @@ export default async function TourPage({ params }: Props) {
           </section>
 
           {tour.allowedMonths && (
-            <section aria-labelledby="offseason-title" className="mt-10 flex max-w-2xl gap-4 rounded-3xl border-2 border-dashed border-wicker/50 p-5 sm:p-6">
+            <section aria-labelledby="offseason-title" className="reveal mt-10 flex max-w-2xl gap-4 rounded-3xl border-2 border-dashed border-wicker/50 p-5 sm:p-6">
               <span className="grid size-10 shrink-0 place-items-center rounded-full bg-forest text-sun sm:size-12">
                 <Moon className="size-6" />
               </span>
@@ -125,7 +125,7 @@ export default async function TourPage({ params }: Props) {
             </section>
           )}
 
-          <section aria-labelledby="highlights-title" className="mt-14">
+          <section aria-labelledby="highlights-title" className="reveal mt-14">
             <h2 id="highlights-title" className="font-display text-3xl sm:text-4xl">
               {t.highlights}
             </h2>
@@ -139,7 +139,7 @@ export default async function TourPage({ params }: Props) {
             </ul>
           </section>
 
-          <section aria-labelledby="itinerary-title" className="mt-16">
+          <section aria-labelledby="itinerary-title" className="reveal mt-16">
             <h2 id="itinerary-title" className="font-display text-3xl sm:text-4xl">
               {t.itinerary}
             </h2>
@@ -147,7 +147,7 @@ export default async function TourPage({ params }: Props) {
             <Itinerary days={tour.itinerary} locale={locale} dayLabel={t.day} />
           </section>
 
-          <section aria-labelledby="food-title" className="gingham mt-16 rounded-3xl p-3 sm:p-5">
+          <section aria-labelledby="food-title" className="reveal reveal-card gingham mt-16 rounded-3xl p-3 sm:p-5">
             <div className="rounded-2xl bg-cream px-5 py-7 sm:px-8">
               <h2 id="food-title" className="font-display text-3xl sm:text-4xl">
                 {t.food}
@@ -169,7 +169,7 @@ export default async function TourPage({ params }: Props) {
           </section>
 
           <div className="mt-16 grid gap-10 sm:grid-cols-2">
-            <section aria-labelledby="included-title">
+            <section aria-labelledby="included-title" className="reveal">
               <h2 id="included-title" className="font-display text-2xl sm:text-3xl">
                 {t.included}
               </h2>
@@ -182,7 +182,7 @@ export default async function TourPage({ params }: Props) {
                 ))}
               </ul>
             </section>
-            <section aria-labelledby="not-included-title">
+            <section aria-labelledby="not-included-title" className="reveal">
               <h2 id="not-included-title" className="font-display text-2xl sm:text-3xl">
                 {t.notIncluded}
               </h2>
@@ -197,7 +197,7 @@ export default async function TourPage({ params }: Props) {
             </section>
           </div>
 
-          <section aria-labelledby="impact-title" className="on-dark relative mt-16 overflow-hidden rounded-3xl bg-forest p-6 text-cream sm:p-8">
+          <section aria-labelledby="impact-title" className="reveal reveal-card on-dark relative mt-16 overflow-hidden rounded-3xl bg-forest p-6 text-cream sm:p-8">
             <Sun className="absolute -top-6 -right-6 size-28 opacity-90" />
             <Birds className="absolute top-9 right-28 w-12 text-sage-pale/60" />
             <span className="grid size-12 place-items-center rounded-full bg-cream/10 text-sun">
@@ -209,7 +209,7 @@ export default async function TourPage({ params }: Props) {
             <p className="mt-3 max-w-xl text-lg leading-relaxed text-sage-pale">{tour.impact[locale]}</p>
           </section>
 
-          <section aria-labelledby="transport-title" className="mt-10 flex max-w-2xl flex-col gap-4 sm:flex-row">
+          <section aria-labelledby="transport-title" className="reveal mt-10 flex max-w-2xl flex-col gap-4 sm:flex-row">
             <span className="flex shrink-0 gap-2 sm:flex-col">
               <span className="grid size-12 place-items-center rounded-full bg-sage-pale/70 text-forest">
                 <Bus className="size-6" />

@@ -9,7 +9,7 @@ const base = { "aria-hidden": true, focusable: false } as const;
 export function Arc(props: P) {
   return (
     <svg viewBox="0 0 200 200" fill="none" {...base} {...props}>
-      <path d="M168 150A86 86 0 1 1 182 82" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
+      <path d="M168 150A86 86 0 1 1 182 82" pathLength={1} stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
     </svg>
   );
 }

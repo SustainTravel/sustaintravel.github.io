@@ -17,7 +17,7 @@ export function About({ dict }: { dict: Dictionary }) {
           </div>
         </div>
 
-        <figure className="reveal">
+        <figure className="reveal reveal-card">
           <div className="relative aspect-[3/2] overflow-hidden rounded-[2rem] bg-sage-pale ring-2 ring-sage-pale">
             <Image
               src="/images/team.jpg"

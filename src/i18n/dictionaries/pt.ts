@@ -36,7 +36,6 @@ export const pt: Dictionary = {
     lead: "Uma semana ou mais por aldeias de xisto, montados de sobro e costas sossegadas de inverno. Plante árvores, pedale por antigas linhas de comboio, prove o que os vizinhos cultivam, e chegue a todo o lado de bicicleta ou de carro elétrico.",
     cta: "Ver viagens",
     secondaryCta: "Como funciona",
-    imageAlt: "Um sobreiro solitário num prado verde do Alentejo",
   },
 
   different: {

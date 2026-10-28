@@ -19,6 +19,8 @@
 
   /* Strong ease-out for entrances and hover settle. */
   --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+  /* Strong ease-in-out for things that move or draw on screen. */
+  --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
 
   --font-display: var(--nf-display), Georgia, serif;
   --font-body: var(--nf-body), system-ui, sans-serif;
@@ -90,13 +92,45 @@ dialog.menu-sheet::backdrop {
 }
 
 /*
- * Motion. Everything here is opt-in: content is fully visible by default and only animates where the
- * browser supports scroll-driven animations and the visitor has not asked for reduced motion.
+ * Motion. Everything here is opt-in: content is fully visible by default. Entrances use the individual
+ * translate / scale properties, so they never fight the transform-based hover lift on tour cards.
  */
-@keyframes reveal {
+@keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    translate: 0 16px;
+  }
+}
+/* Page-load entrances start at 0.01, not 0: Chrome skips fully transparent paints for LCP, which would push LCP back
+   to the end of the hero fade. 0.01 looks the same. */
+@keyframes enter {
+  from {
+    opacity: 0.01;
+    translate: 0 16px;
+  }
+}
+@keyframes rise-card {
+  from {
+    opacity: 0;
+    translate: 0 24px;
+    scale: 0.97;
+  }
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    scale: 0.96;
+  }
+}
+@keyframes circle-in {
+  from {
+    opacity: 0;
+    scale: 0.94;
+  }
+}
+@keyframes arc-draw {
+  from {
+    stroke-dashoffset: 1.05;
   }
 }
 @keyframes hill-drift {
@@ -105,26 +139,58 @@ dialog.menu-sheet::backdrop {
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) {
-    /*
-     * Scrubbed by scroll: done once the first ~160px of the element are on screen. Ease-out cubic, gentler
-     * than the UI curve, because a strong curve finishes within the first few px of scroll.
-     */
-    .reveal {
-      animation-name: reveal;
-      animation-fill-mode: both;
-      animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
-      animation-timeline: view();
-      animation-range: entry 0% entry 160px;
-    }
-    /* Light stagger for items side by side (--i is the column); a single column staggers by itself. */
-    @media (width >= 40rem) {
-      .reveal {
-        animation-range: entry calc(var(--i, 0) * 40px) entry calc(160px + var(--i, 0) * 40px);
-      }
-    }
+/*
+ * On scroll: the inline script in the locale layout sets data-reveal on <html> and data-shown on each element as
+ * it comes into view (plus its stagger delay). Without that script nothing is hidden. Screen only, so print
+ * never comes out blank.
+ */
+@media screen and (prefers-reduced-motion: no-preference) {
+  [data-reveal] .reveal:not([data-shown]) {
+    opacity: 0;
+  }
+  [data-reveal] .reveal[data-shown] {
+    animation: rise 640ms var(--ease-out-strong) backwards;
+  }
+  [data-reveal] .reveal-card[data-shown] {
+    animation-name: rise-card;
+    animation-duration: 700ms;
+  }
+  /*
+   * Gallery: the strip reveals as one, its photos cascade. Per-photo reveals would replay on every swipe, and a
+   * vertical offset inside the horizontal scroller would add overflow, so scale only.
+   */
+  [data-reveal] .reveal-group[data-shown] {
+    animation: none;
+  }
+  [data-reveal] .reveal-group[data-shown] > * {
+    animation: pop 640ms var(--ease-out-strong) backwards;
+  }
+  [data-reveal] .reveal-group[data-shown] > :nth-child(2) {
+    animation-delay: 70ms;
+  }
+  [data-reveal] .reveal-group[data-shown] > :nth-child(3) {
+    animation-delay: 140ms;
+  }
+  [data-reveal] .reveal-group[data-shown] > :nth-child(n + 4) {
+    animation-delay: 210ms;
+  }
+}
 
+@media (prefers-reduced-motion: no-preference) {
+  /* Page-load entrances: pure CSS, so they start on first paint and never wait for JS. All done within ~1s. */
+  .enter {
+    animation: enter 600ms var(--ease-out-strong) backwards;
+  }
+  .hero-circle {
+    animation: circle-in 700ms var(--ease-out-strong) 80ms backwards;
+  }
+  /* The Arc's path has pathLength=1: a dash of 1 slides in from just past the start, so the ring draws itself. */
+  .hero-arc path {
+    stroke-dasharray: 1 2;
+    animation: arc-draw 900ms var(--ease-in-out-strong) 100ms backwards;
+  }
+
+  @supports (animation-timeline: view()) {
     /* Hills sink a few px into their band as it scrolls by. Only towards the band, so no gap opens. */
     .hill-drift {
       animation-name: hill-drift;

@@ -12,7 +12,7 @@ export function Faq({ dict }: { dict: Dictionary }) {
         </h2>
         <div className="border-t-2 border-sage-pale">
           {t.items.map((item) => (
-            <details key={item.q} className="group border-b-2 border-sage-pale">
+            <details key={item.q} className="reveal group border-b-2 border-sage-pale">
               <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-xl leading-snug [&::-webkit-details-marker]:hidden">
                 {item.q}
                 <span className="grid size-10 shrink-0 place-items-center rounded-full bg-sage-pale/70 transition-transform duration-300 group-open:rotate-45">

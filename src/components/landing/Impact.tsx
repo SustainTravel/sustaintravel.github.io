@@ -17,7 +17,7 @@ export function Impact({ dict }: { dict: Dictionary }) {
         <p className="reveal mt-4 max-w-xl text-lg leading-relaxed text-sage-pale">{t.lead}</p>
         <dl className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-4">
           {stats.map((s) => (
-            <div key={s.label} className="flex flex-col-reverse justify-end gap-2 border-l-2 border-sun/60 pl-4 sm:pl-6">
+            <div key={s.label} className="reveal flex flex-col-reverse justify-end gap-2 border-l-2 border-sun/60 pl-4 sm:pl-6">
               <dt className="leading-snug text-sage-pale">{s.label}</dt>
               <dd className="font-display text-4xl text-sun tabular-nums sm:text-6xl">
                 <CountUp value={s.value} />

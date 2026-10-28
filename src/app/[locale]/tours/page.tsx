@@ -26,10 +26,10 @@ export default async function ToursPage({ params }: Props) {
         <div className="relative mx-auto max-w-7xl px-5 pt-10 pb-16 sm:px-8 sm:pb-24 lg:pt-16">
           <Sun className="absolute top-6 right-5 size-10 sm:top-8 sm:right-10 sm:size-20 lg:top-14" />
           <Birds className="absolute top-32 right-36 hidden w-16 text-forest lg:block" />
-          <h1 id="tours-title" className="max-w-3xl pr-10 font-display text-[2.25rem] leading-[1.05] text-balance text-bark sm:pr-24 lg:pr-0 sm:text-6xl lg:text-7xl">
+          <h1 id="tours-title" className="enter max-w-3xl pr-10 font-display text-[2.25rem] leading-[1.05] text-balance text-bark sm:pr-24 lg:pr-0 sm:text-6xl lg:text-7xl">
             {t.title}
           </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-bark sm:text-xl sm:leading-relaxed">{t.lead}</p>
+          <p style={{ animationDelay: "80ms" }} className="enter mt-5 max-w-2xl text-lg leading-relaxed text-bark sm:text-xl sm:leading-relaxed">{t.lead}</p>
         </div>
       </section>
       <div className="relative">

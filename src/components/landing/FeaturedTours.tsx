@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import Link from "next/link";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
@@ -23,8 +22,8 @@ export function FeaturedTours({ locale, dict }: { locale: Locale; dict: Dictiona
       <div className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 xl:grid-cols-4">
         {tours
           .filter((tour) => tour.featured)
-          .map((tour, i) => (
-            <div key={tour.slug} className="reveal flex flex-col" style={{ "--i": i } as CSSProperties}>
+          .map((tour) => (
+            <div key={tour.slug} className="reveal reveal-card flex flex-col">
               <TourCard tour={tour} locale={locale} dict={dict} />
             </div>
           ))}

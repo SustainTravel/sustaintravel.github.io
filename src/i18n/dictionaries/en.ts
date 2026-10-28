@@ -35,7 +35,6 @@ export const en = {
     lead: "Week-long journeys through schist villages, cork-oak plains and quiet winter coasts. Plant trees, cycle old railway lines, eat what the neighbours grow, and arrive everywhere by bike or electric car.",
     cta: "Explore tours",
     secondaryCta: "How it works",
-    imageAlt: "A lone cork oak in a green Alentejo meadow",
   },
 
   different: {

@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { Hands, Village, WinterSun } from "@/components/icons";
 
@@ -16,7 +15,7 @@ export function Different({ dict }: { dict: Dictionary }) {
         {t.points.map((p, i) => {
           const Icon = icons[i];
           return (
-            <li key={p.title} className="reveal border-t-2 border-sage-pale pt-6" style={{ "--i": i } as CSSProperties}>
+            <li key={p.title} className="reveal border-t-2 border-sage-pale pt-6">
               <Icon className="size-14" />
               <h3 className="mt-4 font-display text-2xl">{p.title}</h3>
               <p className="mt-2 leading-relaxed">{p.body}</p>

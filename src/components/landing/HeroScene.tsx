@@ -3,8 +3,8 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Decorative live landscape laid over the hero photo. three.js loads after idle, only with WebGL
- * and without reduced motion; on any failure (or with JS off) this stays an empty layer and the photo shows.
+ * Decorative live landscape laid over the hero's logo poster. three.js loads after idle, only with WebGL
+ * and without reduced motion; on any failure (or with JS off) this stays an empty layer and the logo shows.
  */
 export function HeroScene() {
   const ref = useRef<HTMLDivElement>(null);
@@ -35,7 +35,7 @@ export function HeroScene() {
           const { mountLandscape } = await import("./hero-landscape");
           if (mine === run) dispose = mountLandscape(host, () => (host.dataset.ready = ""));
         } catch {
-          // The chunk failed to load or the scene threw: the photo stays.
+          // The chunk failed to load or the scene threw: the logo stays.
         }
       };
       if ("requestIdleCallback" in window) {

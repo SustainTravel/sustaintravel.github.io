@@ -5,6 +5,7 @@ import { isLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { revealScript } from "@/lib/reveal-script";
 import { body, display } from "../fonts";
 import "../globals.css";
 
@@ -35,7 +36,11 @@ export default async function LocaleLayout({ children, params }: Props) {
   if (!isLocale(locale)) notFound();
   const dict = getDictionary(locale);
   return (
-    <html lang={locale === "pt" ? "pt-PT" : "en"} className={`${display.variable} ${body.variable}`}>
+    <html lang={locale === "pt" ? "pt-PT" : "en"} className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
+      {/* suppressHydrationWarning: the inline script below adds data-reveal to <html> before React hydrates. */}
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: revealScript }} />
+      </head>
       <body className="flex min-h-dvh flex-col">
         <a
           href="#main"

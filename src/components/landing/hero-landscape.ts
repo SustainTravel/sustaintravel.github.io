@@ -51,7 +51,7 @@ export function mountLandscape(host: HTMLElement, onFirstFrame: () => void): () 
   const lite = matchMedia("(pointer: coarse)").matches || host.clientWidth < 420;
   const finePointer = matchMedia("(pointer: fine)").matches;
 
-  // Throws when WebGL is unavailable; the caller keeps the photo.
+  // Throws when WebGL is unavailable; the caller keeps the logo poster.
   const renderer = new WebGLRenderer({ antialias: true, powerPreference: "low-power" });
   renderer.setPixelRatio(Math.min(devicePixelRatio, lite ? 1.5 : 2));
   const canvas = renderer.domElement;

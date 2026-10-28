@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { BasketLine, Bike, Bus, Hills, Home, Moon, Tree } from "@/components/icons";
 
@@ -17,11 +16,11 @@ export function Values({ dict }: { dict: Dictionary }) {
         </h2>
         <p className="reveal mt-4 max-w-xl text-lg leading-relaxed text-bark">{t.lead}</p>
         <ul className="mt-10 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-          {(Object.keys(icons) as (keyof typeof icons)[]).map((key, i) => {
+          {(Object.keys(icons) as (keyof typeof icons)[]).map((key) => {
             const Icon = icons[key];
             const item = t.items[key];
             return (
-              <li key={key} className="reveal flex gap-4" style={{ "--i": i % 3 } as CSSProperties}>
+              <li key={key} className="reveal flex gap-4">
                 <span className="grid size-14 shrink-0 place-items-center rounded-full bg-cream text-forest ring-2 ring-forest/10">
                   <Icon className="size-7" />
                 </span>

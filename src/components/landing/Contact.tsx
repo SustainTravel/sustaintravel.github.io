@@ -18,13 +18,13 @@ export function Contact({ dict }: { dict: Dictionary }) {
           <p className="reveal mt-4 max-w-lg text-lg leading-relaxed">{t.lead}</p>
           <a
             href={`mailto:${dict.footer.email}`}
-            className="mt-6 inline-flex min-h-11 items-center gap-2 font-semibold underline decoration-sun decoration-2 underline-offset-4"
+            className="reveal mt-6 inline-flex min-h-11 items-center gap-2 font-semibold underline decoration-sun decoration-2 underline-offset-4"
           >
             <Mail className="size-5" />
             {dict.footer.email}
           </a>
         </div>
-        <div className="rounded-3xl bg-cream p-6 shadow-[0_2px_0_#c9d8b0,0_18px_40px_-24px_rgb(47_93_58/0.45)] sm:p-10">
+        <div className="reveal reveal-card rounded-3xl bg-cream p-6 shadow-[0_2px_0_#c9d8b0,0_18px_40px_-24px_rgb(47_93_58/0.45)] sm:p-10">
           <ContactForm t={t} />
         </div>
       </div>

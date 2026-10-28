@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import type { Dictionary } from "@/i18n/get-dictionary";
 
 /** A real sequence, so it gets numbers, set in the logo's open circle and joined by a winding path. */
@@ -28,7 +27,7 @@ export function HowItWorks({ dict }: { dict: Dictionary }) {
         </svg>
         <ol className="relative grid gap-10 md:grid-cols-3 md:gap-12">
           {t.steps.map((step, i) => (
-            <li key={step.title} className="reveal flex gap-5 md:block" style={{ "--i": i } as CSSProperties}>
+            <li key={step.title} className="reveal flex gap-5 md:block">
               <span className="relative grid size-[4.5rem] shrink-0 place-items-center rounded-full bg-cream font-display text-4xl text-forest">
                 <svg viewBox="0 0 72 72" className="absolute inset-0 size-full" aria-hidden>
                   <path d="M58 58A31 31 0 1 1 66 32" fill="none" stroke="#2f5d3a" strokeWidth="2.5" strokeLinecap="round" />

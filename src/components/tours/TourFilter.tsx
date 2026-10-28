@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import type { TourType } from "@/content/types";
 import { fill, type Dictionary } from "@/i18n/get-dictionary";
 
@@ -52,8 +52,8 @@ export function TourFilter({ items, t }: { items: { key: string; types: TourType
 
       {shown.length > 0 ? (
         <ul className="mt-10 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {shown.map((item, i) => (
-            <li key={item.key} className="reveal flex flex-col" style={{ "--i": i % 4 } as CSSProperties}>
+          {shown.map((item) => (
+            <li key={item.key} className="reveal reveal-card flex flex-col">
               {item.card}
             </li>
           ))}

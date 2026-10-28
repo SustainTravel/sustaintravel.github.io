@@ -235,7 +235,7 @@ export const pt: Dictionary = {
     },
     eyebrow: "As nossas viagens",
     title: "Sete maneiras lentas de percorrer Portugal",
-    lead: "Todas as viagens duram pelo menos uma semana, deslocam-se de bicicleta e em veículos elétricos, e comem com produtores locais. Escolha o ritmo que lhe convém.",
+    lead: "Todas as viagens duram pelo menos uma semana, deslocam-se em veículos elétricos e muitas vezes de bicicleta, e comem com produtores locais. Escolha o ritmo que lhe convém.",
     featured: {
       eyebrow: "Viagens em destaque",
       title: "Por onde começar",
@@ -289,7 +289,8 @@ export const pt: Dictionary = {
     impact: "O seu impacto",
     transport: {
       title: "Como nos deslocamos",
-      body: "Todas as deslocações são feitas em carro ou autocarro elétrico. Nos dias de bicicleta, segue-se de um sítio para o outro a pedalar — pode juntar uma bicicleta elétrica para as subidas — e a bagagem vai à frente.",
+      ev: "Todas as deslocações são feitas em carro ou autocarro elétrico.",
+      bike: "Nos dias de bicicleta, segue-se de um sítio para o outro a pedalar — há bicicletas elétricas para as subidas — e a bagagem vai à frente.",
     },
     offSeason: {
       title: "Porquê só de novembro a março?",

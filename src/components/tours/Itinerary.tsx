@@ -4,8 +4,8 @@ import { fill } from "@/i18n/get-dictionary";
 import { Plus } from "@/components/icons";
 
 /**
- * Day-by-day path. Native <details> so each day folds on small screens without JS;
- * from lg the closed content is forced visible via ::details-content (older browsers just keep it collapsible).
+ * Day-by-day path. Native <details> at every width (day 1 open): no JS, and the announced
+ * expanded/collapsed state always matches what is on screen.
  */
 export function Itinerary({ days, locale, dayLabel }: { days: ItineraryDay[]; locale: Locale; dayLabel: string }) {
   return (
@@ -22,13 +22,13 @@ export function Itinerary({ days, locale, dayLabel }: { days: ItineraryDay[]; lo
           >
             {i + 1}
           </span>
-          <details open={i === 0} className="group lg:details-content:[content-visibility:visible]">
-            <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-2 lg:pointer-events-none lg:cursor-auto [&::-webkit-details-marker]:hidden">
+          <details open={i === 0} className="group">
+            <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-2 [&::-webkit-details-marker]:hidden">
               <span>
                 <span className="block text-sm font-semibold text-leaf">{fill(dayLabel, { n: i + 1 })}</span>
                 <span className="block font-display text-xl leading-snug text-forest">{day.title[locale]}</span>
               </span>
-              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-sage-pale/70 transition-transform duration-300 group-open:rotate-45 lg:hidden">
+              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-sage-pale/70 transition-transform duration-300 group-open:rotate-45">
                 <Plus className="size-5" />
               </span>
             </summary>

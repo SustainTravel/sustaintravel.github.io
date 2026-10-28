@@ -234,7 +234,7 @@ export const en = {
     },
     eyebrow: "Our journeys",
     title: "Seven slow ways through Portugal",
-    lead: "Every journey runs for at least a week, travels by bike and electric vehicle, and eats with local producers. Pick the rhythm that suits you.",
+    lead: "Every journey runs for at least a week, travels by electric vehicle and often by bike, and eats with local producers. Pick the rhythm that suits you.",
     featured: {
       eyebrow: "Featured journeys",
       title: "Where to start",
@@ -288,7 +288,8 @@ export const en = {
     impact: "Your impact",
     transport: {
       title: "Getting around",
-      body: "All transfers are in electric cars or electric buses. On bike days you ride from place to place — e-bikes can be added for the hills — and your luggage travels ahead.",
+      ev: "All transfers are in electric cars or electric buses.",
+      bike: "On bike days you ride from place to place — e-bikes are on hand for the hills — and your luggage travels ahead.",
     },
     offSeason: {
       title: "Why only November to March?",

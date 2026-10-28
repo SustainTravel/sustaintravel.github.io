@@ -8,13 +8,13 @@ const notIncluded: Localized<string[]> = {
     "Travel to and from Portugal",
     "Travel insurance",
     "Drinks outside meals and personal expenses",
-    "Optional extras chosen at booking",
+    "Optional extras, arranged with us on request",
   ],
   pt: [
     "Viagem de ida e volta para Portugal",
     "Seguro de viagem",
     "Bebidas fora das refeições e despesas pessoais",
-    "Extras opcionais escolhidos na reserva",
+    "Extras opcionais, combinados connosco a pedido",
   ],
 };
 

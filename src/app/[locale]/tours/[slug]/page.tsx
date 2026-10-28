@@ -220,7 +220,10 @@ export default async function TourPage({ params }: Props) {
               <h2 id="transport-title" className="font-display text-2xl">
                 {t.transport.title}
               </h2>
-              <p className="mt-2 leading-relaxed">{t.transport.body}</p>
+              <p className="mt-2 leading-relaxed">
+                {t.transport.ev}
+                {tour.badges.bike && ` ${t.transport.bike}`}
+              </p>
             </div>
           </section>
         </div>

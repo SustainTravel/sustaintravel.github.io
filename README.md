@@ -2,11 +2,13 @@
 
 A bilingual (English / European Portuguese) demo website for Sustain, a slow-travel agency in rural Portugal. It is a fully static Next.js site: no server, no database and no checkout. The "Book this journey" buttons do nothing on purpose.
 
-- `/en/` and `/pt/`: landing page
-- `/en/tours/`: all seven journeys, with a filter (`?type=hiking` and similar links can be shared)
-- `/en/tours/<slug>/`: one page per journey
-- `/en/credits/`: photo credits
-- `/`: picks a language (the last one chosen, otherwise the browser's) and redirects
+English lives at the root URLs and European Portuguese under `/pt/` (for example `/tours/` and `/pt/tours/`). There is no language detection or redirect; the EN | PT switch in the header links to the same page in the other language.
+
+- `/` and `/pt/`: landing page
+- `/tours/`: all seven journeys, with a filter (`?type=hiking` and similar links can be shared)
+- `/tours/<slug>/`: one page per journey
+- `/business-model/`: business model canvas
+- `/credits/`: photo credits
 
 ## Run it locally
 
@@ -29,7 +31,7 @@ Set `NEXT_PUBLIC_SITE_URL` (for example `https://sustain.example`) when running 
 `npm run build` writes the complete site to `out/`. Any static host works.
 
 - **Netlify (recommended):** go to <https://app.netlify.com/drop> and drag the `out/` folder onto the page. You get a public URL straight away.
-- **GitHub Pages:** works only as a *user/organisation site* (`<name>.github.io`) or with a *custom domain*. A normal project site lives in a subfolder (`<name>.github.io/sustain/`), which breaks the site's absolute links such as `/en/`. Publish the contents of `out/` and add an empty `.nojekyll` file so the `_next/` folder is served.
+- **GitHub Pages:** works only as a *user/organisation site* (`<name>.github.io`) or with a *custom domain*. A normal project site lives in a subfolder (`<name>.github.io/sustain/`), which breaks the site's absolute links such as `/tours/`. Publish the contents of `out/` and add an empty `.nojekyll` file so the `_next/` folder is served.
 
 Unknown URLs show the bilingual `404.html`; Netlify and GitHub Pages both pick it up automatically.
 

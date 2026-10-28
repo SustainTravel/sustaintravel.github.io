@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTour, tours } from "@/content/tours";
-import { isLocale, locales } from "@/i18n/config";
+import { isLocale, localePath } from "@/i18n/config";
 import { fill, getDictionary } from "@/i18n/get-dictionary";
 import { formatPrice } from "@/lib/format";
 import { Bike, Birds, Bus, Check, Chevron, Close, Leaf, Moon, Pin, Sun, Tree } from "@/components/icons";
@@ -13,7 +13,7 @@ import { TourBadges } from "@/components/tours/TourBadges";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return locales.flatMap((locale) => tours.map((tour) => ({ locale, slug: tour.slug })));
+  return tours.map((tour) => ({ slug: tour.slug }));
 }
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -41,7 +41,7 @@ export default async function TourPage({ params }: Props) {
     <article aria-labelledby="tour-title">
       <header className="mx-auto max-w-7xl px-5 pt-6 pb-8 sm:px-8 lg:pt-10 lg:pb-12">
         <Link
-          href={`/${locale}/tours/`}
+          href={localePath(locale, "/tours/")}
           className="-ml-1 inline-flex min-h-11 items-center gap-1 rounded-full pr-2 font-semibold text-leaf hover:text-forest"
         >
           <Chevron className="size-4 rotate-180" />

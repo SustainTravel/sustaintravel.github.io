@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { defaultLocale, isLocale, type Locale } from "@/i18n/config";
+import { defaultLocale, isLocale, localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { Arc, Birds, Sun } from "@/components/icons";
 
@@ -21,13 +21,13 @@ export function NotFoundContent({ strings }: { strings: Record<Locale, Dictionar
       <p className="mt-4 max-w-md text-lg leading-relaxed text-pretty">{t.body}</p>
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Link
-          href={`/${locale}/`}
+          href={localePath(locale, "/")}
           className="inline-flex min-h-12 items-center rounded-full bg-sun px-7 font-semibold text-bark press hover:bg-sun-deep"
         >
           {t.home}
         </Link>
         <Link
-          href={`/${locale}/tours/`}
+          href={localePath(locale, "/tours/")}
           className="inline-flex min-h-12 items-center rounded-full border-2 border-forest/25 px-6 font-semibold press hover:border-forest"
         >
           {t.tours}

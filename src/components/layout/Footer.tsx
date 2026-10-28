@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Locale } from "@/i18n/config";
+import { localePath, type Locale } from "@/i18n/config";
 import { fill, type Dictionary } from "@/i18n/get-dictionary";
 import { Facebook, Hills, Instagram, Mail, Pin } from "@/components/icons";
 import { navItems } from "./nav";
@@ -20,7 +20,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
       <Hills colors={["#c9d8b0", "#8baa6b", "#2f5d3a"]} className="absolute bottom-full h-12 w-full sm:h-20" />
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-10 px-5 pt-12 pb-10 sm:px-8 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div className="col-span-2 lg:col-span-1">
-          <Link href={`/${locale}/`} className="inline-flex items-center gap-4 rounded-full">
+          <Link href={localePath(locale, "/")} className="inline-flex items-center gap-4 rounded-full">
             <span className="grid size-24 shrink-0 place-items-center rounded-full bg-cream p-1.5">
               {/* Eager: the header already loaded this file; lazy here only trips Chrome's CLS issue. */}
               <Image src="/logo.jpg" alt="" width={84} height={84} loading="eager" className="rounded-full" />
@@ -43,7 +43,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               </li>
             ))}
             <li>
-              <Link href={`/${locale}/credits/`} className={linkClass}>
+              <Link href={localePath(locale, "/credits/")} className={linkClass}>
                 {t.credits}
               </Link>
             </li>

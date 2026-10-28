@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
-import type { Locale } from "@/i18n/config";
+import { localePath, type Locale } from "@/i18n/config";
 import { Birds, Close, Hills, Menu, Sun } from "@/components/icons";
 import { LanguageSwitch } from "./LanguageSwitch";
 import type { NavItem } from "./nav";
@@ -111,7 +111,7 @@ export function MobileMenu({ locale, items, labels }: { locale: Locale; items: N
 
           <div className="flex flex-wrap items-center gap-4 px-5 pt-8">
             <Link
-              href={`/${locale}/tours/`}
+              href={localePath(locale, "/tours/")}
               onClick={close}
               className="inline-flex min-h-12 items-center rounded-full bg-sun px-6 font-semibold text-bark hover:bg-sun-deep press"
             >

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Locale } from "@/i18n/config";
+import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { LanguageSwitch } from "./LanguageSwitch";
 import { MobileMenu } from "./MobileMenu";
@@ -12,7 +12,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
     <header className="sticky top-0 z-40 border-b border-forest/10 bg-cream/95 backdrop-blur supports-[backdrop-filter]:bg-cream/85">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-2 px-4 sm:px-6 lg:h-20 lg:gap-3 lg:px-8">
-        <Link href={`/${locale}/`} className="mr-auto flex min-h-11 shrink-0 items-center gap-2.5 rounded-full pr-2">
+        <Link href={localePath(locale, "/")} className="mr-auto flex min-h-11 shrink-0 items-center gap-2.5 rounded-full pr-2">
           <Image src="/logo.jpg" alt="" width={48} height={48} className="size-11 lg:size-13" preload />
           <span translate="no" className="font-display text-2xl leading-none text-forest lg:text-[1.7rem]">{dict.common.brand}</span>
         </Link>
@@ -36,7 +36,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         <LanguageSwitch locale={locale} label={dict.common.language} className="hidden md:flex" />
 
         <Link
-          href={`/${locale}/tours/`}
+          href={localePath(locale, "/tours/")}
           className="hidden min-h-11 items-center rounded-full bg-sun px-4 font-semibold whitespace-nowrap text-bark press hover:bg-sun-deep md:inline-flex lg:px-5"
         >
           {dict.common.bookTrip}

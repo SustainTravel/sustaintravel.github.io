@@ -1,12 +1,12 @@
-import type { Locale } from "@/i18n/config";
+import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 
 /** `headerClass` hides an item from the desktop header row only; the mobile menu and footer always list it. */
 export type NavItem = { href: string; label: string; headerClass?: string };
 
-/** Landing anchors use the full `/[locale]/#id` path so they also work from other pages. */
+/** Landing anchors use the full home path (`/#id`, `/pt/#id`) so they also work from other pages. */
 export function navItems(locale: Locale, dict: Dictionary): NavItem[] {
-  const home = `/${locale}/`;
+  const home = localePath(locale, "/");
   return [
     // md–lg: no room for both, so the "Book a trip" CTA stands in for "Tours" (same URL).
     { href: `${home}tours/`, label: dict.nav.tours, headerClass: "md:max-lg:hidden" },

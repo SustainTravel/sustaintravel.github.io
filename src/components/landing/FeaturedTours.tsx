@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Locale } from "@/i18n/config";
+import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { tours } from "@/content/tours";
 import { TourCard } from "@/components/tours/TourCard";
@@ -13,7 +13,7 @@ export function FeaturedTours({ locale, dict }: { locale: Locale; dict: Dictiona
           {t.title}
         </h2>
         <Link
-          href={`/${locale}/tours/`}
+          href={localePath(locale, "/tours/")}
           className="inline-flex min-h-11 items-center font-semibold text-forest underline decoration-sun decoration-2 underline-offset-[6px] hover:decoration-forest"
         >
           {t.viewAll}

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { en } from "@/i18n/dictionaries/en";
 import { pt } from "@/i18n/dictionaries/pt";
+import { localePath } from "@/i18n/config";
 import { Arc, Birds, Hills, Sun } from "@/components/icons";
 import { body, display } from "./fonts";
 import "./globals.css";
@@ -21,7 +22,7 @@ export default function GlobalNotFound() {
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="flex min-h-dvh flex-col">
         <header className="mx-auto flex w-full max-w-5xl px-5 py-4 sm:px-8">
-          <Link href="/en/" className="flex min-h-11 items-center gap-2.5 rounded-full pr-2">
+          <Link href="/" className="flex min-h-11 items-center gap-2.5 rounded-full pr-2">
             <Image src="/logo.jpg" alt="" width={48} height={48} className="size-11" />
             <span translate="no" className="font-display text-2xl leading-none text-forest">
               Sustain
@@ -43,13 +44,13 @@ export default function GlobalNotFound() {
                 {/* mt-auto: the grid stretches both columns, so the buttons line up whatever the copy length. */}
                 <div className="mt-auto flex flex-wrap justify-center gap-3 pt-6">
                   <Link
-                    href={`/${locale}/`}
+                    href={localePath(locale, "/")}
                     className="inline-flex min-h-12 items-center rounded-full bg-sun px-6 font-semibold text-bark press hover:bg-sun-deep"
                   >
                     {t.home}
                   </Link>
                   <Link
-                    href={`/${locale}/tours/`}
+                    href={localePath(locale, "/tours/")}
                     className="inline-flex min-h-12 items-center rounded-full border-2 border-forest/25 px-5 font-semibold press hover:border-forest"
                   >
                     {t.tours}

@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
-import { isLocale, locales } from "@/i18n/config";
+import { defaultLocale, isLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -14,8 +14,9 @@ export const dynamicParams = false;
 
 export const viewport: Viewport = { themeColor: "#f9f7eb" };
 
+// English is served from the (en) route group at the root, so this segment only builds the other languages.
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return locales.filter((locale) => locale !== defaultLocale).map((locale) => ({ locale }));
 }
 
 type Props = { children: ReactNode; params: Promise<{ locale: string }> };

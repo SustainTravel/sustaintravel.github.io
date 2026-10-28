@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Locale } from "@/i18n/config";
+import { localePath, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { Arc, Birds, Sprout } from "@/components/icons";
 import { HeroScene } from "./HeroScene";
@@ -30,13 +30,13 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           <p style={{ animationDelay: "140ms" }} className="enter mt-6 max-w-xl text-lg leading-relaxed text-forest sm:text-xl sm:leading-relaxed">{t.lead}</p>
           <div style={{ animationDelay: "220ms" }} className="enter mt-8 flex flex-wrap gap-3">
             <Link
-              href={`/${locale}/tours/`}
+              href={localePath(locale, "/tours/")}
               className="inline-flex min-h-12 items-center rounded-full bg-sun px-7 text-lg font-semibold text-bark press hover:bg-sun-deep"
             >
               {t.cta}
             </Link>
             <Link
-              href={`/${locale}/#how`}
+              href={localePath(locale, "/#how")}
               className="inline-flex min-h-12 items-center rounded-full border-2 border-forest/25 px-6 text-lg font-semibold text-forest press hover:border-forest"
             >
               {t.secondaryCta}

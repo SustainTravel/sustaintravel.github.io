@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Tour } from "@/content/types";
-import type { Locale } from "@/i18n/config";
+import { localePath, type Locale } from "@/i18n/config";
 import { fill, type Dictionary } from "@/i18n/get-dictionary";
 import { formatPrice } from "@/lib/format";
 import { Moon } from "@/components/icons";
@@ -32,7 +32,7 @@ export function TourCard({ tour, locale, dict }: { tour: Tour; locale: Locale; d
         <p className="text-sm font-medium text-leaf">{tour.region[locale]}</p>
         <h3 className="mt-1 font-display text-2xl leading-tight text-forest">
           <Link
-            href={`/${locale}/tours/${tour.slug}/`}
+            href={localePath(locale, `/tours/${tour.slug}/`)}
             className="after:absolute after:inset-x-0 after:top-0 after:-bottom-1 after:rounded-t-[999px] after:rounded-b-xl group-hover:underline decoration-sun decoration-2 underline-offset-4"
           >
             {tour.title[locale]}

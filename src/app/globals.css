@@ -43,6 +43,14 @@ html {
   }
 }
 
+/* Back-to-top button: clear of the phone's home bar, and above the tour booking bar where there is one. */
+.to-top {
+  bottom: calc(1rem + env(safe-area-inset-bottom));
+}
+html:has(.book-bar) .to-top {
+  bottom: calc(5.75rem + env(safe-area-inset-bottom));
+}
+
 body {
   background: var(--color-cream);
   color: var(--color-forest);

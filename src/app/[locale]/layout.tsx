@@ -5,6 +5,7 @@ import { isLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { BackToTop } from "@/components/layout/BackToTop";
 import { revealScript } from "@/lib/reveal-script";
 import { body, display } from "../fonts";
 import "../globals.css";
@@ -53,6 +54,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           {children}
         </main>
         <Footer locale={locale} dict={dict} />
+        <BackToTop label={dict.common.backToTop} />
       </body>
     </html>
   );

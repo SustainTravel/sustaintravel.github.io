@@ -9,6 +9,7 @@ export const en = {
         "Multi-day slow journeys through rural Portugal: tree planting, hikes, bike rides, yoga and farm food. Electric transfers only, famous sights only off-season.",
     },
     skipToContent: "Skip to content",
+    backToTop: "Back to top",
     openMenu: "Open menu",
     newTab: "(opens in a new tab)",
     closeMenu: "Close menu",

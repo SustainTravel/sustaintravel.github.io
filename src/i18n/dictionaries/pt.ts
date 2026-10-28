@@ -9,6 +9,7 @@ export const pt: Dictionary = {
       description:
         "Viagens lentas de vários dias pelo Portugal rural: plantação de árvores, caminhadas, bicicleta, ioga e comida da terra. Só transfers elétricos, e os lugares famosos só fora de época.",
     },
+    backToTop: "Voltar ao topo",
     skipToContent: "Saltar para o conteúdo",
     openMenu: "Abrir menu",
     newTab: "(abre num novo separador)",

@@ -18,3 +18,10 @@ export function pickInitialLocale(
   }
   return defaultLocale;
 }
+
+/** Same page in another language: '/en/tours/x/' → '/pt/tours/x/'; paths without a locale get one. */
+export function switchLocalePath(pathname: string, to: Locale): string {
+  const [, first = "", ...rest] = pathname.split("/");
+  const tail = isLocale(first) ? rest : [first, ...rest];
+  return `/${to}/${tail.join("/")}`;
+}

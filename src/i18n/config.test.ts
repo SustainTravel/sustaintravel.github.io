@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isLocale, pickInitialLocale } from "./config";
+import { isLocale, pickInitialLocale, switchLocalePath } from "./config";
 
 describe("isLocale", () => {
   it("accepts en and pt", () => {
@@ -20,4 +20,12 @@ describe("pickInitialLocale", () => {
   it("falls back to en for unsupported", () =>
     expect(pickInitialLocale(null, ["de-DE"])).toBe("en"));
   it("falls back to en for empty", () => expect(pickInitialLocale(null, [])).toBe("en"));
+});
+
+describe("switchLocalePath", () => {
+  it("home", () => expect(switchLocalePath("/en/", "pt")).toBe("/pt/"));
+  it("keeps the rest of the path", () =>
+    expect(switchLocalePath("/en/book/replant-the-serra/", "pt")).toBe("/pt/book/replant-the-serra/"));
+  it("pt to en", () => expect(switchLocalePath("/pt/tours/", "en")).toBe("/en/tours/"));
+  it("root", () => expect(switchLocalePath("/", "pt")).toBe("/pt/"));
 });

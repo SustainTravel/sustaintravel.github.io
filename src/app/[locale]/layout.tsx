@@ -1,16 +1,12 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Figtree, Young_Serif } from "next/font/google";
 import { isLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { body, display } from "../fonts";
 import "../globals.css";
-
-// Young Serif: warm, chunky, hand-cut serif with a village-signage feel; Figtree: friendly, very legible body.
-const display = Young_Serif({ subsets: ["latin", "latin-ext"], weight: "400", variable: "--nf-display" });
-const body = Figtree({ subsets: ["latin", "latin-ext"], variable: "--nf-body" });
 
 export const dynamicParams = false;
 

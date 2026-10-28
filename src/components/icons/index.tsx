@@ -180,6 +180,22 @@ export function Plus(props: P) {
   );
 }
 
+export function Check(props: P) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" {...base} {...props}>
+      <path d="M5 12.5l4.5 4.5L19 7" />
+    </svg>
+  );
+}
+
+export function Chevron(props: P) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" {...base} {...props}>
+      <path d="M9 5l7 7-7 7" />
+    </svg>
+  );
+}
+
 export function Instagram(props: P) {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...base} {...props}>

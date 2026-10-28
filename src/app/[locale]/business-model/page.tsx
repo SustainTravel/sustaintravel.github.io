@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isLocale } from "@/i18n/config";
 import { getDictionary, type Dictionary } from "@/i18n/get-dictionary";
+import { FinancialDashboard } from "@/components/business-model/FinancialDashboard";
 import { Basket, Birds, CoinSprout, Coins, Family, Hands, Heart, Hills, Route, Signpost, Sprout, Sun } from "@/components/icons";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -33,7 +34,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function BusinessModelPage({ params }: Props) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  const t = getDictionary(locale).businessModel;
+  const dict = getDictionary(locale);
+  const t = dict.businessModel;
   return (
     <>
       <section aria-labelledby="bmc-title" className="relative bg-meadow">
@@ -102,6 +104,8 @@ export default async function BusinessModelPage({ params }: Props) {
           })}
         </div>
       </div>
+
+      <FinancialDashboard dict={dict} locale={locale} />
     </>
   );
 }

@@ -141,6 +141,16 @@ dialog.menu-sheet::backdrop {
     stroke-dashoffset: 1.05;
   }
 }
+@keyframes grow-x {
+  from {
+    transform: scaleX(0);
+  }
+}
+@keyframes grow-y {
+  from {
+    transform: scaleY(0);
+  }
+}
 @keyframes hill-drift {
   to {
     transform: translateY(8px);
@@ -181,6 +191,16 @@ dialog.menu-sheet::backdrop {
   }
   [data-reveal] .reveal-group[data-shown] > :nth-child(n + 4) {
     animation-delay: 210ms;
+  }
+  /* Dashboard chart bars grow from their baseline once their panel is in. */
+  [data-reveal] .reveal[data-shown] :is(.bar-x, .bar-y) {
+    transform-box: fill-box;
+    transform-origin: left;
+    animation: grow-x 900ms var(--ease-out-strong) 250ms backwards;
+  }
+  [data-reveal] .reveal[data-shown] .bar-y {
+    transform-origin: bottom;
+    animation-name: grow-y;
   }
 }
 

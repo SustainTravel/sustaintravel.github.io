@@ -2,12 +2,19 @@ import type { Locale } from "@/i18n/config";
 
 const tag = (locale: Locale) => (locale === "pt" ? "pt-PT" : "en-IE");
 
-export function formatPrice(amount: number, locale: Locale): string {
+/** Euros, whole by default ("€1,190", "1190 €"); `digits` 2 for unit prices ("€1,230.01", "1230,01 €"). */
+export function formatPrice(amount: number, locale: Locale, digits = 0): string {
   return new Intl.NumberFormat(tag(locale), {
     style: "currency",
     currency: "EUR",
-    maximumFractionDigits: 0,
+    minimumFractionDigits: digits,
+    maximumFractionDigits: digits,
   }).format(amount);
+}
+
+/** Plain numbers and percentages in the page's locale: formatNumber(0.2375, "pt", { style: "percent" }). */
+export function formatNumber(n: number, locale: Locale, options?: Intl.NumberFormatOptions): string {
+  return new Intl.NumberFormat(tag(locale), { maximumFractionDigits: 2, ...options }).format(n);
 }
 
 /** The number inside a formatted stat: "18,400" or "18 400" -> 18400, "100%" -> 100. */

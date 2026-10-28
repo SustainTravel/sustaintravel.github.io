@@ -6,6 +6,11 @@ import { formatLike, formatPrice, statTarget } from "./format";
 describe("formatPrice", () => {
   it("en", () => expect(formatPrice(1190, "en")).toBe("€1,190"));
   it("pt", () => expect(formatPrice(2890, "pt")).toMatch(/^2[\s  .]?890[\s  ]€$/));
+  it("unit prices keep cents", () => {
+    expect(formatPrice(1230.01, "en", 2)).toBe("€1,230.01");
+    expect(formatPrice(19, "en", 2)).toBe("€19.00");
+    expect(formatPrice(1230.01, "pt", 2)).toMatch(/^1230,01\s€$/);
+  });
 });
 
 describe("formatLike", () => {

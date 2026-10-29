@@ -78,7 +78,7 @@ export function MobileMenu({ locale, items, labels }: { locale: Locale; items: N
           <div className="flex h-16 items-center justify-between px-5">
             <span translate="no" className="flex items-center gap-2.5 font-display text-2xl">
               {/* Eager: the header already loaded this file; a lazy copy trips Chrome's CLS issue. */}
-              <Image src="/logo.jpg" alt="" width={44} height={44} loading="eager" className="size-11" />
+              <Image src="/logo.jpg" alt="" width={44} height={44} loading="eager" className="size-11 rounded-full" />
               {labels.brand}
             </span>
             <button

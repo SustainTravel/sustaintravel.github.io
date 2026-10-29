@@ -23,7 +23,7 @@ export default function GlobalNotFound() {
       <body className="flex min-h-dvh flex-col">
         <header className="mx-auto flex w-full max-w-5xl px-5 py-4 sm:px-8">
           <Link href="/" className="flex min-h-11 items-center gap-2.5 rounded-full pr-2">
-            <Image src="/logo.jpg" alt="" width={48} height={48} className="size-11" />
+            <Image src="/logo.jpg" alt="" width={48} height={48} className="size-11 rounded-full" />
             <span translate="no" className="font-display text-2xl leading-none text-forest">
               Sustain
             </span>

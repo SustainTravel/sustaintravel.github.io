@@ -13,7 +13,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
     <header className="sticky top-0 z-40 border-b border-forest/10 bg-cream/95 backdrop-blur supports-[backdrop-filter]:bg-cream/85">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-2 px-4 sm:px-6 lg:h-20 lg:gap-3 lg:px-8">
         <Link href={localePath(locale, "/")} className="mr-auto flex min-h-11 shrink-0 items-center gap-2.5 rounded-full pr-2">
-          <Image src="/logo.jpg" alt="" width={48} height={48} className="size-11 lg:size-13" preload />
+          <Image src="/logo.jpg" alt="" width={48} height={48} className="size-11 rounded-full lg:size-13" preload />
           <span translate="no" className="font-display text-2xl leading-none text-forest lg:text-[1.7rem]">{dict.common.brand}</span>
         </Link>
 

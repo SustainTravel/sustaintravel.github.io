@@ -133,6 +133,16 @@ export const pt: Dictionary = {
       "Somos pequenos e queremos continuar assim. Cada viagem é desenhada em conjunto com quem vive ao longo do seu percurso.",
     ],
     photoAlt: "Os sete membros da equipa da Sustain à porta de um edifício universitário em Portugal",
+    teamTitle: "A equipa",
+    team: [
+      { name: "Nils Briška", country: "Letónia" },
+      { name: "Vadym Royik", country: "República Checa" },
+      { name: "Kersten Wind", country: "Alemanha" },
+      { name: "Pascale Berg", country: "Países Baixos" },
+      { name: "Mariana Palmeirinha", country: "Portugal" },
+      { name: "Nicole Ermitão", country: "Portugal" },
+      { name: "Jelle Jin", country: "Bélgica" },
+    ],
   },
 
   testimonials: {

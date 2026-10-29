@@ -132,6 +132,16 @@ export const en = {
       "We are small, and we mean to stay that way. Every journey is designed together with the people who live along its route.",
     ],
     photoAlt: "The seven members of the Sustain team outside a university building in Portugal",
+    teamTitle: "The team",
+    team: [
+      { name: "Nils Briška", country: "Latvia" },
+      { name: "Vadym Royik", country: "Czech Republic" },
+      { name: "Kersten Wind", country: "Germany" },
+      { name: "Pascale Berg", country: "Netherlands" },
+      { name: "Mariana Palmeirinha", country: "Portugal" },
+      { name: "Nicole Ermitão", country: "Portugal" },
+      { name: "Jelle Jin", country: "Belgium" },
+    ],
   },
 
   testimonials: {

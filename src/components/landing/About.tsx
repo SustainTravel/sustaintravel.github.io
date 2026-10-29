@@ -28,6 +28,17 @@ export function About({ dict }: { dict: Dictionary }) {
               className="absolute inset-0 size-full object-cover"
             />
           </div>
+          <figcaption className="mt-6">
+            <h3 className="font-display text-2xl">{t.teamTitle}</h3>
+            <ul className="mt-3 grid gap-x-6 gap-y-2 sm:grid-cols-2">
+              {t.team.map((m) => (
+                <li key={m.name} className="flex flex-wrap items-baseline gap-x-2">
+                  <span className="font-semibold">{m.name}</span>
+                  <span className="text-leaf">{m.country}</span>
+                </li>
+              ))}
+            </ul>
+          </figcaption>
         </figure>
       </div>
     </section>
